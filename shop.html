@@ -1,0 +1,149 @@
+Perfetto! 🔥 Allora ti scrivo il codice completo di shop.html pronto da copiare e incollare, già strutturato con:
+
+Header con menu centrale
+
+Sezione shop con 3 magliette
+
+2 immagini per maglietta (front e back) caricate su GitHub
+
+Pulsante singolo PayPal per ciascuna maglietta
+
+Devi solo sostituire i codici dei pulsanti PayPal con quelli che hai generato.
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHOP - GOTUZ</title>
+
+<!-- Font stile quasi fatto a mano -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    background: #111;
+    color: #F3EFE6;
+    font-family: 'Cormorant Garamond', serif;
+    text-align: center;
+}
+
+header {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+
+header a {
+    margin: 0 30px;
+    text-decoration: none;
+    color: #F3EFE6;
+}
+
+header a:hover {
+    border-bottom: 1px solid #F3EFE6;
+}
+
+.product {
+    display: inline-block;
+    margin: 30px;
+}
+
+.product img {
+    width: 200px;
+    display: inline-block;
+    margin: 0 10px 10px 10px; /* spazio tra le immagini */
+}
+
+
+.product p {
+    margin: 10px 0;
+    font-weight: bold;
+    font-size: 18px;
+}
+</style>
+</head>
+<body>
+
+<header>
+<a href="index.html">HOME</a>
+<a href="shows.html">SHOWS</a>
+<a href="shop.html">SHOP</a>
+<a href="listen.html">LISTEN</a>
+</header>
+
+<h1>GOTUZ SHOP</h1>
+
+<!-- MAGLIETTA BLACK -->
+<div class="product">
+  <img src="Black Front.jpg" alt="Black Front">
+  <img src="Black Back.jpg" alt="Black Back">
+  <p>T-shirt Black</p>
+
+  <div class="product">
+  <img src="Black Front.jpg" alt="Black Front">
+  <img src="Black Back.jpg" alt="Black Back">
+  <p>T-shirt Black</p>
+
+    
+  <!-- Pulsante PayPal singolo -->
+<div>
+  <style>.pp-HLUAQPS3GRHZC{text-align:center;border:none;border-radius:0.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
+  <form action="https://www.paypal.com/ncp/payment/HLUAQPS3GRHZC" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
+    <input class="pp-HLUAQPS3GRHZC" type="submit" value="Acquista ora" />
+    <img src=https://www.paypalobjects.com/images/Debit_Credit_APM.svg alt="cards" />
+    <section style="font-size: 0.75rem;"> Con tecnologia <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
+  </form>
+</div>
+
+<!-- MAGLIETTA BURDURY -->
+<div class="product">
+  <img src="Burdury Front.jpg" alt="Burdury Front">
+  <img src="Burdury Back.jpg" alt="Burdury Back">
+  <p>T-shirt Burdury</p>
+
+  <div class="product">
+  <img src="Burdury Front.jpg" alt="Burdury Front">
+  <img src="Burdury Back.jpg" alt="Burdury Back">
+  <p>T-shirt Black</p>
+
+    
+  <!-- Pulsante PayPal singolo -->
+<div>
+  <style>.pp-JB2FTB4UEXSME{text-align:center;border:none;border-radius:0.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
+  <form action="https://www.paypal.com/ncp/payment/JB2FTB4UEXSME" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
+    <input class="pp-JB2FTB4UEXSME" type="submit" value="Acquista ora" />
+    <img src=https://www.paypalobjects.com/images/Debit_Credit_APM.svg alt="cards" />
+    <section style="font-size: 0.75rem;"> Con tecnologia <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
+  </form>
+</div>
+
+<!-- MAGLIETTA WHITE -->
+<div class="product">
+  <img src="White Front.jpg" alt="White Front">
+  <img src="White Back.jpg" alt="White Back">
+  <p>T-shirt White</p>
+
+  <div class="product">
+  <img src="White Front.jpg" alt="White Front">
+  <img src="White Back.jpg" alt="White Back">
+  <p>T-shirt Black</p>
+
+    
+    <!-- Pulsante PayPal singolo -->
+<div>
+  <style>.pp-EH4MVT3EZMPEL{text-align:center;border:none;border-radius:0.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
+  <form action="https://www.paypal.com/ncp/payment/EH4MVT3EZMPEL" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
+    <input class="pp-EH4MVT3EZMPEL" type="submit" value="Acquista ora" />
+    <img src=https://www.paypalobjects.com/images/Debit_Credit_APM.svg alt="cards" />
+    <section style="font-size: 0.75rem;"> Con tecnologia <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
+  </form>
+</div>
+  
+
+</body>
+</html>
