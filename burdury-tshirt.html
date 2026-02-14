@@ -18,7 +18,7 @@ body {
 
 header {
     position: fixed;
-    top: 40px;  /* Aumentato lo spazio per allinearlo correttamente */
+    top: 40px;  /* Aggiunto un po' di spazio per allinearlo correttamente */
     width: 100%;
     text-align: center;
     letter-spacing: 2px;
@@ -26,10 +26,12 @@ header {
     padding: 20px 0;
     background: #111;
     z-index: 10;
+    display: flex;
+    justify-content: center; /* Allinea il pulsante al centro */
+    gap: 50px;  /* Distanza tra i pulsanti */
 }
 
 header a {
-    margin: 0 30px;
     text-decoration: none;
     color: #F3EFE6;
 }
@@ -80,15 +82,6 @@ header a:hover {
     font-size: 18px;
     line-height: 1.4;
 }
-
-/* Modifica per mantenere solo SHOP e centrato come le altre pagine */
-header a {
-    display: none; /* Rimuovi gli altri pulsanti */
-}
-
-header a:nth-child(3) { /* SHOP è il terzo link */
-    display: inline-block;
-}
 </style>
 
 <!-- PayPal SDK -->
@@ -98,7 +91,7 @@ header a:nth-child(3) { /* SHOP è il terzo link */
 <body>
 
 <header>
-    <a href="shop.html">SHOP</a>
+    <a href="shop.html">SHOP</a>  <!-- Solo il pulsante SHOP visibile -->
 </header>
 
 <div class="product-container">
