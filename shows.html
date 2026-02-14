@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,8 +13,7 @@ body {
     background: #111;
     color: #F3EFE6;
     font-family: 'Cormorant Garamond', serif;
-    text-align: center;
-    padding-top: 150px;
+    text-align: left; /* testo a sinistra */
 }
 
 header {
@@ -35,6 +34,18 @@ header a {
 header a:hover {
     border-bottom: 1px solid #F3EFE6;
 }
+
+/* Sezione messaggio shows */
+.shows-message {
+    margin-top: 160px;       /* più spazio sotto header */
+    display: flex;
+    justify-content: flex-start; /* testo a sinistra */
+    align-items: center;          /* centrato verticalmente */
+    height: 300px;                /* altezza della sezione */
+    padding-left: 50px;           /* spazio dalla sinistra */
+    font-size: 20px;              /* carattere più piccolo */
+    line-height: 1.5;
+}
 </style>
 </head>
 <body>
@@ -47,8 +58,9 @@ header a:hover {
 <a href="news.html">NEWS</a>
 </header>
 
-
-<h1>New GOTUZ shows coming soon</h1>
+<div class="shows-message">
+    Nuovi show in arrivo presto! Rimanete sintonizzati.
+</div>
 
 </body>
 </html>
