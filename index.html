@@ -69,6 +69,24 @@ header a:hover {
     background: #F3EFE6;
     color: #111;
 }
+
+/* FOOTER SOCIAL */
+.social-footer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;                 /* spazio tra le icone */
+    margin: 20px 0 40px 0;     /* spazio sopra e sotto il footer */
+}
+
+.social-footer img {
+    width: 25px;               /* dimensione icone */
+    filter: grayscale(100%);   /* bianco e nero */
+    transition: transform 0.2s;
+}
+
+.social-footer img:hover {
+    transform: scale(1.2);     /* effetto hover leggero */
+}
 </style>
 </head>
 
@@ -82,7 +100,6 @@ header a:hover {
 <a href="news.html">NEWS</a>
 </header>
 
-
 <div class="hero">
 <h1>GOTUZ</h1>
 <h2>SECOND ALBUM</h2>
@@ -93,6 +110,22 @@ header a:hover {
 <a href="#">PRE-SAVE</a>
 </div>
 </div>
+
+<!-- FOOTER SOCIAL -->
+<footer class="social-footer">
+  <a href="https://www.instagram.com/TUOUSERNAME" target="_blank">
+    <img src="icons/instagram-bn.png" alt="Instagram">
+  </a>
+  <a href="https://www.facebook.com/TUOUSERNAME" target="_blank">
+    <img src="icons/facebook-bn.png" alt="Facebook">
+  </a>
+  <a href="https://twitter.com/TUOUSERNAME" target="_blank">
+    <img src="icons/twitter-bn.png" alt="Twitter/X">
+  </a>
+  <a href="https://www.youtube.com/channel/TUOUSERNAME" target="_blank">
+    <img src="icons/youtube-bn.png" alt="YouTube">
+  </a>
+</footer>
 
 </body>
 </html>
