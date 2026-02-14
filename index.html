@@ -13,24 +13,20 @@ body {
     background: #111;
     color: #F3EFE6;
     font-family: 'Cormorant Garamond', serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Imposta il body con altezza minima 100% della finestra */
 }
 
 header {
-    position: fixed;
-    top: 30px; /* Maggiore spazio tra il bordo superiore e il menu */
+    position: absolute;
+    top: 40px;
     width: 100%;
     text-align: center;
     letter-spacing: 2px;
     font-size: 20px;
     z-index: 1000;
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    background-color: #111;
-    padding: 20px 0;
+    justify-content: center;  /* allineamento centrale */
+    gap: 50px;               /* aumenta la distanza tra i titoli */
+    flex-wrap: wrap;         /* permette la disposizione su più righe su dispositivi piccoli */
 }
 
 header a {
@@ -44,14 +40,13 @@ header a:hover {
 
 /* HERO */
 .hero {
-    flex: 1; /* Prende lo spazio rimanente */
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     position: relative;
-    margin-top: 150px; /* Maggiore spazio sotto l'header */
 }
 
 .hero h1 {
@@ -83,12 +78,11 @@ header a:hover {
 
 /* SOCIAL ICONS - FOOTER */
 .social-footer {
+    position: absolute;
+    bottom: 50px;
     display: flex;
     justify-content: center;
     gap: 20px;
-    position: relative;
-    bottom: 30px; /* Maggiore distanza dal fondo */
-    margin-bottom: 40px; /* Distanza finale dal fondo */
 }
 
 .social-footer img {
@@ -106,21 +100,21 @@ header a:hover {
 /* Media Queries per dispositivi mobili */
 @media (max-width: 768px) {
     header {
-        font-size: 16px;
-        flex-direction: column;
-        align-items: center;
+        font-size: 16px;               /* riduce la dimensione del font */
+        flex-direction: column;        /* cambia la direzione dei link da orizzontale a verticale */
+        align-items: center;           /* allinea i link al centro */
     }
 
     .hero h1 {
-        font-size: 60px;
+        font-size: 60px;                /* ridimensiona il titolo principale */
     }
 
     .hero h2 {
-        font-size: 20px;
+        font-size: 20px;                /* ridimensiona i sottotitoli */
     }
 
     .buttons a {
-        padding: 10px 20px;
+        padding: 10px 20px;             /* riduce la dimensione dei pulsanti */
         margin: 8px;
     }
 }
@@ -161,9 +155,8 @@ header a:hover {
 <a href="#">PRE-ORDER</a>
 <a href="#">PRE-SAVE</a>
 </div>
-</div>
 
-<!-- FOOTER SOCIAL -->
+<!-- FOOTER SOCIAL DENTRO HERO -->
 <footer class="social-footer">
   <a href="https://www.instagram.com/gotuzmusic" target="_blank">
     <img src="icons/instagram-bw.png" alt="Instagram">
@@ -178,6 +171,8 @@ header a:hover {
     <img src="icons/youtube-bw.png" alt="YouTube">
   </a>
 </footer>
+
+</div>
 
 </body>
 </html>
