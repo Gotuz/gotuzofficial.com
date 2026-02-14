@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black T-shirt - GOTUZ</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    background: #111;
+    color: #F3EFE6;
+    font-family: 'Cormorant Garamond', serif;
+    text-align: center;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 20px;
+    padding: 20px 0;
+    background: #111;
+    z-index: 10;
+}
+
+header a {
+    margin: 0 30px;
+    text-decoration: none;
+    color: #F3EFE6;
+}
+
+header a:hover {
+    border-bottom: 1px solid #F3EFE6;
+}
+
+.product-container {
+    margin-top: 120px; 
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.product-images {
+    text-align: center;
+}
+
+.product-images img {
+    width: 400px;
+    border-radius: 5px;
+}
+
+.thumbnails {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.thumbnails img {
+    width: 80px;
+    cursor: pointer;
+    border-radius: 5px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.thumbnails img:hover, .thumbnails img.active {
+    opacity: 1;
+}
+
+.description {
+    max-width: 400px;
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.4;
+}
+</style>
+
+<!-- PayPal SDK -->
+<script src="https://www.paypal.com/sdk/js?client-id=BAApqvZFp7OYumHbOcxJDgeLBFc3A3SmYM8jxmr2c6h5ib7dXGqgupvVo0k-kvA-xwMhtPXZsQWtCvUKPI&components=hosted-buttons&disable-funding=venmo&currency=EUR"></script>
+
+</head>
+<body>
+
+<header>
+<a href="index.html">HOME</a>
+<a href="shows.html">SHOWS</a>
+<a href="shop.html">SHOP</a>
+<a href="listen.html">LISTEN</a>
+</header>
+
+<div class="product-container">
+
+    <div class="product-images">
+        <img id="main-image" src="Black Front.png" alt="Black T-shirt">
+        <div class="thumbnails">
+            <img src="Black Front.png" alt="Front" class="active" onclick="switchImage(this)">
+            <img src="Black Back.png" alt="Back" onclick="switchImage(this)">
+        </div>
+    </div>
+
+    <div class="description">
+        <p>This is the premium GOTUZ Black T-shirt. Made with 100% cotton, perfect for fans. Front and back design included. Limited edition!</p>
+        <div id="paypal-container-BLACK"></div>
+    </div>
+
+</div>
+
+<script>
+function switchImage(thumbnail){
+    document.getElementById('main-image').src = thumbnail.src;
+    // reset active class
+    document.querySelectorAll('.thumbnails img').forEach(img => img.classList.remove('active'));
+    thumbnail.classList.add('active');
+}
+
+// PayPal button
+paypal.HostedButtons({
+    hostedButtonId: "HLUAQPS3GRHZC" // metti qui ID PayPal
+}).render('#paypal-container-BLACK');
+</script>
+
+</body>
+</html>
