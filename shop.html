@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SHOP - GOTUZ</title>
 
-<!-- Font quasi fatto a mano per menu -->
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
@@ -14,6 +13,7 @@ body {
     background: #111;
     color: #F3EFE6;
     font-family: 'Cormorant Garamond', serif;
+    text-align: center;
 }
 
 header {
@@ -21,47 +21,40 @@ header {
     top: 0;
     width: 100%;
     text-align: center;
-    padding: 15px 0;
     letter-spacing: 2px;
-    font-size: 18px;
+    font-size: 20px;
+    padding: 20px 0;
     background: #111;
-    z-index: 100;
+    z-index: 10;
 }
 
 header a {
-    margin: 0 20px;
+    margin: 0 30px;
     text-decoration: none;
     color: #F3EFE6;
-    font-weight: 600;
 }
 
 header a:hover {
     border-bottom: 1px solid #F3EFE6;
 }
 
-/* griglia prodotti */
-.products-grid {
+.shop-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colonne */
-    gap: 30px;
-    padding: 80px 40px 40px 40px; /* lascia spazio per menu fisso in alto */
+    grid-template-columns: repeat(3, 1fr);
     justify-items: center;
+    gap: 40px;
+    margin-top: 120px; /* spazio sotto header */
 }
 
-.product {
-    text-align: center;
+.shop-grid img {
+    width: 300px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.2s;
 }
 
-.product img {
-    width: 120px; /* immagini front/back più piccole */
-    margin: 0 5px 5px 5px; /* spazio tra front/back */
-}
-
-.product p {
-    margin-top: 5px;
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: 1px;
+.shop-grid img:hover {
+    transform: scale(1.05);
 }
 </style>
 </head>
@@ -74,47 +67,10 @@ header a:hover {
 <a href="listen.html">LISTEN</a>
 </header>
 
-<div class="products-grid">
-
-  <!-- MAGLIETTA BLACK -->
-  <div class="product">
-    <img src="Black Front.jpg" alt="Black Front">
-    <img src="Black Back.jpg" alt="Black Back">
-    <p>T-SHIRT BLACK</p>
-    <!-- pulsante PayPal -->
-    <div>
-      <form action="https://www.paypal.com/ncp/payment/HLUAQPS3GRHZC" method="post" target="_blank">
-        <input type="submit" value="Acquista ora" style="padding:5px 12px;background:#FFD140;color:#000;border:none;border-radius:4px;cursor:pointer;font-weight:bold;">
-      </form>
-    </div>
-  </div>
-
-  <!-- MAGLIETTA BURGUNDY -->
-  <div class="product">
-    <img src="Burdury Front.jpg" alt="Burdury Front">
-    <img src="Burdury Back.jpg" alt="Burdury Back">
-    <p>T-SHIRT BURGUNDY</p>
-    <!-- pulsante PayPal -->
-    <div>
-      <form action="https://www.paypal.com/ncp/payment/JB2FTB4UEXSME" method="post" target="_blank">
-        <input type="submit" value="Acquista ora" style="padding:5px 12px;background:#FFD140;color:#000;border:none;border-radius:4px;cursor:pointer;font-weight:bold;">
-      </form>
-    </div>
-  </div>
-
-  <!-- MAGLIETTA WHITE -->
-  <div class="product">
-    <img src="White Front.jpg" alt="White Front">
-    <img src="White Back.jpg" alt="White Back">
-    <p>T-SHIRT WHITE</p>
-    <!-- pulsante PayPal -->
-    <div>
-      <form action="https://www.paypal.com/ncp/payment/EH4MVT3EZMPEL" method="post" target="_blank">
-        <input type="submit" value="Acquista ora" style="padding:5px 12px;background:#FFD140;color:#000;border:none;border-radius:4px;cursor:pointer;font-weight:bold;">
-      </form>
-    </div>
-  </div>
-
+<div class="shop-grid">
+    <a href="black-tshirt.html"><img src="Black Front.png" alt="Black T-shirt"></a>
+    <a href="white-tshirt.html"><img src="White Front.png" alt="White T-shirt"></a>
+    <a href="burdury-tshirt.html"><img src="Burdury Front.png" alt="Burdury T-shirt"></a>
 </div>
 
 </body>
