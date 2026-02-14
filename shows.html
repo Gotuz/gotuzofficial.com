@@ -13,22 +13,21 @@ body {
     background: #111;
     color: #F3EFE6;
     font-family: 'Cormorant Garamond', serif;
-    text-align: center;
 }
 
-/* HEADER - Menu superiore */
 header {
     position: absolute;
-    top: 40px;
+    top: 40px;  /* distanza dal top */
     width: 100%;
     text-align: center;
     letter-spacing: 2px;
     font-size: 20px;
     z-index: 1000;
     display: flex;
-    justify-content: center;  /* allineamento centrale */
-    gap: 50px;               /* distanza tra i titoli */
-    flex-wrap: wrap;         /* permette la disposizione su più righe su dispositivi piccoli */
+    justify-content: center;  /* Allineamento centrale */
+    gap: 30px;                /* Ridotto per fare stare i tasti su una riga */
+    flex-wrap: wrap;          /* Permette la disposizione su più righe su dispositivi piccoli */
+    padding-top: 10px;         /* Aggiunta distanza tra i tasti e il bordo superiore */
 }
 
 header a {
@@ -42,26 +41,23 @@ header a:hover {
 
 /* Sezione messaggio shows */
 .shows-message {
-    margin-top: 160px;       /* spazio sotto header */
+    margin-top: 160px;       /* più spazio sotto header */
     display: flex;
-    justify-content: center; /* testo centrato */
-    align-items: center;     /* centrato verticalmente */
-    height: 300px;           /* altezza della sezione */
-    font-size: 24px;         /* carattere più grande */
+    justify-content: center;  /* testo centrato orizzontalmente */
+    align-items: center;      /* centrato verticalmente */
+    height: 300px;            /* altezza della sezione */
+    font-size: 20px;          /* carattere più piccolo */
     line-height: 1.5;
-    padding-left: 50px;
-    padding-right: 50px;
 }
 
 /* SOCIAL ICONS - FOOTER */
 .social-footer {
-    position: absolute;
-    bottom: 50px;
+    position: fixed;           /* Cambiato da absolute a fixed per evitare che i tasti social scompaiano con lo scroll */
+    bottom: 10px;              /* Aggiunta distanza dal fondo della pagina */
     display: flex;
     justify-content: center;
     gap: 20px;
-    width: 100%;  /* assicura che il footer prenda tutta la larghezza */
-    text-align: center;  /* centra i contenuti */
+    width: 100%;
 }
 
 .social-footer img {
@@ -79,23 +75,22 @@ header a:hover {
 /* Media Queries per dispositivi mobili */
 @media (max-width: 768px) {
     header {
-        font-size: 16px;               /* riduce la dimensione del font */
-        flex-direction: column;        /* cambia la direzione dei link da orizzontale a verticale */
-        align-items: center;           /* allinea i link al centro */
+        font-size: 16px;               /* Riduce la dimensione del font */
+        flex-direction: row;           /* Cambia la disposizione dei link su una sola riga */
+        align-items: center;           /* Allinea i link al centro */
+        gap: 20px;                     /* Aggiustato per dispositivi più piccoli */
+        padding-top: 30px;             /* Spazio maggiore tra l'header e il contenuto */
     }
 
     .shows-message {
-        font-size: 20px;  /* riduce il font sui dispositivi più piccoli */
-        padding-left: 0;
-        padding-right: 0;
-        text-align: center;
+        padding-left: 0;  /* rimuove il padding a sinistra sui dispositivi più piccoli */
+        text-align: center;  /* centro del testo per schermi piccoli */
     }
 }
 
-/* Media Queries per dispositivi molto piccoli */
 @media (max-width: 480px) {
     .shows-message {
-        font-size: 18px;  /* riduce ulteriormente il font */
+        font-size: 18px;  /* riduce il font */
     }
 
     .social-footer img {
