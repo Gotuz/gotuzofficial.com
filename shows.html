@@ -13,9 +13,7 @@ body {
     background: #111;
     color: #F3EFE6;
     font-family: 'Cormorant Garamond', serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Garantisce che la pagina occupi almeno tutta l'altezza della finestra */
+    text-align: left; /* testo a sinistra */
 }
 
 header {
@@ -25,10 +23,14 @@ header {
     text-align: center;
     letter-spacing: 2px;
     font-size: 20px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;  /* allineamento centrale */
+    gap: 50px;               /* distanza tra i titoli */
+    flex-wrap: wrap;         /* permette la disposizione su più righe su dispositivi piccoli */
 }
 
 header a {
-    margin: 0 30px;
     text-decoration: none;
     color: #F3EFE6;
 }
@@ -39,34 +41,60 @@ header a:hover {
 
 /* Sezione messaggio shows */
 .shows-message {
-    margin-top: 160px; /* spazio sotto header */
+    margin-top: 160px;       /* più spazio sotto header */
     display: flex;
     justify-content: flex-start; /* testo a sinistra */
-    align-items: center; /* centrato verticalmente */
-    height: 300px; /* altezza della sezione */
-    padding-left: 50px; /* spazio dalla sinistra */
-    font-size: 20px; /* carattere più piccolo */
+    align-items: center;          /* centrato verticalmente */
+    height: 300px;                /* altezza della sezione */
+    padding-left: 50px;           /* spazio dalla sinistra */
+    font-size: 20px;              /* carattere più piccolo */
     line-height: 1.5;
 }
 
-/* FOOTER SOCIAL */
+/* SOCIAL ICONS - FOOTER */
 .social-footer {
+    position: absolute;
+    bottom: 50px;
     display: flex;
     justify-content: center;
-    gap: 20px;                 /* spazio tra le icone */
-    margin-top: auto;          /* spinge il footer in fondo */
-    padding: 20px 0;           /* spaziatura sopra e sotto le icone */
-    background-color: #111;    /* fondo nero per il footer */
+    gap: 20px;
 }
 
 .social-footer img {
-    width: 25px;               /* dimensione icone */
-    filter: grayscale(100%);   /* bianco e nero */
-    transition: transform 0.2s;
+    width: 25px;
+    filter: grayscale(100%);
+    transition: transform 0.2s, opacity 0.2s;
+    opacity: 0.7;
 }
 
 .social-footer img:hover {
-    transform: scale(1.2);     /* effetto hover */
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+/* Media Queries per dispositivi mobili */
+@media (max-width: 768px) {
+    header {
+        font-size: 16px;               /* riduce la dimensione del font */
+        flex-direction: column;        /* cambia la direzione dei link da orizzontale a verticale */
+        align-items: center;           /* allinea i link al centro */
+    }
+
+    .shows-message {
+        font-size: 18px;                /* riduce il carattere del messaggio */
+        padding-left: 20px;             /* riduce lo spazio a sinistra */
+    }
+}
+
+/* Media Queries per dispositivi molto piccoli */
+@media (max-width: 480px) {
+    .shows-message {
+        font-size: 16px;               /* riduce ancora il carattere del messaggio */
+    }
+
+    .social-footer img {
+        width: 20px;                   /* riduce la dimensione delle icone sui dispositivi piccoli */
+    }
 }
 </style>
 </head>
