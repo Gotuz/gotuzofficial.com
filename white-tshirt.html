@@ -16,30 +16,37 @@ body {
     text-align: center;
 }
 
+/* 🔥 MINI TOP BAR ELEGANTE */
 header {
     position: fixed;
-    top: 40px;  /* Aumentato lo spazio per allinearlo correttamente */
+    top: 0;
+    left: 0;
     width: 100%;
-    text-align: center;
-    letter-spacing: 2px;
-    font-size: 20px;
-    padding: 20px 0;
+    height: 60px;
     background: #111;
-    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    border-bottom: 1px solid #222;
 }
 
 header a {
-    margin: 0 30px;
     text-decoration: none;
     color: #F3EFE6;
+    font-size: 18px;
+    letter-spacing: 2px;
+    padding: 6px 14px;
+    transition: 0.2s;
 }
 
 header a:hover {
     border-bottom: 1px solid #F3EFE6;
 }
 
+/* spazio sotto la barra */
 .product-container {
-    margin-top: 120px; 
+    margin-top: 100px;
     display: flex;
     justify-content: center;
     gap: 50px;
@@ -52,6 +59,7 @@ header a:hover {
 
 .product-images img {
     width: 400px;
+    max-width: 100%;
     border-radius: 5px;
 }
 
@@ -70,7 +78,8 @@ header a:hover {
     transition: opacity 0.2s;
 }
 
-.thumbnails img:hover, .thumbnails img.active {
+.thumbnails img:hover,
+.thumbnails img.active {
     opacity: 1;
 }
 
@@ -79,15 +88,6 @@ header a:hover {
     text-align: left;
     font-size: 18px;
     line-height: 1.4;
-}
-
-/* Modifica per mantenere solo SHOP e centrato come le altre pagine */
-header a {
-    display: none; /* Rimuovi gli altri pulsanti */
-}
-
-header a:nth-child(3) { /* SHOP è il terzo link */
-    display: inline-block;
 }
 </style>
 
@@ -98,36 +98,43 @@ header a:nth-child(3) { /* SHOP è il terzo link */
 <body>
 
 <header>
-    <a href="shop.html">SHOP</a>
+<a href="shop.html">SHOP</a>
 </header>
 
 <div class="product-container">
 
-    <div class="product-images">
-        <img id="main-image" src="White Front.png" alt="White T-shirt">
-        <div class="thumbnails">
-            <img src="White Front.png" alt="Front" class="active" onclick="switchImage(this)">
-            <img src="White Back.png" alt="Back" onclick="switchImage(this)">
-        </div>
-    </div>
+<div class="product-images">
+<img id="main-image" src="White Front.png" alt="White T-shirt">
 
-    <div class="description">
-        <p>This is the premium GOTUZ White T-shirt. Made with 100% cotton, perfect for fans. Front and back design included. Limited edition!</p>
-        <div id="paypal-container-WHITE"></div>
-    </div>
+<div class="thumbnails">
+<img src="White Front.png" class="active" onclick="switchImage(this)">
+<img src="White Back.png" onclick="switchImage(this)">
+</div>
+</div>
+
+<div class="description">
+<p>
+This is the premium GOTUZ White T-shirt.
+Made with 100% cotton, perfect for fans.
+Front and back design included.
+Limited edition!
+</p>
+
+<div id="paypal-container-WHITE"></div>
+</div>
 
 </div>
 
 <script>
 function switchImage(thumbnail){
     document.getElementById('main-image').src = thumbnail.src;
-    document.querySelectorAll('.thumbnails img').forEach(img => img.classList.remove('active'));
+    document.querySelectorAll('.thumbnails img')
+        .forEach(img => img.classList.remove('active'));
     thumbnail.classList.add('active');
 }
 
-// PayPal button
 paypal.HostedButtons({
-    hostedButtonId: "EH4MVT3EZMPEL" // metti qui ID PayPal White T-shirt
+    hostedButtonId: "EH4MVT3EZMPEL"
 }).render('#paypal-container-WHITE');
 </script>
 
