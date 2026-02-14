@@ -18,7 +18,7 @@ body {
 
 header {
     position: fixed;
-    top: 0;
+    top: 40px;  /* Aumentato lo spazio per allinearlo correttamente */
     width: 100%;
     text-align: center;
     letter-spacing: 2px;
@@ -36,14 +36,6 @@ header a {
 
 header a:hover {
     border-bottom: 1px solid #F3EFE6;
-}
-
-/* Modifiche per il pulsante SHOP */
-header a {
-    margin: 0 0;  /* Rimosso spazio tra i link */
-    display: block;
-    font-size: 20px;
-    padding: 10px 0;
 }
 
 .product-container {
@@ -88,6 +80,15 @@ header a {
     font-size: 18px;
     line-height: 1.4;
 }
+
+/* Modifica per mantenere solo SHOP e centrato come le altre pagine */
+header a {
+    display: none; /* Rimuovi gli altri pulsanti */
+}
+
+header a:nth-child(3) { /* SHOP è il terzo link */
+    display: inline-block;
+}
 </style>
 
 <!-- PayPal SDK -->
@@ -97,7 +98,7 @@ header a {
 <body>
 
 <header>
-<a href="shop.html">SHOP</a> <!-- solo il link SHOP -->
+    <a href="shop.html">SHOP</a>
 </header>
 
 <div class="product-container">
@@ -120,7 +121,6 @@ header a {
 <script>
 function switchImage(thumbnail){
     document.getElementById('main-image').src = thumbnail.src;
-    // reset active class
     document.querySelectorAll('.thumbnails img').forEach(img => img.classList.remove('active'));
     thumbnail.classList.add('active');
 }
