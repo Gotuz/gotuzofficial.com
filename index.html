@@ -15,21 +15,22 @@ body {
     font-family: 'Cormorant Garamond', serif;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Garantisce che la pagina occupi almeno tutta l'altezza della finestra */
+    min-height: 100vh; /* Imposta il body con altezza minima 100% della finestra */
 }
 
 header {
-    position: absolute;
-    top: 40px;
+    position: fixed;
+    top: 0;
     width: 100%;
     text-align: center;
     letter-spacing: 2px;
     font-size: 20px;
     z-index: 1000;
     display: flex;
-    justify-content: center;  /* allineamento centrale */
-    gap: 30px;               /* spazio tra i titoli */
-    flex-wrap: wrap;         /* permette la disposizione su più righe su dispositivi piccoli */
+    justify-content: center;
+    gap: 30px;
+    background-color: #111;
+    padding: 20px 0;
 }
 
 header a {
@@ -43,13 +44,14 @@ header a:hover {
 
 /* HERO */
 .hero {
-    height: 100vh;
+    flex: 1; /* Prende lo spazio rimanente */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     position: relative;
+    margin-top: 120px; /* Spazio sotto l'header */
 }
 
 .hero h1 {
@@ -83,40 +85,41 @@ header a:hover {
 .social-footer {
     display: flex;
     justify-content: center;
-    gap: 20px;                 /* spazio tra le icone */
-    margin-top: auto;          /* spinge il footer in fondo */
-    padding: 20px 0;           /* spaziatura sopra e sotto le icone */
-    background-color: #111;    /* fondo nero per il footer */
+    gap: 20px;
+    position: relative;
+    bottom: 20px; /* Distanza dal fondo, aggiusta se necessario */
 }
 
 .social-footer img {
-    width: 25px;               /* dimensione icone */
-    filter: grayscale(100%);   /* bianco e nero */
-    transition: transform 0.2s;
+    width: 25px;
+    filter: grayscale(100%);
+    transition: transform 0.2s, opacity 0.2s;
+    opacity: 0.7;
 }
 
 .social-footer img:hover {
-    transform: scale(1.2);     /* effetto hover */
+    transform: scale(1.2);
+    opacity: 1;
 }
 
 /* Media Queries per dispositivi mobili */
 @media (max-width: 768px) {
     header {
-        font-size: 16px;               /* riduce la dimensione del font */
-        flex-direction: column;        /* cambia la direzione dei link da orizzontale a verticale */
-        align-items: center;           /* allinea i link al centro */
+        font-size: 16px;
+        flex-direction: column;
+        align-items: center;
     }
 
     .hero h1 {
-        font-size: 60px;                /* ridimensiona il titolo principale */
+        font-size: 60px;
     }
 
     .hero h2 {
-        font-size: 20px;                /* ridimensiona i sottotitoli */
+        font-size: 20px;
     }
 
     .buttons a {
-        padding: 10px 20px;             /* riduce la dimensione dei pulsanti */
+        padding: 10px 20px;
         margin: 8px;
     }
 }
@@ -157,8 +160,9 @@ header a:hover {
 <a href="#">PRE-ORDER</a>
 <a href="#">PRE-SAVE</a>
 </div>
+</div>
 
-<!-- FOOTER SOCIAL DENTRO HERO -->
+<!-- FOOTER SOCIAL -->
 <footer class="social-footer">
   <a href="https://www.instagram.com/gotuzmusic" target="_blank">
     <img src="icons/instagram-bw.png" alt="Instagram">
@@ -173,8 +177,6 @@ header a:hover {
     <img src="icons/youtube-bw.png" alt="YouTube">
   </a>
 </footer>
-
-</div>
 
 </body>
 </html>
