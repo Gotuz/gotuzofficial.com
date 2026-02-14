@@ -86,7 +86,7 @@ header a:hover {
 @media (max-width: 768px) {
     header {
         font-size: 16px;               /* Riduce la dimensione del font */
-        flex-direction: column;        /* Cambia la disposizione dei link su una sola riga */
+        flex-direction: row;           /* Assicurati che i tasti siano su una sola riga */
         align-items: center;           /* Allinea i link al centro */
         gap: 20px;                     /* Aggiustato per dispositivi più piccoli */
         padding-top: 30px;             /* Spazio maggiore tra l'header e il contenuto */
@@ -103,6 +103,10 @@ header a:hover {
 
 /* Media Queries per dispositivi molto piccoli */
 @media (max-width: 480px) {
+    header {
+        font-size: 14px;  /* Ridotto ulteriormente la dimensione dei tasti su dispositivi molto piccoli */
+    }
+
     .shop-grid {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* ancora più piccoli su dispositivi molto piccoli */
     }
@@ -139,4 +143,11 @@ header a:hover {
   </a>
   <a href="https://twitter.com/gotuzmusic" target="_blank">
     <img src="icons/twitter-bw.png" alt="Twitter/X">
-  </a
+  </a>
+  <a href="https://www.youtube.com/@gotuzmusic3389" target="_blank">
+    <img src="icons/youtube-bw.png" alt="YouTube">
+  </a>
+</footer>
+
+</body>
+</html>
