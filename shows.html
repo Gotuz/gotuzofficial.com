@@ -13,6 +13,7 @@ body {
     background: #111;
     color: #F3EFE6;
     font-family: 'Cormorant Garamond', serif;
+    text-align: center;
 }
 
 header {
@@ -24,9 +25,9 @@ header {
     font-size: 20px;
     z-index: 1000;
     display: flex;
-    justify-content: center;  /* Allineamento centrale */
-    gap: 30px;                /* Ridotto per fare stare i tasti su una riga */
-    flex-wrap: wrap;          /* Permette la disposizione su più righe su dispositivi piccoli */
+    justify-content: center;  /* allineamento centrale */
+    gap: 30px;                /* distanza tra i titoli */
+    flex-wrap: wrap;          /* permette la disposizione su più righe su dispositivi piccoli */
     padding-top: 10px;         /* Aggiunta distanza tra i tasti e il bordo superiore */
 }
 
@@ -43,10 +44,10 @@ header a:hover {
 .shows-message {
     margin-top: 160px;       /* più spazio sotto header */
     display: flex;
-    justify-content: center;  /* testo centrato orizzontalmente */
-    align-items: center;      /* centrato verticalmente */
-    height: 300px;            /* altezza della sezione */
-    font-size: 20px;          /* carattere più piccolo */
+    justify-content: center; /* testo centrato */
+    align-items: center;     /* centrato verticalmente */
+    height: 300px;           /* altezza della sezione */
+    font-size: 30px;         /* più grande per visibilità */
     line-height: 1.5;
 }
 
@@ -57,11 +58,12 @@ header a:hover {
     display: flex;
     justify-content: center;
     gap: 20px;
-    width: 100%;
+    width: 100%;               /* assicura che il footer prenda tutta la larghezza */
+    text-align: center;        /* centra i contenuti */
 }
 
 .social-footer img {
-    width: 25px;  /* Dimensione uniforme delle icone social (corretta a 25px come in HOME) */
+    width: 25px;   /* Assicura che le dimensioni siano esattamente uguali a quelle di HOME e SHOP */
     filter: grayscale(100%);
     transition: transform 0.2s, opacity 0.2s;
     opacity: 0.7;
@@ -83,18 +85,17 @@ header a:hover {
     }
 
     .shows-message {
-        padding-left: 0;  /* rimuove il padding a sinistra sui dispositivi più piccoli */
-        text-align: center;  /* centro del testo per schermi piccoli */
+        font-size: 25px;  /* Ridimensiona il testo per schermi più piccoli */
     }
 }
 
 @media (max-width: 480px) {
-    .shows-message {
-        font-size: 18px;  /* riduce il font */
+    .social-footer img {
+        width: 20px; /* Riduci leggermente le icone su dispositivi molto piccoli */
     }
 
-    .social-footer img {
-        width: 20px;  /* icone più piccole sui dispositivi molto piccoli */
+    .shows-message {
+        font-size: 18px;  /* Riduce il font per dispositivi molto piccoli */
     }
 }
 </style>
