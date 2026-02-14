@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SHOWS - GOTUZ</title>
 
-<!-- Font stile quasi fatto a mano -->
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
@@ -14,10 +13,9 @@ body {
     background: #111;
     color: #F3EFE6;
     font-family: 'Cormorant Garamond', serif;
-    text-align: center;
-    padding-bottom: 70px; /* Distanza dal fondo per evitare sovrapposizione dei pulsanti inferiori */
 }
 
+/* HEADER */
 header {
     position: absolute;
     top: 40px;
@@ -27,10 +25,10 @@ header {
     font-size: 20px;
     z-index: 1000;
     display: flex;
-    justify-content: center;  /* Allineamento centrale */
-    gap: 50px;                /* Distanza tra i titoli */
-    flex-wrap: wrap;          /* Permette la disposizione su più righe su dispositivi piccoli */
-    padding-top: 10px;         /* Aggiunta distanza tra i tasti e il bordo superiore */
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding-top: 10px;
 }
 
 header a {
@@ -42,26 +40,67 @@ header a:hover {
     border-bottom: 1px solid #F3EFE6;
 }
 
-/* SHOWS MESSAGE */
-.shows-message {
-    margin-top: 160px;       /* più spazio sotto header */
+/* HERO SHOWS */
+.hero {
+    min-height: 100vh;
     display: flex;
-    justify-content: center; /* testo centrato orizzontalmente */
-    align-items: center;     /* testo centrato verticalmente */
-    height: 300px;           /* altezza della sezione */
-    font-size: 20px;
-    line-height: 1.5;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 120px 20px;
 }
 
-/* SOCIAL ICONS - FOOTER */
-.social-footer {
-    position: fixed;  /* Posizionato in basso e fisso */
-    bottom: 10px;     /* Aggiungi una distanza dal fondo */
+.hero h1 {
+    font-size: 70px;
+    margin-bottom: 40px;
+    letter-spacing: 6px;
+}
+
+/* LISTA DATE */
+.shows-list {
+    max-width: 700px;
+    width: 100%;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.show {
     display: flex;
-    justify-content: center;    /* CENTRA I PULSANTI */
+    justify-content: space-between;
+    border-bottom: 1px solid #333;
+    padding: 15px 0;
+}
+
+/* PULSANTI IN BASSO STILE HOME */
+.buttons {
+    margin-top: 50px;
+}
+
+.buttons a {
+    border: 1px solid #F3EFE6;
+    padding: 12px 30px;
+    margin: 10px;
+    text-decoration: none;
+    color: #F3EFE6;
+    display: inline-block;
+    letter-spacing: 3px;
+}
+
+.buttons a:hover {
+    background: #F3EFE6;
+    color: #111;
+}
+
+/* FOOTER SOCIAL */
+.social-footer {
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    justify-content: center;
     gap: 20px;
-    width: 100%;  /* Assicura che il footer prenda tutta la larghezza */
-    text-align: center;  /* Centra i contenuti */
+    width: 100%;
 }
 
 .social-footer img {
@@ -76,29 +115,31 @@ header a:hover {
     opacity: 1;
 }
 
-/* Media Queries per dispositivi mobili */
+/* MOBILE */
 @media (max-width: 768px) {
     header {
-        font-size: 16px;               /* Riduce la dimensione del font */
-        flex-direction: row;           /* Cambia la disposizione dei link su una sola riga */
-        align-items: center;           /* Allinea i link al centro */
-        gap: 20px;                     /* Aggiustato per dispositivi più piccoli */
-        padding-top: 30px;             /* Spazio maggiore tra l'header e il contenuto */
+        font-size: 16px;
+        gap: 20px;
+        padding-top: 30px;
     }
 
-    .shows-message {
-        font-size: 18px;  /* Riduce la dimensione del testo per dispositivi più piccoli */
+    .hero h1 {
+        font-size: 50px;
     }
-}
 
-/* Media Queries per dispositivi molto piccoli */
-@media (max-width: 480px) {
-    .shows-message {
-        font-size: 14px;  /* Riduce ulteriormente la dimensione del testo sui dispositivi molto piccoli */
+    .show {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+
+    .shows-list {
+        font-size: 18px;
     }
 }
 </style>
 </head>
+
 <body>
 
 <header>
@@ -109,26 +150,50 @@ header a:hover {
 <a href="news.html">NEWS</a>
 </header>
 
-<!-- Sezione messaggio Shows -->
-<div class="shows-message">
-    New shows coming soon! Stay connected
+<div class="hero">
+
+<h1>SHOWS</h1>
+
+<div class="shows-list">
+
+<div class="show">
+<span>12 MAY 2026</span>
+<span>MILAN, IT</span>
 </div>
 
-<!-- FOOTER SOCIAL -->
+<div class="show">
+<span>18 MAY 2026</span>
+<span>BERLIN, DE</span>
+</div>
+
+<div class="show">
+<span>25 MAY 2026</span>
+<span>PARIS, FR</span>
+</div>
+
+</div>
+
+<div class="buttons">
+<a href="#">TICKETS</a>
+<a href="#">CONTACT</a>
+</div>
+
 <footer class="social-footer">
-  <a href="https://www.instagram.com/gotuzmusic" target="_blank">
-    <img src="icons/instagram-bw.png" alt="Instagram">
-  </a>
-  <a href="https://www.facebook.com/gotuzmusic" target="_blank">
-    <img src="icons/facebook-bw.png" alt="Facebook">
-  </a>
-  <a href="https://twitter.com/gotuzmusic" target="_blank">
-    <img src="icons/twitter-bw.png" alt="Twitter/X">
-  </a>
-  <a href="https://www.youtube.com/@gotuzmusic3389" target="_blank">
-    <img src="icons/youtube-bw.png" alt="YouTube">
-  </a>
+<a href="https://www.instagram.com/gotuzmusic" target="_blank">
+<img src="icons/instagram-bw.png" alt="Instagram">
+</a>
+<a href="https://www.facebook.com/gotuzmusic" target="_blank">
+<img src="icons/facebook-bw.png" alt="Facebook">
+</a>
+<a href="https://twitter.com/gotuzmusic" target="_blank">
+<img src="icons/twitter-bw.png" alt="Twitter/X">
+</a>
+<a href="https://www.youtube.com/@gotuzmusic3389" target="_blank">
+<img src="icons/youtube-bw.png" alt="YouTube">
+</a>
 </footer>
+
+</div>
 
 </body>
 </html>
