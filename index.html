@@ -17,16 +17,17 @@ body {
 
 header {
     position: absolute;
-    top: 40px;
+    top: 40px;  /* distanza dal top */
     width: 100%;
     text-align: center;
     letter-spacing: 2px;
     font-size: 20px;
     z-index: 1000;
     display: flex;
-    justify-content: center;  /* allineamento centrale */
-    gap: 50px;               /* aumenta la distanza tra i titoli */
-    flex-wrap: wrap;         /* permette la disposizione su più righe su dispositivi piccoli */
+    justify-content: center;  /* Allineamento centrale */
+    gap: 50px;                /* Aumenta la distanza tra i titoli */
+    flex-wrap: wrap;          /* Permette la disposizione su più righe su dispositivi piccoli */
+    padding-top: 10px;         /* Aggiunta distanza tra i tasti e il bordo superiore */
 }
 
 header a {
@@ -100,21 +101,22 @@ header a:hover {
 /* Media Queries per dispositivi mobili */
 @media (max-width: 768px) {
     header {
-        font-size: 16px;               /* riduce la dimensione del font */
-        flex-direction: column;        /* cambia la direzione dei link da orizzontale a verticale */
-        align-items: center;           /* allinea i link al centro */
+        font-size: 16px;               /* Riduce la dimensione del font */
+        flex-direction: row;           /* Cambia la disposizione dei link su una sola riga */
+        align-items: center;           /* Allinea i link al centro */
+        padding-top: 30px;             /* Spazio maggiore tra l'header e il contenuto */
     }
 
     .hero h1 {
-        font-size: 60px;                /* ridimensiona il titolo principale */
+        font-size: 60px;                /* Ridimensiona il titolo principale */
     }
 
     .hero h2 {
-        font-size: 20px;                /* ridimensiona i sottotitoli */
+        font-size: 20px;                /* Ridimensiona i sottotitoli */
     }
 
     .buttons a {
-        padding: 10px 20px;             /* riduce la dimensione dei pulsanti */
+        padding: 10px 20px;             /* Riduce la dimensione dei pulsanti */
         margin: 8px;
     }
 }
