@@ -41,10 +41,11 @@ header a:hover {
 
 .shop-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* grid dinamico, ogni colonna ha una larghezza minima di 250px */
-    justify-items: center;
+    grid-template-columns: repeat(3, 1fr); /* Tre colonne per i prodotti */
+    justify-items: center;                  /* Centra ogni prodotto nella cella */
     gap: 20px;       /* meno spazio tra i prodotti */
     margin-top: 160px; /* più spazio sotto header */
+    width: 100%;        /* garantisce che la griglia prenda tutta la larghezza */
 }
 
 .shop-grid img {
@@ -144,4 +145,3 @@ header a:hover {
 
 </body>
 </html>
-
