@@ -16,35 +16,37 @@ body {
     text-align: center;
 }
 
-/* 🔥 HEADER FIXATO CON AREA NERA SOPRA */
+/* 🔥 MINI TOP BAR ELEGANTE */
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 120px;
+    height: 60px;
     background: #111;
-    z-index: 100;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
-    padding-bottom: 20px;
-    letter-spacing: 2px;
-    font-size: 20px;
+    z-index: 100;
+    border-bottom: 1px solid #222;
 }
 
 header a {
     text-decoration: none;
     color: #F3EFE6;
+    font-size: 18px;
+    letter-spacing: 2px;
+    padding: 6px 14px;
+    transition: 0.2s;
 }
 
 header a:hover {
     border-bottom: 1px solid #F3EFE6;
 }
 
-/* spazio corretto sotto la barra */
+/* spazio sotto la barra */
 .product-container {
-    margin-top: 160px;
+    margin-top: 100px;
     display: flex;
     justify-content: center;
     gap: 50px;
@@ -101,25 +103,33 @@ header a:hover {
 
 <div class="product-container">
 
-    <div class="product-images">
-        <img id="main-image" src="Burdury Front.png" alt="Burdury T-shirt">
-        <div class="thumbnails">
-            <img src="Burdury Front.png" alt="Front" class="active" onclick="switchImage(this)">
-            <img src="Burdury Back.png" alt="Back" onclick="switchImage(this)">
-        </div>
-    </div>
+<div class="product-images">
+<img id="main-image" src="Burdury Front.png" alt="Burdury T-shirt">
 
-    <div class="description">
-        <p>This is the premium GOTUZ Burdury T-shirt. Made with 100% cotton, perfect for fans. Front and back design included. Limited edition!</p>
-        <div id="paypal-container-BURDURY"></div>
-    </div>
+<div class="thumbnails">
+<img src="Burdury Front.png" class="active" onclick="switchImage(this)">
+<img src="Burdury Back.png" onclick="switchImage(this)">
+</div>
+</div>
+
+<div class="description">
+<p>
+This is the premium GOTUZ Burdury T-shirt.
+Made with 100% cotton, perfect for fans.
+Front and back design included.
+Limited edition!
+</p>
+
+<div id="paypal-container-BURDURY"></div>
+</div>
 
 </div>
 
 <script>
 function switchImage(thumbnail){
     document.getElementById('main-image').src = thumbnail.src;
-    document.querySelectorAll('.thumbnails img').forEach(img => img.classList.remove('active'));
+    document.querySelectorAll('.thumbnails img')
+        .forEach(img => img.classList.remove('active'));
     thumbnail.classList.add('active');
 }
 
