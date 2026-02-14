@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GOTUZ</title>
 
+<!-- Font stile quasi fatto a mano -->
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
@@ -79,12 +80,13 @@ header a:hover {
 
 /* SOCIAL ICONS - FOOTER */
 .social-footer {
-    position: fixed;           /* Cambiato da absolute a fixed per evitare che i tasti social scompaiano con lo scroll */
-    bottom: 10px;              /* Aggiunta distanza dal fondo della pagina */
+    position: absolute;
+    bottom: 50px;
     display: flex;
     justify-content: center;
     gap: 20px;
-    width: 100%;
+    width: 100%;  /* Assicura che il footer prenda tutta la larghezza */
+    text-align: center;  /* Centra i contenuti */
 }
 
 .social-footer img {
@@ -160,7 +162,7 @@ header a:hover {
 <a href="#">PRE-SAVE</a>
 </div>
 
-<!-- FOOTER SOCIAL DENTRO HERO -->
+<!-- FOOTER SOCIAL -->
 <footer class="social-footer">
   <a href="https://www.instagram.com/gotuzmusic" target="_blank">
     <img src="icons/instagram-bw.png" alt="Instagram">
