@@ -37,14 +37,32 @@ header a:hover {
 
 /* Sezione messaggio shows */
 .shows-message {
-    margin-top: 160px;       /* più spazio sotto header */
+    margin-top: 160px; /* più spazio sotto header */
     display: flex;
     justify-content: flex-start; /* testo a sinistra */
-    align-items: center;          /* centrato verticalmente */
-    height: 300px;                /* altezza della sezione */
-    padding-left: 50px;           /* spazio dalla sinistra */
-    font-size: 20px;              /* carattere più piccolo */
+    align-items: center; /* centrato verticalmente */
+    height: 300px; /* altezza della sezione */
+    padding-left: 50px; /* spazio dalla sinistra */
+    font-size: 20px; /* carattere più piccolo */
     line-height: 1.5;
+}
+
+/* FOOTER SOCIAL */
+.social-footer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;                 /* spazio tra le icone */
+    margin-top: 20px;          /* spazio sopra il footer */
+}
+
+.social-footer img {
+    width: 25px;               /* dimensione icone */
+    filter: grayscale(100%);   /* bianco e nero */
+    transition: transform 0.2s;
+}
+
+.social-footer img:hover {
+    transform: scale(1.2);     /* effetto hover leggero */
 }
 </style>
 </head>
@@ -61,6 +79,22 @@ header a:hover {
 <div class="shows-message">
     New shows coming soon! Stay connected
 </div>
+
+<!-- FOOTER SOCIAL -->
+<footer class="social-footer">
+  <a href="https://www.instagram.com/gotuzmusic" target="_blank">
+    <img src="icons/instagram-bw.png" alt="Instagram">
+  </a>
+  <a href="https://www.facebook.com/gotuzmusic" target="_blank">
+    <img src="icons/facebook-bw.png" alt="Facebook">
+  </a>
+  <a href="https://twitter.com/gotuzmusic" target="_blank">
+    <img src="icons/twitter-bw.png" alt="Twitter/X">
+  </a>
+  <a href="https://www.youtube.com/@gotuzmusic3389" target="_blank">
+    <img src="icons/youtube-bw.png" alt="YouTube">
+  </a>
+</footer>
 
 </body>
 </html>
