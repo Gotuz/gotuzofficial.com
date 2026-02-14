@@ -15,6 +15,7 @@ body {
     color: #F3EFE6;
     font-family: 'Cormorant Garamond', serif;
     text-align: center;
+    padding-bottom: 70px; /* Distanza dal fondo per evitare sovrapposizione dei pulsanti inferiori */
 }
 
 header {
@@ -29,6 +30,7 @@ header {
     justify-content: center;  /* Allineamento centrale */
     gap: 50px;                /* Distanza tra i titoli */
     flex-wrap: wrap;          /* Permette la disposizione su più righe su dispositivi piccoli */
+    padding-top: 10px;         /* Aggiunta distanza tra i tasti e il bordo superiore */
 }
 
 header a {
@@ -40,27 +42,26 @@ header a:hover {
     border-bottom: 1px solid #F3EFE6;
 }
 
-/* Sezione messaggio shows */
+/* SHOWS MESSAGE */
 .shows-message {
     margin-top: 160px;       /* più spazio sotto header */
     display: flex;
-    justify-content: center; /* centra orizzontalmente */
-    align-items: center;     /* centra verticalmente */
+    justify-content: center; /* testo centrato orizzontalmente */
+    align-items: center;     /* testo centrato verticalmente */
     height: 300px;           /* altezza della sezione */
-    font-size: 20px;         /* carattere più piccolo */
+    font-size: 20px;
     line-height: 1.5;
-    text-align: center;      /* Assicura che il testo sia centrato */
 }
 
 /* SOCIAL ICONS - FOOTER */
 .social-footer {
-    position: absolute;
-    bottom: 50px;
+    position: fixed;  /* Posizionato in basso e fisso */
+    bottom: 10px;     /* Aggiungi una distanza dal fondo */
     display: flex;
     justify-content: center;    /* CENTRA I PULSANTI */
     gap: 20px;
-    width: 100%;  /* assicura che il footer prenda tutta la larghezza */
-    text-align: center;  /* centra i contenuti */
+    width: 100%;  /* Assicura che il footer prenda tutta la larghezza */
+    text-align: center;  /* Centra i contenuti */
 }
 
 .social-footer img {
@@ -79,24 +80,21 @@ header a:hover {
 @media (max-width: 768px) {
     header {
         font-size: 16px;               /* Riduce la dimensione del font */
-        flex-direction: column;        /* Cambia la direzione dei link da orizzontale a verticale */
+        flex-direction: row;           /* Cambia la disposizione dei link su una sola riga */
         align-items: center;           /* Allinea i link al centro */
+        gap: 20px;                     /* Aggiustato per dispositivi più piccoli */
+        padding-top: 30px;             /* Spazio maggiore tra l'header e il contenuto */
     }
 
     .shows-message {
-        padding-left: 0;  /* rimuove il padding a sinistra sui dispositivi più piccoli */
-        text-align: center;
+        font-size: 18px;  /* Riduce la dimensione del testo per dispositivi più piccoli */
     }
 }
 
 /* Media Queries per dispositivi molto piccoli */
 @media (max-width: 480px) {
     .shows-message {
-        font-size: 18px;  /* riduce il font */
-    }
-
-    .social-footer img {
-        width: 20px;  /* icone più piccole sui dispositivi molto piccoli */
+        font-size: 14px;  /* Riduce ulteriormente la dimensione del testo sui dispositivi molto piccoli */
     }
 }
 </style>
@@ -111,6 +109,7 @@ header a:hover {
 <a href="news.html">NEWS</a>
 </header>
 
+<!-- Sezione messaggio Shows -->
 <div class="shows-message">
     New shows coming soon! Stay connected
 </div>
