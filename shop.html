@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SHOP - GOTUZ</title>
 
+<!-- Font stile quasi fatto a mano -->
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
@@ -18,7 +19,7 @@ body {
 
 header {
     position: absolute;
-    top: 40px;  /* distanza dal top */
+    top: 40px;
     width: 100%;
     text-align: center;
     letter-spacing: 2px;
@@ -26,9 +27,8 @@ header {
     z-index: 1000;
     display: flex;
     justify-content: center;  /* Allineamento centrale */
-    gap: 30px;                /* Distanza tra i tasti */
+    gap: 50px;                /* Distanza tra i titoli */
     flex-wrap: wrap;          /* Permette la disposizione su più righe su dispositivi piccoli */
-    padding-top: 10px;         /* Aggiunta distanza tra i tasti e il bordo superiore */
 }
 
 header a {
@@ -45,13 +45,13 @@ header a:hover {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Tre colonne per i prodotti */
     justify-items: center;                  /* Centra ogni prodotto nella cella */
-    gap: 20px;       /* Meno spazio tra i prodotti */
-    margin-top: 160px; /* Più spazio sotto header */
-    width: 100%;        /* Garantisce che la griglia prenda tutta la larghezza */
+    gap: 20px;       /* meno spazio tra i prodotti */
+    margin-top: 160px; /* più spazio sotto header */
+    width: 100%;        /* garantisce che la griglia prenda tutta la larghezza */
 }
 
 .shop-grid img {
-    width: 260px;    /* Un po’ più piccolo rispetto a prima */
+    width: 260px;    /* un po’ più piccolo rispetto a prima */
     cursor: pointer;
     border-radius: 5px;
     transition: transform 0.2s;
@@ -63,12 +63,13 @@ header a:hover {
 
 /* SOCIAL ICONS - FOOTER */
 .social-footer {
-    position: fixed;           /* Cambiato da absolute a fixed per evitare che i tasti social scompaiano con lo scroll */
-    bottom: 10px;              /* Aggiunta distanza dal fondo della pagina */
+    position: absolute;
+    bottom: 50px;
     display: flex;
-    justify-content: center;
+    justify-content: center;    /* CENTRA I PULSANTI */
     gap: 20px;
-    width: 100%;
+    width: 100%;  /* assicura che il footer prenda tutta la larghezza */
+    text-align: center;  /* centra i contenuti */
 }
 
 .social-footer img {
@@ -87,10 +88,8 @@ header a:hover {
 @media (max-width: 768px) {
     header {
         font-size: 16px;               /* Riduce la dimensione del font */
-        flex-direction: row;           /* Cambia la disposizione dei link su una sola riga */
+        flex-direction: column;        /* Cambia la direzione dei link da orizzontale a verticale */
         align-items: center;           /* Allinea i link al centro */
-        gap: 20px;                     /* Aggiustato per dispositivi più piccoli */
-        padding-top: 30px;             /* Spazio maggiore tra l'header e il contenuto */
     }
 
     .shop-grid {
@@ -98,18 +97,18 @@ header a:hover {
     }
 
     .shop-grid img {
-        width: 200px;  /* Immagini più piccole sui dispositivi mobili */
+        width: 200px;  /* icone più piccole sui dispositivi mobili */
     }
 }
 
 /* Media Queries per dispositivi molto piccoli */
 @media (max-width: 480px) {
     .shop-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Ancora più piccoli su dispositivi molto piccoli */
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* ancora più piccoli su dispositivi molto piccoli */
     }
 
     .shop-grid img {
-        width: 180px;  /* Immagini più piccole sui dispositivi molto piccoli */
+        width: 180px;  /* icone più piccole sui dispositivi molto piccoli */
     }
 }
 </style>
