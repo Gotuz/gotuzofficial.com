@@ -15,6 +15,7 @@ body {
     color: #F3EFE6;
     font-family: 'Cormorant Garamond', serif;
     text-align: center;
+    padding-bottom: 70px; /* Distanza dal fondo per evitare sovrapposizione dei pulsanti inferiori */
 }
 
 header {
@@ -29,6 +30,7 @@ header {
     justify-content: center;  /* Allineamento centrale */
     gap: 50px;                /* Distanza tra i titoli */
     flex-wrap: wrap;          /* Permette la disposizione su più righe su dispositivi piccoli */
+    padding-top: 10px;         /* Aggiunta distanza tra i tasti e il bordo superiore */
 }
 
 header a {
@@ -63,13 +65,13 @@ header a:hover {
 
 /* SOCIAL ICONS - FOOTER */
 .social-footer {
-    position: absolute;
-    bottom: 50px;
+    position: fixed;  /* Posizionato in basso e fisso */
+    bottom: 10px;     /* Aggiungi una distanza dal fondo */
     display: flex;
     justify-content: center;    /* CENTRA I PULSANTI */
     gap: 20px;
-    width: 100%;  /* assicura che il footer prenda tutta la larghezza */
-    text-align: center;  /* centra i contenuti */
+    width: 100%;  /* Assicura che il footer prenda tutta la larghezza */
+    text-align: center;  /* Centra i contenuti */
 }
 
 .social-footer img {
@@ -88,8 +90,10 @@ header a:hover {
 @media (max-width: 768px) {
     header {
         font-size: 16px;               /* Riduce la dimensione del font */
-        flex-direction: column;        /* Cambia la direzione dei link da orizzontale a verticale */
+        flex-direction: row;           /* Cambia la disposizione dei link su una sola riga */
         align-items: center;           /* Allinea i link al centro */
+        gap: 20px;                     /* Aggiustato per dispositivi più piccoli */
+        padding-top: 30px;             /* Spazio maggiore tra l'header e il contenuto */
     }
 
     .shop-grid {
