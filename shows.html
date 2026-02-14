@@ -16,6 +16,7 @@ body {
     text-align: center;
 }
 
+/* HEADER */
 header {
     position: absolute;
     top: 40px;
@@ -40,18 +41,24 @@ header a:hover {
     border-bottom: 1px solid #F3EFE6;
 }
 
-/* MESSAGGIO SHOWS */
+/* 🔥 AREA CENTRALE COME HOME */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* MESSAGGIO */
 .shows-message {
-    margin-top: 160px;
     font-size: 20px;
     line-height: 1.5;
+    margin-bottom: 30px;
 }
 
-/* 🔥 PULSANTE CONTACT CENTRALE */
-.contact-button {
-    margin-top: 40px;
-}
-
+/* CONTACT BUTTON */
 .contact-button a {
     border: 1px solid #F3EFE6;
     padding: 12px 30px;
@@ -66,7 +73,7 @@ header a:hover {
     color: #111;
 }
 
-/* 🔥 SOCIAL FOOTER IDENTICO A HOME */
+/* SOCIAL FOOTER */
 .social-footer {
     position: absolute;
     bottom: 50px;
@@ -127,29 +134,31 @@ header a:hover {
 <a href="news.html">NEWS</a>
 </header>
 
+<div class="hero">
+
 <div class="shows-message">
 New shows coming soon! Stay connected
 </div>
 
-<!-- CONTACT CENTRALE -->
 <div class="contact-button">
 <a href="#">CONTACT</a>
 </div>
 
-<!-- SOCIAL FOOTER -->
+</div>
+
 <footer class="social-footer">
-  <a href="https://www.instagram.com/gotuzmusic" target="_blank">
-    <img src="icons/instagram-bw.png" alt="Instagram">
-  </a>
-  <a href="https://www.facebook.com/gotuzmusic" target="_blank">
-    <img src="icons/facebook-bw.png" alt="Facebook">
-  </a>
-  <a href="https://twitter.com/gotuzmusic" target="_blank">
-    <img src="icons/twitter-bw.png" alt="Twitter/X">
-  </a>
-  <a href="https://www.youtube.com/@gotuzmusic3389" target="_blank">
-    <img src="icons/youtube-bw.png" alt="YouTube">
-  </a>
+<a href="https://www.instagram.com/gotuzmusic" target="_blank">
+<img src="icons/instagram-bw.png" alt="Instagram">
+</a>
+<a href="https://www.facebook.com/gotuzmusic" target="_blank">
+<img src="icons/facebook-bw.png" alt="Facebook">
+</a>
+<a href="https://twitter.com/gotuzmusic" target="_blank">
+<img src="icons/twitter-bw.png" alt="Twitter/X">
+</a>
+<a href="https://www.youtube.com/@gotuzmusic3389" target="_blank">
+<img src="icons/youtube-bw.png" alt="YouTube">
+</a>
 </footer>
 
 </body>
