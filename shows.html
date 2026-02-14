@@ -14,7 +14,7 @@ body {
     color: #F3EFE6;
     font-family: 'Cormorant Garamond', serif;
     text-align: center;
-    padding-bottom: 140px;
+    padding-bottom: 120px; /* spazio per i pulsanti in basso */
 }
 
 header {
@@ -41,32 +41,18 @@ header a:hover {
     border-bottom: 1px solid #F3EFE6;
 }
 
-/* MESSAGGIO CENTRALE */
+/* MESSAGGIO SHOWS */
 .shows-message {
     margin-top: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
     font-size: 20px;
     line-height: 1.5;
 }
 
-/* AREA CONCERTI */
-.shows-list {
-    margin-top: 40px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 18px;
-    letter-spacing: 2px;
-}
-
-.show {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #333;
-    padding: 15px 0;
-    min-height: 30px;
-}
-
-/* PULSANTI IN BASSO */
+/* 🔥 PULSANTI STILE HOME IN BASSO */
 .bottom-buttons {
     position: fixed;
     bottom: 40px;
@@ -100,12 +86,6 @@ header a:hover {
         font-size: 18px;
     }
 
-    .show {
-        flex-direction: column;
-        text-align: center;
-        gap: 5px;
-    }
-
     .bottom-buttons a {
         padding: 10px 20px;
         margin: 8px;
@@ -135,29 +115,10 @@ header a:hover {
 </header>
 
 <div class="shows-message">
-Shows coming very soon, stay connected!
+New shows coming soon! Stay connected
 </div>
 
-<!-- AREA 3 CONCERTI (VUOTA) -->
-<div class="shows-list">
-
-<div class="show">
-<span></span>
-<span></span>
-</div>
-
-<div class="show">
-<span></span>
-<span></span>
-</div>
-
-<div class="show">
-<span></span>
-<span></span>
-</div>
-
-</div>
-
+<!-- 🔥 PULSANTI HOME IN BASSO -->
 <div class="bottom-buttons">
 <a href="#">TICKETS</a>
 <a href="#">CONTACT</a>
