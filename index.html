@@ -17,13 +17,13 @@ body {
 
 /* HEADER SEMPRE SOPRA */
 header {
-    position: fixed;     /* cambia da absolute a fixed */
+    position: absolute;     /* come nel tuo ultimo codice */
     top: 40px;
     width: 100%;
     text-align: center;
     letter-spacing: 2px;
     font-size: 20px;
-    z-index: 1000;       /* sempre cliccabile sopra tutto */
+    z-index: 1000;          /* menu sempre cliccabile */
 }
 
 header a {
@@ -38,13 +38,13 @@ header a:hover {
 
 /* HERO CENTRATO */
 .hero {
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-bottom: 120px; /* spazio in basso per le icone social */
+    position: relative; /* IMPORTANTE per le icone social */
 }
 
 .hero h1 {
@@ -74,12 +74,13 @@ header a:hover {
     color: #111;
 }
 
-/* SOCIAL ICONS */
+/* SOCIAL ICONS - ancorate in basso alla hero */
 .social-footer {
+    position: absolute;
+    bottom: 50px;  /* distanza dal fondo come volevi */
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-top: 80px; /* distanza dai pulsanti */
 }
 
 .social-footer img {
@@ -116,7 +117,7 @@ header a:hover {
 <a href="#">PRE-SAVE</a>
 </div>
 
-<!-- ICONE SOCIAL -->
+<!-- FOOTER SOCIAL DENTRO HERO -->
 <footer class="social-footer">
   <a href="https://www.instagram.com/gotuzmusic" target="_blank">
     <img src="icons/instagram-bw.png" alt="Instagram">
