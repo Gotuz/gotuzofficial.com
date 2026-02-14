@@ -13,7 +13,6 @@ body {
     background: #111;
     color: #F3EFE6;
     font-family: 'Cormorant Garamond', serif;
-    text-align: left; /* testo a sinistra */
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Garantisce che la pagina occupi almeno tutta l'altezza della finestra */
@@ -40,7 +39,7 @@ header a:hover {
 
 /* Sezione messaggio shows */
 .shows-message {
-    margin-top: 160px; /* più spazio sotto header */
+    margin-top: 160px; /* spazio sotto header */
     display: flex;
     justify-content: flex-start; /* testo a sinistra */
     align-items: center; /* centrato verticalmente */
@@ -55,9 +54,9 @@ header a:hover {
     display: flex;
     justify-content: center;
     gap: 20px;                 /* spazio tra le icone */
-    margin-top: 40px;          /* spazio sopra il footer */
-    margin-bottom: 20px;       /* spazio sotto il footer */
-    padding-bottom: 20px;      /* spazio sotto */
+    margin-top: auto;          /* spinge il footer in fondo */
+    padding: 20px 0;           /* spaziatura sopra e sotto le icone */
+    background-color: #111;    /* fondo nero per il footer */
 }
 
 .social-footer img {
@@ -67,7 +66,7 @@ header a:hover {
 }
 
 .social-footer img:hover {
-    transform: scale(1.2);     /* effetto hover leggero */
+    transform: scale(1.2);     /* effetto hover */
 }
 </style>
 </head>
