@@ -23,11 +23,14 @@ header {
     text-align: center;
     letter-spacing: 2px;
     font-size: 20px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;  /* allineamento centrale */
+    gap: 50px;               /* distanza tra i titoli */
+    flex-wrap: wrap;         /* permette la disposizione su più righe su dispositivi piccoli */
 }
 
-
 header a {
-    margin: 0 30px;
     text-decoration: none;
     color: #F3EFE6;
 }
@@ -40,7 +43,7 @@ header a:hover {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
-    gap: 20px;       /* meno spazio tra i prodotti */
+    gap: 15px; /* ridotto lo spazio tra i prodotti */
     margin-top: 160px; /* più spazio sotto header */
 }
 
@@ -51,9 +54,58 @@ header a:hover {
     transition: transform 0.2s;
 }
 
-
 .shop-grid img:hover {
     transform: scale(1.05);
+}
+
+/* SOCIAL ICONS - FOOTER */
+.social-footer {
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-footer img {
+    width: 25px;
+    filter: grayscale(100%);
+    transition: transform 0.2s, opacity 0.2s;
+    opacity: 0.7;
+}
+
+.social-footer img:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+/* Media Queries per dispositivi mobili */
+@media (max-width: 768px) {
+    header {
+        font-size: 16px;               /* riduce la dimensione del font */
+        flex-direction: column;        /* cambia la direzione dei link da orizzontale a verticale */
+        align-items: center;           /* allinea i link al centro */
+    }
+
+    .shop-grid {
+        grid-template-columns: repeat(2, 1fr);  /* 2 colonne su schermi più piccoli */
+        gap: 10px;  /* spazio ridotto tra i prodotti */
+    }
+
+    .shop-grid img {
+        width: 220px;   /* immagini un po' più piccole sui dispositivi mobili */
+    }
+}
+
+/* Media Queries per dispositivi molto piccoli */
+@media (max-width: 480px) {
+    .shop-grid {
+        grid-template-columns: 1fr;  /* 1 colonna sui dispositivi più piccoli */
+    }
+
+    .shop-grid img {
+        width: 200px;   /* riduce ulteriormente la dimensione delle immagini */
+    }
 }
 </style>
 </head>
@@ -67,12 +119,6 @@ header a:hover {
 <a href="news.html">NEWS</a>
 </header>
 
-
 <div class="shop-grid">
     <a href="black-tshirt.html"><img src="Black Front.png" alt="Black T-shirt"></a>
-    <a href="white-tshirt.html"><img src="White Front.png" alt="White T-shirt"></a>
-    <a href="burdury-tshirt.html"><img src="Burdury Front.png" alt="Burdury T-shirt"></a>
-</div>
-
-</body>
-</html>
+    <a href="white-tshirt.html"><img src="White
