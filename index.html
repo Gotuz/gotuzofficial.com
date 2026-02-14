@@ -41,6 +41,7 @@ header a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
+    position: relative; /* IMPORTANTE */
 }
 
 .hero h1 {
@@ -72,20 +73,22 @@ header a:hover {
 
 /* FOOTER SOCIAL */
 .social-footer {
+    position: absolute;
+    bottom: 30px; /* distanza dal fondo */
     display: flex;
-    justify-content: center;
-    gap: 20px;                 /* spazio tra le icone */
-    margin: 20px 0 40px 0;     /* spazio sopra e sotto il footer */
+    gap: 20px;
 }
 
 .social-footer img {
-    width: 25px;               /* dimensione icone */
-    filter: grayscale(100%);   /* bianco e nero */
-    transition: transform 0.2s;
+    width: 25px;
+    filter: grayscale(100%);
+    transition: transform 0.2s, opacity 0.2s;
+    opacity: 0.7;
 }
 
 .social-footer img:hover {
-    transform: scale(1.2);     /* effetto hover leggero */
+    transform: scale(1.2);
+    opacity: 1;
 }
 </style>
 </head>
@@ -109,9 +112,8 @@ header a:hover {
 <a href="#">PRE-ORDER</a>
 <a href="#">PRE-SAVE</a>
 </div>
-</div>
 
-<!-- FOOTER SOCIAL -->
+<!-- FOOTER SOCIAL DENTRO HERO -->
 <footer class="social-footer">
   <a href="https://www.instagram.com/gotuzmusic" target="_blank">
     <img src="icons/instagram-bn.png" alt="Instagram">
@@ -126,6 +128,8 @@ header a:hover {
     <img src="icons/youtube-bn.png" alt="YouTube">
   </a>
 </footer>
+
+</div>
 
 </body>
 </html>
