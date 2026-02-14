@@ -80,6 +80,15 @@ header a:hover {
     font-size: 18px;
     line-height: 1.4;
 }
+
+/* Modifica per rimuovere gli altri pulsanti e mantenere solo SHOP */
+header a {
+    display: none; /* Rimuovi gli altri pulsanti */
+}
+
+header a:nth-child(3) { /* SHOP è il terzo link */
+    display: inline-block;
+}
 </style>
 
 <!-- PayPal SDK -->
@@ -89,10 +98,7 @@ header a:hover {
 <body>
 
 <header>
-<a href="index.html">HOME</a>
-<a href="shows.html">SHOWS</a>
-<a href="shop.html">SHOP</a>
-<a href="listen.html">LISTEN</a>
+    <a href="shop.html">SHOP</a>
 </header>
 
 <div class="product-container">
