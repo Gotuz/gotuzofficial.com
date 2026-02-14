@@ -25,7 +25,7 @@ header {
     z-index: 1000;
     display: flex;
     justify-content: center;  /* Allineamento centrale */
-    gap: 50px;                /* Aumenta la distanza tra i titoli */
+    gap: 30px;                /* Ridotto per fare stare i tasti su una riga */
     flex-wrap: wrap;          /* Permette la disposizione su più righe su dispositivi piccoli */
     padding-top: 10px;         /* Aggiunta distanza tra i tasti e il bordo superiore */
 }
@@ -79,11 +79,12 @@ header a:hover {
 
 /* SOCIAL ICONS - FOOTER */
 .social-footer {
-    position: absolute;
-    bottom: 50px;
+    position: fixed;           /* Cambiato da absolute a fixed per evitare che i tasti social scompaiano con lo scroll */
+    bottom: 10px;              /* Aggiunta distanza dal fondo della pagina */
     display: flex;
     justify-content: center;
     gap: 20px;
+    width: 100%;
 }
 
 .social-footer img {
@@ -104,6 +105,7 @@ header a:hover {
         font-size: 16px;               /* Riduce la dimensione del font */
         flex-direction: row;           /* Cambia la disposizione dei link su una sola riga */
         align-items: center;           /* Allinea i link al centro */
+        gap: 20px;                     /* Aggiustato per dispositivi più piccoli */
         padding-top: 30px;             /* Spazio maggiore tra l'header e il contenuto */
     }
 
