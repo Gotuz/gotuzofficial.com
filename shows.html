@@ -14,7 +14,6 @@ body {
     color: #F3EFE6;
     font-family: 'Cormorant Garamond', serif;
     text-align: center;
-    padding-bottom: 120px; /* spazio per i pulsanti in basso */
 }
 
 header {
@@ -44,34 +43,49 @@ header a:hover {
 /* MESSAGGIO SHOWS */
 .shows-message {
     margin-top: 160px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 300px;
     font-size: 20px;
     line-height: 1.5;
 }
 
-/* 🔥 PULSANTI STILE HOME IN BASSO */
-.bottom-buttons {
-    position: fixed;
-    bottom: 40px;
-    width: 100%;
+/* 🔥 PULSANTE CONTACT CENTRALE */
+.contact-button {
+    margin-top: 40px;
 }
 
-.bottom-buttons a {
+.contact-button a {
     border: 1px solid #F3EFE6;
     padding: 12px 30px;
-    margin: 10px;
     text-decoration: none;
     color: #F3EFE6;
     display: inline-block;
     letter-spacing: 3px;
 }
 
-.bottom-buttons a:hover {
+.contact-button a:hover {
     background: #F3EFE6;
     color: #111;
+}
+
+/* 🔥 SOCIAL FOOTER IDENTICO A HOME */
+.social-footer {
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.social-footer img {
+    width: 25px;
+    filter: grayscale(100%);
+    transition: transform 0.2s, opacity 0.2s;
+    opacity: 0.7;
+}
+
+.social-footer img:hover {
+    transform: scale(1.2);
+    opacity: 1;
 }
 
 /* MOBILE */
@@ -86,9 +100,8 @@ header a:hover {
         font-size: 18px;
     }
 
-    .bottom-buttons a {
+    .contact-button a {
         padding: 10px 20px;
-        margin: 8px;
     }
 }
 
@@ -97,7 +110,7 @@ header a:hover {
         font-size: 14px;
     }
 
-    .bottom-buttons a {
+    .contact-button a {
         font-size: 14px;
     }
 }
@@ -118,11 +131,26 @@ header a:hover {
 New shows coming soon! Stay connected
 </div>
 
-<!-- 🔥 PULSANTI HOME IN BASSO -->
-<div class="bottom-buttons">
-<a href="#">TICKETS</a>
+<!-- CONTACT CENTRALE -->
+<div class="contact-button">
 <a href="#">CONTACT</a>
 </div>
+
+<!-- SOCIAL FOOTER -->
+<footer class="social-footer">
+  <a href="https://www.instagram.com/gotuzmusic" target="_blank">
+    <img src="icons/instagram-bw.png" alt="Instagram">
+  </a>
+  <a href="https://www.facebook.com/gotuzmusic" target="_blank">
+    <img src="icons/facebook-bw.png" alt="Facebook">
+  </a>
+  <a href="https://twitter.com/gotuzmusic" target="_blank">
+    <img src="icons/twitter-bw.png" alt="Twitter/X">
+  </a>
+  <a href="https://www.youtube.com/@gotuzmusic3389" target="_blank">
+    <img src="icons/youtube-bw.png" alt="YouTube">
+  </a>
+</footer>
 
 </body>
 </html>
