@@ -13,7 +13,7 @@ body {
     background: #111;
     color: #F3EFE6;
     font-family: 'Cormorant Garamond', serif;
-    text-align: left; /* testo a sinistra */
+    text-align: center;
 }
 
 header {
@@ -58,6 +58,8 @@ header a:hover {
     display: flex;
     justify-content: center;
     gap: 20px;
+    width: 100%;  /* assicura che il footer prenda tutta la larghezza */
+    text-align: center;  /* centra i contenuti */
 }
 
 .social-footer img {
@@ -81,19 +83,19 @@ header a:hover {
     }
 
     .shows-message {
-        font-size: 18px;                /* riduce il carattere del messaggio */
-        padding-left: 20px;             /* riduce lo spazio a sinistra */
+        padding-left: 0;  /* rimuove il padding a sinistra sui dispositivi più piccoli */
+        text-align: center;
     }
 }
 
 /* Media Queries per dispositivi molto piccoli */
 @media (max-width: 480px) {
     .shows-message {
-        font-size: 16px;               /* riduce ancora il carattere del messaggio */
+        font-size: 18px;  /* riduce il font */
     }
 
     .social-footer img {
-        width: 20px;                   /* riduce la dimensione delle icone sui dispositivi piccoli */
+        width: 20px;  /* icone più piccole sui dispositivi molto piccoli */
     }
 }
 </style>
