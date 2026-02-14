@@ -16,19 +16,21 @@ body {
     text-align: center;
 }
 
+/* 🔥 HEADER FIXATO CON AREA NERA SOPRA */
 header {
     position: fixed;
-    top: 40px; /* Spazio corretto per il pulsante */
+    top: 0;
+    left: 0;
     width: 100%;
-    text-align: center;
+    height: 120px;
+    background: #111;
+    z-index: 100;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 20px;
     letter-spacing: 2px;
     font-size: 20px;
-    padding: 20px 0;
-    background: #111;
-    z-index: 10;
-    display: flex;
-    justify-content: center; /* Allinea il pulsante al centro */
-    gap: 50px;
 }
 
 header a {
@@ -40,8 +42,9 @@ header a:hover {
     border-bottom: 1px solid #F3EFE6;
 }
 
+/* spazio corretto sotto la barra */
 .product-container {
-    margin-top: 120px; 
+    margin-top: 160px;
     display: flex;
     justify-content: center;
     gap: 50px;
@@ -54,6 +57,7 @@ header a:hover {
 
 .product-images img {
     width: 400px;
+    max-width: 100%;
     border-radius: 5px;
 }
 
@@ -72,7 +76,8 @@ header a:hover {
     transition: opacity 0.2s;
 }
 
-.thumbnails img:hover, .thumbnails img.active {
+.thumbnails img:hover,
+.thumbnails img.active {
     opacity: 1;
 }
 
@@ -91,7 +96,7 @@ header a:hover {
 <body>
 
 <header>
-<a href="shop.html">SHOP</a> <!-- Solo il pulsante SHOP visibile -->
+<a href="shop.html">SHOP</a>
 </header>
 
 <div class="product-container">
@@ -118,9 +123,8 @@ function switchImage(thumbnail){
     thumbnail.classList.add('active');
 }
 
-// PayPal button
 paypal.HostedButtons({
-    hostedButtonId: "JB2FTB4UEXSME" // metti qui ID PayPal Burdury T-shirt
+    hostedButtonId: "JB2FTB4UEXSME"
 }).render('#paypal-container-BURDURY');
 </script>
 
