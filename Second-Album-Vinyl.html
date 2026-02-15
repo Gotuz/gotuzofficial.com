@@ -3,165 +3,129 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Second Album Vinyl - GOTUZ</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
 body {
     margin: 0;
     background: #111;
     color: #F3EFE6;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     text-align: center;
-    min-height: 100vh;
 }
 
-/* HEADER — SOLO SHOP */
-
+/* MINI TOP BAR — IDENTICA T-SHIRT */
 header {
-    position: absolute;
-    top: 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    letter-spacing: 2px;
-    font-size: 20px;
+    height: 60px;
+    background: #111;
     display: flex;
+    align-items: center;
     justify-content: center;
+    z-index: 100;
+    border-bottom: 1px solid #222;
 }
 
 header a {
     text-decoration: none;
     color: #F3EFE6;
+    font-size: 18px;
+    letter-spacing: 2px;
+    padding: 6px 14px;
 }
 
 header a:hover {
     border-bottom: 1px solid #F3EFE6;
 }
 
-/* PRODUCT */
-
-.product {
-    margin-top: 160px;
-    padding: 20px;
-    max-width: 720px;
-    margin-left: auto;
-    margin-right: auto;
+/* PRODUCT LAYOUT */
+.product-container {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
 }
 
-.product img {
+.product-images img {
     width: 420px;
-    max-width: 90vw;
-    margin-bottom: 30px;
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.description {
+    max-width: 420px;
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.5;
 }
 
 .product-title {
     font-size: 22px;
     letter-spacing: 2px;
-    margin: 10px 0;
-}
-
-.product-price {
-    color: #b11212;
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.product-description {
-    font-size: 15px;
-    line-height: 1.6;
-    opacity: 0.85;
-    margin: 0 auto 25px;
-}
-
-/* PAYPAL */
-
-.paypal {
-    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 /* FOOTER */
-
 .legal-footer {
-    position: absolute;
-    bottom: 15px;
-    width: 100%;
+    margin-top: 80px;
     font-size: 12px;
-    opacity: 0.6;
     letter-spacing: 2px;
+    opacity: 0.6;
 }
 
-/* MOBILE */
+.legal-footer a {
+    color: #F3EFE6;
+    text-decoration: none;
+    margin-left: 10px;
+}
 
-@media (max-width: 768px) {
-    header {
-        font-size: 16px;
-    }
-
-    .product-description {
-        font-size: 14px;
-    }
+.legal-footer a:hover {
+    border-bottom: 1px solid #F3EFE6;
 }
 </style>
-</head>
 
+<!-- PayPal SDK -->
+<script src="https://www.paypal.com/sdk/js?client-id=BAApqvZFp7OYumHbOcxJDgeLBFc3A3SmYM8jxmr2c6h5ib7dXGqgupvVo0k-kvA-xwMhtPXZsQWtCvUKPI&components=hosted-buttons&disable-funding=venmo&currency=EUR"></script>
+
+</head>
 <body>
 
 <header>
 <a href="shop.html">SHOP</a>
 </header>
 
-<div class="product">
+<div class="product-container">
 
+<div class="product-images">
 <img src="Neutre-Vinyl.png" alt="Second Album Vinyl">
+</div>
+
+<div class="description">
 
 <div class="product-title">
-Second Album — Vinyl
+GOTUZ Second Album — Vinyl
 </div>
 
-<div class="product-price">
-€ 35,00
-</div>
+<p>
+This album is entirely written, arranged and produced by GOTUZ.
+Every element — from orchestral strings to drums and synthesizers —
+was crafted personally to create a cinematic and powerful soundscape.
+</p>
 
-<div class="product-description">
-Featuring a truly unique and powerful international voice, this album has been entirely created and produced by GOTUZ — from orchestral arrangements and live drums to every synthesizer and recording detail. The sound blends cinematic depth with modern textures, showcasing a vocal presence described as “Royal Albert Hall beautiful.” A record designed for global stages, arenas, and opera houses worldwide.
-</div>
+<p>
+At the center of the project is a unique and international voice —
+rich, emotional and striking — designed for arena stages and opera
+venues around the world. This vinyl edition captures the full depth
+and intensity of the record in its purest analog form.
+</p>
 
-<div class="paypal">
-
-<div>
-<style>
-.pp-HYAGKK8UVEPYY{
-text-align:center;
-border:none;
-border-radius:0.25rem;
-min-width:11.625rem;
-padding:0 2rem;
-height:2.625rem;
-font-weight:bold;
-background-color:#FFD140;
-color:#000;
-font-family:"Helvetica Neue",Arial,sans-serif;
-cursor:pointer;
-}
-</style>
-
-<form action="https://www.paypal.com/ncp/payment/HYAGKK8UVEPYY"
-method="post" target="_blank"
-style="display:inline-grid;gap:0.5rem;">
-
-<input class="pp-HYAGKK8UVEPYY" type="submit" value="Buy Now">
-
-<img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg">
-
-<section style="font-size:0.75rem;">
-Powered by
-<img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg"
-style="height:0.875rem;vertical-align:middle;">
-</section>
-
-</form>
-</div>
+<div id="paypal-container-VINYL"></div>
 
 </div>
 
@@ -169,7 +133,14 @@ style="height:0.875rem;vertical-align:middle;">
 
 <footer class="legal-footer">
 © 2026 GOTUZ
+<a href="privacy.html">Privacy Policy</a>
 </footer>
+
+<script>
+paypal.HostedButtons({
+    hostedButtonId: "HYAGKK8UVEPYY"
+}).render('#paypal-container-VINYL');
+</script>
 
 </body>
 </html>
