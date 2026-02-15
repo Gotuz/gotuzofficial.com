@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GOTUZ</title>
 
-<!-- Font stile quasi fatto a mano -->
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
@@ -16,19 +15,20 @@ body {
     font-family: 'Cormorant Garamond', serif;
 }
 
+/* HEADER */
 header {
     position: absolute;
-    top: 40px;  /* distanza dal top */
+    top: 40px;
     width: 100%;
     text-align: center;
     letter-spacing: 2px;
     font-size: 20px;
     z-index: 1000;
     display: flex;
-    justify-content: center;  /* Allineamento centrale */
-    gap: 30px;                /* Ridotto per fare stare i tasti su una riga */
-    flex-wrap: wrap;          /* Permette la disposizione su più righe su dispositivi piccoli */
-    padding-top: 10px;         /* Aggiunta distanza tra i tasti e il bordo superiore */
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding-top: 10px;
 }
 
 header a {
@@ -78,15 +78,14 @@ header a:hover {
     color: #111;
 }
 
-/* SOCIAL ICONS - FOOTER */
+/* SOCIAL FOOTER */
 .social-footer {
     position: absolute;
-    bottom: 50px;
+    bottom: 90px;
     display: flex;
     justify-content: center;
     gap: 20px;
-    width: 100%;  /* Assicura che il footer prenda tutta la larghezza */
-    text-align: center;  /* Centra i contenuti */
+    width: 100%;
 }
 
 .social-footer img {
@@ -101,31 +100,49 @@ header a:hover {
     opacity: 1;
 }
 
-/* Media Queries per dispositivi mobili */
+/* LEGAL FOOTER */
+.legal-footer {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 2px;
+    opacity: 0.6;
+}
+
+.legal-footer a {
+    color: #F3EFE6;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.legal-footer a:hover {
+    border-bottom: 1px solid #F3EFE6;
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
     header {
-        font-size: 16px;               /* Riduce la dimensione del font */
-        flex-direction: row;           /* Cambia la disposizione dei link su una sola riga */
-        align-items: center;           /* Allinea i link al centro */
-        gap: 20px;                     /* Aggiustato per dispositivi più piccoli */
-        padding-top: 30px;             /* Spazio maggiore tra l'header e il contenuto */
+        font-size: 16px;
+        gap: 20px;
+        padding-top: 30px;
     }
 
     .hero h1 {
-        font-size: 60px;                /* Ridimensiona il titolo principale */
+        font-size: 60px;
     }
 
     .hero h2 {
-        font-size: 20px;                /* Ridimensiona i sottotitoli */
+        font-size: 20px;
     }
 
     .buttons a {
-        padding: 10px 20px;             /* Riduce la dimensione dei pulsanti */
+        padding: 10px 20px;
         margin: 8px;
     }
 }
 
-/* Media Queries per dispositivi molto piccoli */
 @media (max-width: 480px) {
     .hero h1 {
         font-size: 50px;
@@ -153,6 +170,7 @@ header a:hover {
 </header>
 
 <div class="hero">
+
 <h1>GOTUZ</h1>
 <h2>SECOND ALBUM</h2>
 <h2>MAY 2026</h2>
@@ -162,7 +180,7 @@ header a:hover {
 <a href="#">PRE-SAVE</a>
 </div>
 
-<!-- FOOTER SOCIAL -->
+<!-- SOCIAL -->
 <footer class="social-footer">
   <a href="https://www.instagram.com/gotuzmusic" target="_blank">
     <img src="icons/instagram-bw.png" alt="Instagram">
@@ -176,6 +194,12 @@ header a:hover {
   <a href="https://www.youtube.com/@gotuzmusic3389" target="_blank">
     <img src="icons/youtube-bw.png" alt="YouTube">
   </a>
+</footer>
+
+<!-- LEGAL -->
+<footer class="legal-footer">
+  © 2026 GOTUZ
+  <a href="privacy.html">Privacy Policy</a>
 </footer>
 
 </div>
