@@ -1,4 +1,113 @@
-/* FOOTER — NON PIÙ ASSOLUTO */
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHOP - GOTUZ</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* BASE */
+
+body {
+    margin: 0;
+    background: #111;
+    color: #F3EFE6;
+    font-family: 'Cormorant Garamond', serif;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* HEADER */
+
+header {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    letter-spacing: 2px;
+    font-size: 20px;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    padding-top: 10px;
+}
+
+header a {
+    text-decoration: none;
+    color: #F3EFE6;
+}
+
+header a:hover {
+    border-bottom: 1px solid #F3EFE6;
+}
+
+/* SHOP GRID */
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 25px;
+
+    margin-top: 160px;
+    padding: 0 20px 60px;
+}
+
+/* PRODUCT */
+
+.product-item {
+    text-decoration: none;
+    color: #F3EFE6;
+}
+
+.product-item img {
+    width: 260px;
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+
+.product-item img:hover {
+    transform: scale(1.05);
+}
+
+/* VINYL */
+
+.vinyl img {
+    width: 290px;
+}
+
+.vinyl-info {
+    position: relative;
+    margin-top: 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* PREORDER BADGE */
+
+.preorder-badge {
+    position: absolute;
+    top: -16px;
+    right: -10px;
+
+    background: #b11212;
+    color: white;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 3px 7px;
+    border-radius: 12px;
+}
+
+/* FOOTER */
 
 .social-footer {
     margin-top: auto;
@@ -37,3 +146,107 @@
 .legal-footer a:hover {
     border-bottom: 1px solid #F3EFE6;
 }
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .shop-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    header {
+        font-size: 16px;
+        gap: 20px;
+        padding-top: 30px;
+    }
+
+    .product-item img {
+        width: 200px;
+    }
+
+    .vinyl img {
+        width: 230px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .shop-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-item img {
+        width: 180px;
+    }
+
+    .vinyl img {
+        width: 200px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<a href="index.html">HOME</a>
+<a href="shows.html">SHOWS</a>
+<a href="shop.html">SHOP</a>
+<a href="listen.html">LISTEN</a>
+<a href="news.html">NEWS</a>
+</header>
+
+<div class="shop-grid">
+
+<a href="black-tshirt.html" class="product-item">
+<img src="Black Front.png" alt="Black T-shirt">
+</a>
+
+<a href="white-tshirt.html" class="product-item">
+<img src="White Front.png" alt="White T-shirt">
+</a>
+
+<a href="burdury-tshirt.html" class="product-item">
+<img src="Burdury Front.png" alt="Burdury T-shirt">
+</a>
+
+<a href="Second-Album-Vinyl.html" class="product-item vinyl">
+
+<img src="Neutre-Vinyl.png" alt="Second Album Vinyl">
+
+<div class="vinyl-info">
+<div class="preorder-badge">PRE-ORDER</div>
+Second Album<br>
+Vinyl
+</div>
+
+</a>
+
+</div>
+
+<footer class="social-footer">
+<a href="https://www.instagram.com/gotuzmusic" target="_blank">
+<img src="icons/instagram-bw.png">
+</a>
+<a href="https://www.facebook.com/gotuzmusic" target="_blank">
+<img src="icons/facebook-bw.png">
+</a>
+<a href="https://twitter.com/gotuzmusic" target="_blank">
+<img src="icons/twitter-bw.png">
+</a>
+<a href="https://www.youtube.com/@gotuzmusic3389" target="_blank">
+<img src="icons/youtube-bw.png">
+</a>
+</footer>
+
+<footer class="legal-footer">
+© 2026 GOTUZ
+<a href="privacy.html">Privacy Policy</a>
+</footer>
+
+</body>
+</html>
