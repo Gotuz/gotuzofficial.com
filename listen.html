@@ -189,4 +189,74 @@ header a:hover {
 
 <div class="section">
 
-<div class="release-title fade">MEMO
+<div class="release-title fade">MEMORY — ALBUM</div>
+
+<div class="video-wrapper fade">
+<iframe
+src="https://www.youtube.com/embed/videoseries?list=PLb0A9UBWgIc_5TXERJfomYvdBW5iTfazp&autoplay=1&mute=1&loop=1"
+allow="autoplay"
+allowfullscreen>
+</iframe>
+</div>
+
+<div class="discography fade">
+
+<div class="album" onclick="toggleAlbum(this)">
+MEMORY — STREAM / BUY
+
+<div class="album-content">
+<div class="bandcamp-wrapper">
+
+<iframe
+src="https://bandcamp.com/EmbeddedPlayer/album=207018480/size=large/bgcol=111111/linkcol=F3EFE6/tracklist=false/artwork=small/transparent=true/"
+seamless>
+</iframe>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<footer class="social-footer">
+<a href="https://www.instagram.com/gotuzmusic" target="_blank">
+<img src="icons/instagram-bw.png">
+</a>
+<a href="https://www.facebook.com/gotuzmusic" target="_blank">
+<img src="icons/facebook-bw.png">
+</a>
+<a href="https://twitter.com/gotuzmusic" target="_blank">
+<img src="icons/twitter-bw.png">
+</a>
+<a href="https://www.youtube.com/@gotuzmusic3389" target="_blank">
+<img src="icons/youtube-bw.png">
+</a>
+</footer>
+
+<div class="footer">
+© 2026 GOTUZ
+</div>
+
+<script>
+const fades = document.querySelectorAll('.fade');
+
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('visible');
+}
+});
+});
+
+fades.forEach(el => observer.observe(el));
+
+function toggleAlbum(el) {
+el.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
