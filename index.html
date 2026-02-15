@@ -16,9 +16,18 @@ body {
     text-align: center;
     height: 100vh;
     overflow: hidden;
+
+    /* fade in pagina */
+    animation: pageFade 1.2s ease;
+}
+
+@keyframes pageFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* HEADER */
+
 header {
     position: absolute;
     top: 40px;
@@ -43,18 +52,36 @@ header a:hover {
 }
 
 /* HERO */
+
 .hero {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
+
+    /* cinematic entrance */
+    animation: heroFade 1.8s ease;
+}
+
+@keyframes heroFade {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -46%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
 }
 
 .hero h1 {
     font-size: 90px;
     margin: 0;
     letter-spacing: 6px;
+
+    /* retina sharp */
+    text-rendering: optimizeLegibility;
 }
 
 .hero h2 {
@@ -63,7 +90,7 @@ header a:hover {
     letter-spacing: 4px;
 }
 
-/* ===== LUXURY GOLD BUTTON ===== */
+/* ===== ULTRA LUXURY GOLD BUTTON ===== */
 
 .buttons a {
     font-family: 'Playfair Display', serif;
@@ -72,27 +99,51 @@ header a:hover {
     padding: 14px 38px;
     text-decoration: none;
     display: inline-block;
+    position: relative;
+    overflow: hidden;
 
-    /* oro metallizzato intermedio */
     background: linear-gradient(
         145deg,
-        #bfa24a 0%,
-        #e6c86a 40%,
-        #caa94f 60%,
-        #a88935 100%
+        #bfa24a,
+        #e6c86a,
+        #caa94f,
+        #a88935
     );
 
     color: #111;
     border: 1px solid #caa94f;
     border-radius: 2px;
 
-    /* glow leggero */
     box-shadow:
-        0 0 8px rgba(212, 175, 55, 0.35),
+        0 0 8px rgba(212,175,55,0.35),
         0 4px 10px rgba(0,0,0,0.5);
 
-    /* animazione smooth luxury */
     transition: all 0.35s ease;
+}
+
+/* shimmer metal reflection */
+
+.buttons a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.4),
+        transparent
+    );
+
+    animation: shimmer 4.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -120%; }
+    100% { left: 140%; }
 }
 
 /* hover luxury */
@@ -103,7 +154,7 @@ header a:hover {
     border: 1px solid #8B0000;
 
     box-shadow:
-        0 0 12px rgba(139, 0, 0, 0.35),
+        0 0 12px rgba(139,0,0,0.35),
         0 6px 14px rgba(0,0,0,0.6);
 
     transform: translateY(-1px);
