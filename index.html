@@ -16,8 +16,6 @@ body {
     text-align: center;
     height: 100vh;
     overflow: hidden;
-
-    /* fade in pagina */
     animation: pageFade 1.2s ease;
 }
 
@@ -59,8 +57,6 @@ header a:hover {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
-
-    /* cinematic entrance */
     animation: heroFade 1.8s ease;
 }
 
@@ -79,8 +75,6 @@ header a:hover {
     font-size: 90px;
     margin: 0;
     letter-spacing: 6px;
-
-    /* retina sharp */
     text-rendering: optimizeLegibility;
 }
 
@@ -90,7 +84,7 @@ header a:hover {
     letter-spacing: 4px;
 }
 
-/* ===== ULTRA LUXURY GOLD BUTTON ===== */
+/* GOLD BUTTON */
 
 .buttons a {
     font-family: 'Playfair Display', serif;
@@ -121,8 +115,6 @@ header a:hover {
     transition: all 0.35s ease;
 }
 
-/* shimmer metal reflection */
-
 .buttons a::before {
     content: "";
     position: absolute;
@@ -130,14 +122,12 @@ header a:hover {
     left: -120%;
     width: 60%;
     height: 100%;
-
     background: linear-gradient(
         120deg,
         transparent,
         rgba(255,255,255,0.4),
         transparent
     );
-
     animation: shimmer 4.5s infinite;
 }
 
@@ -146,21 +136,17 @@ header a:hover {
     100% { left: 140%; }
 }
 
-/* hover luxury */
-
 .buttons a:hover {
     background: transparent;
     color: #d6b85a;
     border: 1px solid #8B0000;
-
     box-shadow:
         0 0 12px rgba(139,0,0,0.35),
         0 6px 14px rgba(0,0,0,0.6);
-
     transform: translateY(-1px);
 }
 
-/* SOCIAL FOOTER */
+/* FOOTERS */
 
 .social-footer {
     position: absolute;
@@ -182,8 +168,6 @@ header a:hover {
     transform: scale(1.2);
     opacity: 1;
 }
-
-/* LEGAL FOOTER */
 
 .legal-footer {
     position: absolute;
@@ -240,7 +224,6 @@ header a:hover {
         padding: 12px 28px;
     }
 }
-
 </style>
 </head>
 
@@ -261,7 +244,7 @@ header a:hover {
 <h2>MAY 2026</h2>
 
 <div class="buttons">
-<a href="#">PRE-ORDER</a>
+<a href="shop.html">PRE-ORDER</a>
 </div>
 
 </div>
