@@ -14,9 +14,10 @@ body {
     color: #F3EFE6;
     font-family: 'Cormorant Garamond', serif;
     text-align: center;
+    min-height: 100vh;
 }
 
-/* MINI TOP BAR — IDENTICA T-SHIRT */
+/* HEADER */
 header {
     position: fixed;
     top: 0;
@@ -43,9 +44,10 @@ header a:hover {
     border-bottom: 1px solid #F3EFE6;
 }
 
-/* PRODUCT LAYOUT */
+/* PRODUCT */
 .product-container {
     margin-top: 100px;
+    padding-bottom: 140px; /* spazio per footer */
     display: flex;
     justify-content: center;
     gap: 50px;
@@ -71,9 +73,35 @@ header a:hover {
     margin-bottom: 10px;
 }
 
-/* FOOTER */
+/* SOCIAL FOOTER — IDENTICO PAGINE PRINCIPALI */
+
+.social-footer {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-footer img {
+    width: 25px;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: 0.2s;
+}
+
+.social-footer img:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+/* LEGAL FOOTER */
+
 .legal-footer {
-    margin-top: 80px;
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
     font-size: 12px;
     letter-spacing: 2px;
     opacity: 0.6;
@@ -87,6 +115,18 @@ header a:hover {
 
 .legal-footer a:hover {
     border-bottom: 1px solid #F3EFE6;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+    header {
+        font-size: 16px;
+    }
+
+    .product-container {
+        gap: 30px;
+    }
 }
 </style>
 
@@ -109,7 +149,7 @@ header a:hover {
 <div class="description">
 
 <div class="product-title">
-GOTUZ Second Album — Vinyl
+Second Album — Vinyl
 </div>
 
 <p>
@@ -130,6 +170,21 @@ and intensity of the record in its purest analog form.
 </div>
 
 </div>
+
+<footer class="social-footer">
+<a href="https://www.instagram.com/gotuzmusic" target="_blank">
+<img src="icons/instagram-bw.png">
+</a>
+<a href="https://www.facebook.com/gotuzmusic" target="_blank">
+<img src="icons/facebook-bw.png">
+</a>
+<a href="https://twitter.com/gotuzmusic" target="_blank">
+<img src="icons/twitter-bw.png">
+</a>
+<a href="https://www.youtube.com/@gotuzmusic3389" target="_blank">
+<img src="icons/youtube-bw.png">
+</a>
+</footer>
 
 <footer class="legal-footer">
 © 2026 GOTUZ
