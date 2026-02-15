@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NEWS - GOTUZ</title>
 
-<!-- Font stile quasi fatto a mano -->
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
@@ -15,21 +14,21 @@ body {
     color: #F3EFE6;
     font-family: 'Cormorant Garamond', serif;
     text-align: center;
+    padding-bottom: 160px;
 }
 
+/* HEADER */
 header {
     position: absolute;
     top: 40px;
     width: 100%;
-    text-align: center;
     letter-spacing: 2px;
     font-size: 20px;
     z-index: 1000;
     display: flex;
-    justify-content: center;  /* Allineamento centrale */
-    gap: 30px;                /* Distanza tra i titoli */
-    flex-wrap: wrap;          /* Permette la disposizione su più righe su dispositivi piccoli */
-    padding-top: 10px;         /* Aggiunta distanza tra i tasti e il bordo superiore */
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 header a {
@@ -41,50 +40,70 @@ header a:hover {
     border-bottom: 1px solid #F3EFE6;
 }
 
-form {
-    margin-top: 200px; /* Spazio sotto il menu */
-    display: inline-block;
-    text-align: left;
+/* HERO NEWS */
+.news-hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
-form input, form select, form button {
-    display: block;
-    margin: 15px 0;
-    padding: 10px;
-    font-size: 16px;
-    width: 300px;
+.news-title {
+    font-size: 30px;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+}
+
+/* FORM */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 320px;
     max-width: 90vw;
-    border: none;
-    border-radius: 4px;
+}
+
+form input,
+form select {
+    padding: 12px;
+    font-size: 15px;
+    background: #1a1a1a;
+    border: 1px solid #222;
+    color: #F3EFE6;
 }
 
 form button {
-    background-color: #FFD140;
-    color: #000;
-    font-weight: bold;
+    border: 1px solid #F3EFE6;
+    background: transparent;
+    color: #F3EFE6;
+    padding: 12px;
+    letter-spacing: 2px;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 form button:hover {
-    background-color: #e0b800;
+    background: #F3EFE6;
+    color: #111;
 }
 
-/* SOCIAL ICONS - FOOTER */
+/* SOCIAL FOOTER */
 .social-footer {
     position: absolute;
     bottom: 50px;
     display: flex;
-    justify-content: center;    /* CENTRA I PULSANTI */
+    justify-content: center;
     gap: 20px;
     width: 100%;
-    text-align: center;
 }
 
 .social-footer img {
     width: 25px;
     filter: grayscale(100%);
-    transition: transform 0.2s, opacity 0.2s;
     opacity: 0.7;
+    transition: 0.2s;
 }
 
 .social-footer img:hover {
@@ -92,29 +111,40 @@ form button:hover {
     opacity: 1;
 }
 
-/* Media Queries per dispositivi mobili */
-@media (max-width: 768px) {
-    header {
-        font-size: 16px;               /* Riduce la dimensione del font */
-        flex-direction: row;           /* Cambia la disposizione dei link su una sola riga */
-        align-items: center;           /* Allinea i link al centro */
-        gap: 20px;                     /* Aggiustato per dispositivi più piccoli */
-        padding-top: 30px;             /* Spazio maggiore tra l'header e il contenuto */
-    }
-
-    form input, form select, form button {
-        width: 100%;  /* Adatta a tutta la larghezza dello schermo */
-    }
+/* LEGAL FOOTER */
+.legal-footer {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    font-size: 12px;
+    letter-spacing: 2px;
+    opacity: 0.6;
 }
 
-/* Media Queries per dispositivi molto piccoli */
-@media (max-width: 480px) {
-    form input, form select, form button {
-        font-size: 14px;  /* Riduce la dimensione del font sui dispositivi più piccoli */
+.legal-footer a {
+    color: #F3EFE6;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.legal-footer a:hover {
+    border-bottom: 1px solid #F3EFE6;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    header {
+        font-size: 16px;
+        gap: 20px;
+    }
+
+    .news-title {
+        font-size: 22px;
     }
 }
 </style>
 </head>
+
 <body>
 
 <header>
@@ -125,46 +155,53 @@ form button:hover {
 <a href="news.html">NEWS</a>
 </header>
 
-<!-- Inizio form newsletter -->
-<form action="https://gmail.us22.list-manage.com/subscribe/post?u=7feb774a5321a363057aa2bf6&amp;id=0758196072&amp;f_id=008bc2e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-    <input type="email" name="EMAIL" placeholder="Email Address" required>
-    <input type="text" name="FNAME" placeholder="First Name" required>
-    <input type="text" name="LNAME" placeholder="Last Name" required>
+<div class="news-hero">
 
-    <label for="mce-COUNTRY" style="margin-top:15px;">Country:</label>
-    <select name="COUNTRY" id="mce-COUNTRY" required>
-      <option value="">Select a country</option>
-      <option value="Afghanistan">Afghanistan</option>
-      <option value="Albania">Albania</option>
-      <option value="Algeria">Algeria</option>
-      <option value="Andorra">Andorra</option>
-      <option value="Angola">Angola</option>
-      <option value="Antigua and Barbuda">Antigua and Barbuda</option>
-      <option value="Argentina">Argentina</option>
-      <option value="Armenia">Armenia</option>
-      <option value="Australia">Australia</option>
-      <option value="Austria">Austria</option>
-      <option value="Azerbaijan">Azerbaijan</option>
-      <!-- Altri paesi omessi per brevità -->
-    </select>
+<div class="news-title">
+JOIN THE MAILING LIST
+</div>
 
-    <button type="submit">Submit</button>
+<form action="https://gmail.us22.list-manage.com/subscribe/post?u=7feb774a5321a363057aa2bf6&amp;id=0758196072&amp;f_id=008bc2e1f0" method="post" target="_blank">
+
+<input type="email" name="EMAIL" placeholder="Email Address" required>
+<input type="text" name="FNAME" placeholder="First Name" required>
+<input type="text" name="LNAME" placeholder="Last Name" required>
+
+<select name="COUNTRY" required>
+<option value="">Country</option>
+<option value="Italy">Italy</option>
+<option value="United States">United States</option>
+<option value="United Kingdom">United Kingdom</option>
+<option value="France">France</option>
+<option value="Germany">Germany</option>
+<option value="Spain">Spain</option>
+<option value="Other">Other</option>
+</select>
+
+<button type="submit">SUBSCRIBE</button>
+
 </form>
 
-<!-- FOOTER SOCIAL -->
+</div>
+
 <footer class="social-footer">
-  <a href="https://www.instagram.com/gotuzmusic" target="_blank">
-    <img src="icons/instagram-bw.png" alt="Instagram">
-  </a>
-  <a href="https://www.facebook.com/gotuzmusic" target="_blank">
-    <img src="icons/facebook-bw.png" alt="Facebook">
-  </a>
-  <a href="https://twitter.com/gotuzmusic" target="_blank">
-    <img src="icons/twitter-bw.png" alt="Twitter/X">
-  </a>
-  <a href="https://www.youtube.com/@gotuzmusic3389" target="_blank">
-    <img src="icons/youtube-bw.png" alt="YouTube">
-  </a>
+<a href="https://www.instagram.com/gotuzmusic" target="_blank">
+<img src="icons/instagram-bw.png">
+</a>
+<a href="https://www.facebook.com/gotuzmusic" target="_blank">
+<img src="icons/facebook-bw.png">
+</a>
+<a href="https://twitter.com/gotuzmusic" target="_blank">
+<img src="icons/twitter-bw.png">
+</a>
+<a href="https://www.youtube.com/@gotuzmusic3389" target="_blank">
+<img src="icons/youtube-bw.png">
+</a>
+</footer>
+
+<footer class="legal-footer">
+© 2026 GOTUZ
+<a href="privacy.html">Privacy Policy</a>
 </footer>
 
 </body>
