@@ -9,7 +9,7 @@
 
 <style>
 
-/* LAYOUT BASE */
+/* BASE */
 body {
     margin: 0;
     background: #111;
@@ -21,17 +21,21 @@ body {
     min-height: 100vh;
 }
 
-/* HEADER */
+/* HEADER — IDENTICO A SHOWS */
 header {
+    position: relative;
+    top: 40px;
+
+    width: 100%;
     text-align: center;
     letter-spacing: 2px;
     font-size: 20px;
-    padding: 40px 0 20px 0;
 
     display: flex;
     justify-content: center;
     gap: 50px;
     flex-wrap: wrap;
+    padding-top: 10px;
 }
 
 header a {
@@ -43,10 +47,10 @@ header a:hover {
     border-bottom: 1px solid #F3EFE6;
 }
 
-/* CONTENUTO SHOP */
+/* CONTENUTO */
 main {
     flex: 1;
-    text-align: center;
+    margin-top: 80px;
 }
 
 .shop-grid {
@@ -74,7 +78,6 @@ footer {
     padding: 20px 0;
 }
 
-/* SOCIAL */
 .social-footer {
     display: flex;
     justify-content: center;
@@ -94,7 +97,6 @@ footer {
     opacity: 1;
 }
 
-/* LEGAL */
 .legal-footer {
     font-size: 12px;
     letter-spacing: 2px;
@@ -117,6 +119,7 @@ footer {
     header {
         font-size: 16px;
         gap: 20px;
+        padding-top: 30px;
     }
 
     .shop-grid {
