@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SHOP - GOTUZ</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
 
@@ -19,6 +19,7 @@ body {
 }
 
 /* HEADER — IDENTICO A SHOWS */
+
 header {
     position: absolute;
     top: 40px;
@@ -44,25 +45,44 @@ header a:hover {
 }
 
 /* SHOP GRID */
+
 .shop-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     justify-items: center;
-    gap: 20px;
+    gap: 30px;
 
     margin-top: 160px;
-    padding: 0 20px 160px; /* spazio per footer */
+    padding: 0 20px 180px;
 }
 
-.shop-grid img {
+.product-item {
+    text-decoration: none;
+    color: #F3EFE6;
+}
+
+.product-item img {
     width: 260px;
-    cursor: pointer;
     border-radius: 5px;
     transition: transform 0.2s;
 }
 
-.shop-grid img:hover {
+.product-item img:hover {
     transform: scale(1.05);
+}
+
+/* VINYL TEXT */
+
+.vinyl-text {
+    font-family: 'Inter', sans-serif;
+    margin-top: 12px;
+    line-height: 1.4;
+}
+
+.vinyl-text span {
+    color: #b11212;
+    font-size: 14px;
+    letter-spacing: 1px;
 }
 
 /* FOOTER — IDENTICO A SHOWS */
@@ -111,6 +131,12 @@ header a:hover {
 
 /* MOBILE */
 
+@media (max-width: 900px) {
+    .shop-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
 
     header {
@@ -119,11 +145,7 @@ header a:hover {
         padding-top: 30px;
     }
 
-    .shop-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
-
-    .shop-grid img {
+    .product-item img {
         width: 200px;
     }
 }
@@ -131,10 +153,10 @@ header a:hover {
 @media (max-width: 480px) {
 
     .shop-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-template-columns: 1fr;
     }
 
-    .shop-grid img {
+    .product-item img {
         width: 180px;
     }
 }
@@ -153,9 +175,33 @@ header a:hover {
 </header>
 
 <div class="shop-grid">
-<a href="black-tshirt.html"><img src="Black Front.png" alt="Black T-shirt"></a>
-<a href="white-tshirt.html"><img src="White Front.png" alt="White T-shirt"></a>
-<a href="burdury-tshirt.html"><img src="Burdury Front.png" alt="Burdury T-shirt"></a>
+
+<a href="black-tshirt.html" class="product-item">
+<img src="Black Front.png" alt="Black T-shirt">
+</a>
+
+<a href="white-tshirt.html" class="product-item">
+<img src="White Front.png" alt="White T-shirt">
+</a>
+
+<a href="burdury-tshirt.html" class="product-item">
+<img src="Burdury Front.png" alt="Burdury T-shirt">
+</a>
+
+<!-- VINYL -->
+
+<a href="Second-Album-Vinyl.html" class="product-item">
+
+<img src="Neutre-Vinyl.png" alt="Second Album Vinyl">
+
+<div class="vinyl-text">
+Second Album<br>
+Vinyl<br>
+<span>€ 35,00</span>
+</div>
+
+</a>
+
 </div>
 
 <footer class="social-footer">
