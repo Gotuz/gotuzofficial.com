@@ -73,26 +73,28 @@ header a:hover {
     transform: scale(1.05);
 }
 
-/* PREORDER BADGE */
+/* VINYL TEXT CONTAINER */
 
-.preorder-badge {
-    display: inline-block;
-    background: #b11212;
-    color: white;
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    padding: 4px 10px;
-    border-radius: 20px;
-    margin-top: 12px;
-    margin-bottom: 6px;
-}
-
-/* VINYL TEXT */
-
-.vinyl-text {
+.vinyl-info {
+    position: relative;
+    margin-top: 10px;
     font-family: 'Inter', sans-serif;
     line-height: 1.4;
+}
+
+/* SMALL PREORDER BADGE */
+
+.preorder-badge {
+    position: absolute;
+    top: -14px;
+    right: -8px;
+
+    background: #b11212;
+    color: white;
+    font-size: 9px;
+    letter-spacing: 1px;
+    padding: 2px 6px;
+    border-radius: 10px;
 }
 
 /* FOOTER */
@@ -169,6 +171,10 @@ header a:hover {
     .product-item img {
         width: 180px;
     }
+
+    .preorder-badge {
+        right: 0;
+    }
 }
 
 </style>
@@ -206,9 +212,9 @@ header a:hover {
 
 <img src="Neutre-Vinyl.png" alt="Second Album Vinyl">
 
+<div class="vinyl-info">
 <div class="preorder-badge">PRE-ORDER</div>
 
-<div class="vinyl-text">
 Second Album<br>
 Vinyl
 </div>
