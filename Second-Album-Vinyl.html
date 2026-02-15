@@ -14,6 +14,9 @@ body {
     color: #F3EFE6;
     font-family: 'Cormorant Garamond', serif;
     text-align: center;
+
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
 }
 
@@ -44,22 +47,23 @@ header a:hover {
     border-bottom: 1px solid #F3EFE6;
 }
 
-/* PRODUCT */
+/* PRODUCT LAYOUT */
 .product-container {
-    margin-top: 100px;
-    padding-bottom: 140px; /* spazio per footer */
+    margin-top: 110px;
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 60px;
     flex-wrap: wrap;
+    padding: 40px 20px;
 }
 
 .product-images img {
     width: 420px;
     max-width: 100%;
-    border-radius: 5px;
+    border-radius: 6px;
 }
 
+/* DESCRIPTION */
 .description {
     max-width: 420px;
     text-align: left;
@@ -67,18 +71,16 @@ header a:hover {
     line-height: 1.5;
 }
 
-.product-title {
-    font-size: 22px;
+.description h2 {
+    margin-top: 0;
     letter-spacing: 2px;
-    margin-bottom: 10px;
+    font-size: 26px;
 }
 
-/* SOCIAL FOOTER — IDENTICO PAGINE PRINCIPALI */
-
+/* SOCIAL FOOTER */
 .social-footer {
-    position: absolute;
-    bottom: 50px;
-    width: 100%;
+    margin-top: auto;
+    padding-top: 40px;
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -97,11 +99,8 @@ header a:hover {
 }
 
 /* LEGAL FOOTER */
-
 .legal-footer {
-    position: absolute;
-    bottom: 15px;
-    width: 100%;
+    padding: 15px 0 25px;
     font-size: 12px;
     letter-spacing: 2px;
     opacity: 0.6;
@@ -118,14 +117,13 @@ header a:hover {
 }
 
 /* MOBILE */
-
 @media (max-width: 768px) {
-    header {
-        font-size: 16px;
+    .product-container {
+        gap: 40px;
     }
 
-    .product-container {
-        gap: 30px;
+    .description {
+        text-align: center;
     }
 }
 </style>
@@ -148,21 +146,15 @@ header a:hover {
 
 <div class="description">
 
-<div class="product-title">
-Second Album — Vinyl
-</div>
+<h2>Second Album — Vinyl</h2>
 
 <p>
-This album is entirely written, arranged and produced by GOTUZ.
-Every element — from orchestral strings to drums and synthesizers —
-was crafted personally to create a cinematic and powerful soundscape.
-</p>
-
-<p>
-At the center of the project is a unique and international voice —
-rich, emotional and striking — designed for arena stages and opera
-venues around the world. This vinyl edition captures the full depth
-and intensity of the record in its purest analog form.
+A unique and cinematic vinyl release of GOTUZ’s second album.
+Featuring a powerful international voice and a sound crafted
+for deep listening, this record captures the atmosphere of a live
+concert hall experience — intimate, emotional, and timeless.
+A collector’s piece for those who want to own the music in its
+purest physical form.
 </p>
 
 <div id="paypal-container-VINYL"></div>
