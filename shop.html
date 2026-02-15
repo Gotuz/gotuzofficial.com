@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Burgundy T-shirt - GOTUZ</title>
+<title>SHOP - GOTUZ</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
+
 body {
     margin: 0;
     background: #111;
@@ -17,6 +18,7 @@ body {
 }
 
 /* HEADER */
+
 header {
     position: fixed;
     top: 0;
@@ -27,6 +29,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 50px;
     z-index: 100;
     border-bottom: 1px solid #222;
 }
@@ -36,61 +39,69 @@ header a {
     color: #F3EFE6;
     font-size: 18px;
     letter-spacing: 2px;
-    padding: 6px 14px;
 }
 
 header a:hover {
     border-bottom: 1px solid #F3EFE6;
 }
 
-/* MAIN WRAPPER */
+/* MAIN */
+
 main {
     padding-top: 100px;
 }
 
-/* PRODUCT */
-.product-container {
+/* SHOP GRID */
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
     padding: 40px 20px;
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    flex-wrap: wrap;
 }
 
-.product-images img {
-    width: 400px;
-    max-width: 100%;
+/* PRODUCT CARD */
+
+.product {
+    position: relative;
+    width: 260px;
+}
+
+.product img {
+    width: 100%;
     border-radius: 5px;
+    transition: transform 0.2s;
 }
 
-.thumbnails {
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+.product img:hover {
+    transform: scale(1.05);
 }
 
-.thumbnails img {
-    width: 80px;
-    cursor: pointer;
-    border-radius: 5px;
-    opacity: 0.7;
-    transition: opacity 0.2s;
+/* VINYL BADGE */
+
+.badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: #b11212;
+    color: #fff;
+    font-size: 10px;
+    padding: 4px 6px;
+    letter-spacing: 1px;
+    border-radius: 2px;
 }
 
-.thumbnails img:hover,
-.thumbnails img.active {
-    opacity: 1;
-}
+/* PRODUCT TEXT */
 
-.description {
-    max-width: 400px;
-    text-align: left;
+.product-title {
+    margin-top: 10px;
     font-size: 18px;
-    line-height: 1.4;
+    letter-spacing: 2px;
 }
 
 /* SOCIAL FOOTER */
+
 .social-footer {
     margin-top: 40px;
     padding-top: 40px;
@@ -111,7 +122,8 @@ main {
     opacity: 1;
 }
 
-/* LEGAL FOOTER */
+/* LEGAL */
+
 .legal-footer {
     padding: 15px 0 40px;
     font-size: 12px;
@@ -130,45 +142,65 @@ main {
 }
 
 /* MOBILE */
-@media (max-width: 768px) {
-    .description {
-        text-align: center;
+
+@media (max-width: 900px) {
+    .shop-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
+
+@media (max-width: 600px) {
+    header {
+        font-size: 16px;
+        gap: 20px;
+    }
+
+    .shop-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product {
+        width: 220px;
+    }
+}
+
 </style>
-
-<script src="https://www.paypal.com/sdk/js?client-id=BAApqvZFp7OYumHbOcxJDgeLBFc3A3SmYM8jxmr2c6h5ib7dXGqgupvVo0k-kvA-xwMhtPXZsQWtCvUKPI&components=hosted-buttons&disable-funding=venmo&currency=EUR"></script>
-
 </head>
+
 <body>
 
 <header>
+<a href="index.html">HOME</a>
+<a href="shows.html">SHOWS</a>
 <a href="shop.html">SHOP</a>
+<a href="listen.html">LISTEN</a>
+<a href="news.html">NEWS</a>
 </header>
 
 <main>
 
-<div class="product-container">
+<div class="shop-grid">
 
-<div class="product-images">
-<img id="main-image" src="Burgundy Front.png" alt="Burgundy T-shirt">
+<a href="black-tshirt.html" class="product">
+<img src="Black Front.png">
+<div class="product-title">Black T-shirt</div>
+</a>
 
-<div class="thumbnails">
-<img src="Burgundy Front.png" class="active" onclick="switchImage(this)">
-<img src="Burgundy Back.png" onclick="switchImage(this)">
-</div>
-</div>
+<a href="white-tshirt.html" class="product">
+<img src="White Front.png">
+<div class="product-title">White T-shirt</div>
+</a>
 
-<div class="description">
-<p>
-This is the premium GOTUZ Burgundy T-shirt.
-Made with 100% cotton, perfect for fans.
-Front and back design included.
-Limited edition!
-</p>
+<a href="burdury-tshirt.html" class="product">
+<img src="Burdury Front.png">
+<div class="product-title">Burgundy T-shirt</div>
+</a>
 
-<div id="paypal-container-BURGUNDY"></div>
-</div>
+<a href="Second-Album-Vinyl.html" class="product">
+<span class="badge">PRE-ORDER</span>
+<img src="Neutre-Vinyl.png">
+<div class="product-title">Second Album — Vinyl</div>
+</a>
 
 </div>
 
@@ -193,19 +225,6 @@ Limited edition!
 </footer>
 
 </main>
-
-<script>
-function switchImage(thumbnail){
-    document.getElementById('main-image').src = thumbnail.src;
-    document.querySelectorAll('.thumbnails img')
-        .forEach(img => img.classList.remove('active'));
-    thumbnail.classList.add('active');
-}
-
-paypal.HostedButtons({
-    hostedButtonId: "JB2FTB4UEXSME"
-}).render('#paypal-container-BURGUNDY');
-</script>
 
 </body>
 </html>
