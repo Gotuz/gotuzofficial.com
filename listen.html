@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LISTEN - GOTUZ</title>
+
+<title>Listen - GOTUZ | Official Music</title>
+<meta name="description" content="Listen to GOTUZ official music. Watch videos and stream releases.">
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
 
@@ -14,14 +16,14 @@ body {
     color: #F3EFE6;
     font-family: 'Cormorant Garamond', serif;
     text-align: center;
-    padding-bottom: 120px;
+    padding-bottom: 140px;
 }
 
+/* HEADER */
 header {
     position: absolute;
     top: 40px;
     width: 100%;
-    text-align: center;
     letter-spacing: 2px;
     font-size: 20px;
     z-index: 1000;
@@ -41,41 +43,70 @@ header a:hover {
     border-bottom: 1px solid #F3EFE6;
 }
 
-/* SEZIONE LISTEN */
-.listen-section {
+/* SEZIONI */
+.section {
     margin-top: 160px;
     padding: 20px;
 }
 
-.listen-section h1 {
-    font-size: 36px;
+.section h1 {
+    font-size: 34px;
     letter-spacing: 4px;
     margin-bottom: 40px;
 }
 
-/* YOUTUBE EMBED */
-.video-container {
-    position: relative;
-    width: 90%;
-    max-width: 900px;
-    margin: 0 auto 60px auto;
-    aspect-ratio: 16 / 9;
+/* YOUTUBE PLAYER CINEMATICO */
+.video-wrapper {
+    max-width: 680px;
+    margin: 0 auto 30px auto;
+    box-shadow: 0 0 40px rgba(255,255,255,0.05);
+    border-radius: 6px;
+    overflow: hidden;
 }
 
-.video-container iframe {
+.video-wrapper iframe {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 16/9;
     border: none;
 }
 
-/* BANDCAMP PLACEHOLDER */
-.bandcamp-placeholder {
-    font-size: 18px;
-    opacity: 0.8;
-    margin-top: 40px;
+/* BUTTONS */
+.button {
+    border: 1px solid #F3EFE6;
+    padding: 12px 30px;
+    margin: 20px 10px;
+    text-decoration: none;
+    color: #F3EFE6;
+    display: inline-block;
+    letter-spacing: 3px;
+    transition: 0.2s;
 }
 
-/* SOCIAL FOOTER (uguale HOME) */
+.button:hover {
+    background: #F3EFE6;
+    color: #111;
+}
+
+/* RELEASE SECTION */
+.release-title {
+    font-size: 26px;
+    letter-spacing: 3px;
+    margin: 80px 0 30px;
+}
+
+/* BANDCAMP EMBED */
+.bandcamp-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.bandcamp-wrapper iframe {
+    width: 100%;
+    height: 420px;
+    border: none;
+}
+
+/* SOCIAL FOOTER */
 .social-footer {
     position: absolute;
     bottom: 50px;
@@ -105,8 +136,17 @@ header a:hover {
         padding-top: 30px;
     }
 
-    .listen-section h1 {
+    .section h1 {
         font-size: 26px;
+    }
+
+    .release-title {
+        font-size: 20px;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 14px;
     }
 }
 </style>
@@ -122,18 +162,26 @@ header a:hover {
 <a href="news.html">NEWS</a>
 </header>
 
-<div class="listen-section">
+<div class="section">
 
 <h1>LISTEN</h1>
 
-<!-- 🔥 SOSTITUISCI IL LINK CON IL TUO VIDEO O PLAYLIST -->
-<div class="video-container">
+<!-- 🎬 YOUTUBE VIDEO (CAMBIA VIDEO QUI SE VUOI) -->
+<div class="video-wrapper">
 <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=gotuzmusic3389"
 allowfullscreen></iframe>
 </div>
 
-<div class="bandcamp-placeholder">
-Bandcamp coming soon
+<a class="button" href="https://www.youtube.com/@gotuzmusic3389" target="_blank">
+WATCH ON YOUTUBE
+</a>
+
+<!-- 🎵 RELEASE -->
+<div class="release-title">MEMORY — ALBUM</div>
+
+<div class="bandcamp-wrapper">
+<iframe src="https://bandcamp.com/EmbeddedPlayer/album=2158021636/size=large/bgcol=111111/linkcol=F3EFE6/artwork=small/transparent=true/">
+</iframe>
 </div>
 
 </div>
