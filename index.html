@@ -63,27 +63,54 @@ header a:hover {
     letter-spacing: 4px;
 }
 
-/* PRE-ORDER BUTTON */
+/* ===== LUXURY GOLD BUTTON ===== */
+
 .buttons a {
-    background: #D4AF37;
-    color: #111;
-    border: 2px solid #D4AF37;
-    padding: 14px 36px;
-    text-decoration: none;
-    display: inline-block;
-    letter-spacing: 3px;
     font-family: 'Playfair Display', serif;
     font-size: 18px;
-    transition: all 0.25s ease;
+    letter-spacing: 3px;
+    padding: 14px 38px;
+    text-decoration: none;
+    display: inline-block;
+
+    /* oro metallizzato intermedio */
+    background: linear-gradient(
+        145deg,
+        #bfa24a 0%,
+        #e6c86a 40%,
+        #caa94f 60%,
+        #a88935 100%
+    );
+
+    color: #111;
+    border: 1px solid #caa94f;
+    border-radius: 2px;
+
+    /* glow leggero */
+    box-shadow:
+        0 0 8px rgba(212, 175, 55, 0.35),
+        0 4px 10px rgba(0,0,0,0.5);
+
+    /* animazione smooth luxury */
+    transition: all 0.35s ease;
 }
+
+/* hover luxury */
 
 .buttons a:hover {
     background: transparent;
-    color: #D4AF37;
-    border: 2px solid #8B0000;
+    color: #d6b85a;
+    border: 1px solid #8B0000;
+
+    box-shadow:
+        0 0 12px rgba(139, 0, 0, 0.35),
+        0 6px 14px rgba(0,0,0,0.6);
+
+    transform: translateY(-1px);
 }
 
 /* SOCIAL FOOTER */
+
 .social-footer {
     position: absolute;
     bottom: 50px;
@@ -106,6 +133,7 @@ header a:hover {
 }
 
 /* LEGAL FOOTER */
+
 .legal-footer {
     position: absolute;
     bottom: 15px;
@@ -126,6 +154,7 @@ header a:hover {
 }
 
 /* MOBILE */
+
 @media (max-width: 768px) {
     header {
         font-size: 16px;
@@ -160,6 +189,7 @@ header a:hover {
         padding: 12px 28px;
     }
 }
+
 </style>
 </head>
 
