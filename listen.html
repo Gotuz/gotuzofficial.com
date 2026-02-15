@@ -7,32 +7,22 @@
 <title>Listen - GOTUZ | Memory Album</title>
 <meta name="description" content="Official GOTUZ music. Listen to the Memory album and watch videos.">
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MusicAlbum",
-  "name": "Memory",
-  "byArtist": {
-    "@type": "MusicGroup",
-    "name": "GOTUZ"
-  }
-}
-</script>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+<!-- Font elegante classico -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
 
 <style>
+
 body {
     margin: 0;
     background: #111;
     color: #F3EFE6;
     font-family: 'Cormorant Garamond', serif;
     text-align: center;
-    padding-bottom: 140px;
+    min-height: 100vh;
     overflow-x: hidden;
 }
 
-/* HEADER — IDENTICO A SHOP */
+/* HEADER — NON TOCCATO */
 header {
     position: absolute;
     top: 40px;
@@ -40,6 +30,7 @@ header {
     letter-spacing: 2px;
     font-size: 20px;
     z-index: 1000;
+
     display: flex;
     justify-content: center;
     gap: 50px;
@@ -56,37 +47,30 @@ header a:hover {
     border-bottom: 1px solid #F3EFE6;
 }
 
-/* FADE ANIMATION */
-.fade {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 1s ease;
-}
-
-.fade.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 /* MAIN SECTION */
+
 .section {
-    margin-top: 180px;
-    padding: 20px;
+    margin-top: 170px;
+    padding: 0 20px 160px; /* spazio per footer */
 }
+
+/* TITOLO ALBUM */
 
 .release-title {
-    font-size: 30px;
-    letter-spacing: 3px;
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 500;
     margin-bottom: 40px;
 }
 
 /* VIDEO */
+
 .video-wrapper {
     max-width: 720px;
     margin: 0 auto 60px;
-    box-shadow: 0 0 60px rgba(255,255,255,0.06);
     border-radius: 6px;
     overflow: hidden;
+    box-shadow: 0 0 40px rgba(255,255,255,0.05);
 }
 
 .video-wrapper iframe {
@@ -96,6 +80,7 @@ header a:hover {
 }
 
 /* DISCOGRAPHY */
+
 .discography {
     max-width: 720px;
     margin: 0 auto;
@@ -103,9 +88,10 @@ header a:hover {
 
 .album {
     border: 1px solid #222;
-    padding: 20px;
+    padding: 18px;
     cursor: pointer;
-    letter-spacing: 2px;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
     transition: background 0.3s;
 }
 
@@ -125,29 +111,23 @@ header a:hover {
 }
 
 /* BANDCAMP */
+
 .bandcamp-wrapper iframe {
     width: 100%;
     height: 120px;
     border: none;
 }
 
-/* FOOTER */
-.footer {
-    text-align: center;
-    margin-top: 80px;
-    font-size: 13px;
-    opacity: 0.6;
-    letter-spacing: 2px;
-}
+/* FOOTER — IDENTICO A SHOWS */
 
-/* SOCIAL FOOTER */
 .social-footer {
     position: absolute;
     bottom: 50px;
+    width: 100%;
+
     display: flex;
     justify-content: center;
     gap: 20px;
-    width: 100%;
 }
 
 .social-footer img {
@@ -162,8 +142,30 @@ header a:hover {
     opacity: 1;
 }
 
+.legal-footer {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+
+    font-size: 12px;
+    letter-spacing: 2px;
+    opacity: 0.6;
+}
+
+.legal-footer a {
+    color: #F3EFE6;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.legal-footer a:hover {
+    border-bottom: 1px solid #F3EFE6;
+}
+
 /* MOBILE */
+
 @media (max-width: 768px) {
+
     header {
         font-size: 16px;
         gap: 20px;
@@ -174,6 +176,7 @@ header a:hover {
         font-size: 22px;
     }
 }
+
 </style>
 </head>
 
@@ -189,20 +192,19 @@ header a:hover {
 
 <div class="section">
 
-<div class="release-title fade">MEMORY — ALBUM</div>
+<div class="release-title">Memory — Album</div>
 
-<div class="video-wrapper fade">
+<div class="video-wrapper">
 <iframe
-src="https://www.youtube.com/embed/videoseries?list=PLb0A9UBWgIc_5TXERJfomYvdBW5iTfazp&autoplay=1&mute=1&loop=1"
-allow="autoplay"
+src="https://www.youtube.com/embed/videoseries?list=PLb0A9UBWgIc_5TXERJfomYvdBW5iTfazp"
 allowfullscreen>
 </iframe>
 </div>
 
-<div class="discography fade">
+<div class="discography">
 
 <div class="album" onclick="toggleAlbum(this)">
-MEMORY — STREAM / BUY
+Stream / Buy
 
 <div class="album-content">
 <div class="bandcamp-wrapper">
@@ -236,25 +238,14 @@ seamless>
 </a>
 </footer>
 
-<div class="footer">
+<footer class="legal-footer">
 © 2026 GOTUZ
-</div>
+<a href="privacy.html">Privacy Policy</a>
+</footer>
 
 <script>
-const fades = document.querySelectorAll('.fade');
-
-const observer = new IntersectionObserver(entries => {
-entries.forEach(entry => {
-if (entry.isIntersecting) {
-entry.target.classList.add('visible');
-}
-});
-});
-
-fades.forEach(el => observer.observe(el));
-
 function toggleAlbum(el) {
-el.classList.toggle('open');
+    el.classList.toggle('open');
 }
 </script>
 
