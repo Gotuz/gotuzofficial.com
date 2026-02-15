@@ -44,13 +44,13 @@ header a:hover {
     border-bottom: 1px solid #F3EFE6;
 }
 
-/* SHOP GRID */
+/* SHOP GRID — PIÙ COMPATTA */
 
 .shop-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
-    gap: 40px;
+    gap: 25px; /* 🔥 meno spazio tra prodotti */
 
     margin-top: 160px;
     padding: 0 20px 200px;
@@ -73,28 +73,35 @@ header a:hover {
     transform: scale(1.05);
 }
 
-/* VINYL TEXT CONTAINER */
+/* VINYL — PIÙ GRANDE */
+
+.vinyl img {
+    width: 290px;
+}
+
+/* VINYL TEXT */
 
 .vinyl-info {
     position: relative;
-    margin-top: 10px;
+    margin-top: 14px;
     font-family: 'Inter', sans-serif;
-    line-height: 1.4;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
-/* SMALL PREORDER BADGE */
+/* PREORDER BADGE */
 
 .preorder-badge {
     position: absolute;
-    top: -14px;
-    right: -8px;
+    top: -16px;
+    right: -10px;
 
     background: #b11212;
     color: white;
-    font-size: 9px;
+    font-size: 10px;
     letter-spacing: 1px;
-    padding: 2px 6px;
-    border-radius: 10px;
+    padding: 3px 7px;
+    border-radius: 12px;
 }
 
 /* FOOTER */
@@ -160,6 +167,10 @@ header a:hover {
     .product-item img {
         width: 200px;
     }
+
+    .vinyl img {
+        width: 230px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -172,8 +183,8 @@ header a:hover {
         width: 180px;
     }
 
-    .preorder-badge {
-        right: 0;
+    .vinyl img {
+        width: 200px;
     }
 }
 
@@ -192,8 +203,6 @@ header a:hover {
 
 <div class="shop-grid">
 
-<!-- MAGLIETTE -->
-
 <a href="black-tshirt.html" class="product-item">
 <img src="Black Front.png" alt="Black T-shirt">
 </a>
@@ -206,9 +215,7 @@ header a:hover {
 <img src="Burdury Front.png" alt="Burdury T-shirt">
 </a>
 
-<!-- VINYL -->
-
-<a href="Second-Album-Vinyl.html" class="product-item">
+<a href="Second-Album-Vinyl.html" class="product-item vinyl">
 
 <img src="Neutre-Vinyl.png" alt="Second Album Vinyl">
 
