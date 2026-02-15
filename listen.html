@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,7 @@
 <title>Listen - GOTUZ | Memory Album</title>
 <meta name="description" content="Official GOTUZ music. Listen to the Memory album and watch videos.">
 
+<!-- SEO Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -28,11 +29,12 @@ body {
     color: #F3EFE6;
     font-family: 'Cormorant Garamond', serif;
     text-align: center;
-    padding-bottom: 160px;
-    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* HEADER */
+/* HEADER — IDENTICO A SHOP */
 header {
     position: absolute;
     top: 40px;
@@ -55,7 +57,14 @@ header a:hover {
     border-bottom: 1px solid #F3EFE6;
 }
 
-/* FADE */
+/* MAIN CONTENT — ALLINEATO A SHOP */
+.main {
+    flex: 1;
+    margin-top: 160px;
+    padding: 20px;
+}
+
+/* FADE-IN */
 .fade {
     opacity: 0;
     transform: translateY(30px);
@@ -67,12 +76,7 @@ header a:hover {
     transform: translateY(0);
 }
 
-/* MAIN */
-.section {
-    margin-top: 180px;
-    padding: 20px;
-}
-
+/* TITLE */
 .release-title {
     font-size: 30px;
     letter-spacing: 3px;
@@ -130,14 +134,17 @@ header a:hover {
     border: none;
 }
 
-/* SOCIAL FOOTER */
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px 0 20px;
+}
+
 .social-footer {
-    position: absolute;
-    bottom: 50px;
     display: flex;
     justify-content: center;
     gap: 20px;
-    width: 100%;
+    margin-bottom: 10px;
 }
 
 .social-footer img {
@@ -152,24 +159,10 @@ header a:hover {
     opacity: 1;
 }
 
-/* LEGAL FOOTER */
-.legal-footer {
-    position: absolute;
-    bottom: 15px;
-    width: 100%;
-    font-size: 12px;
-    letter-spacing: 2px;
+.copyright {
+    font-size: 13px;
     opacity: 0.6;
-}
-
-.legal-footer a {
-    color: #F3EFE6;
-    text-decoration: none;
-    margin-left: 10px;
-}
-
-.legal-footer a:hover {
-    border-bottom: 1px solid #F3EFE6;
+    letter-spacing: 2px;
 }
 
 /* MOBILE */
@@ -196,10 +189,11 @@ header a:hover {
 <a href="news.html">NEWS</a>
 </header>
 
-<div class="section">
+<div class="main">
 
 <div class="release-title fade">MEMORY — ALBUM</div>
 
+<!-- YOUTUBE -->
 <div class="video-wrapper fade">
 <iframe
 src="https://www.youtube.com/embed/videoseries?list=PLb0A9UBWgIc_5TXERJfomYvdBW5iTfazp&autoplay=1&mute=1&loop=1"
@@ -208,6 +202,7 @@ allowfullscreen>
 </iframe>
 </div>
 
+<!-- DISCOGRAPHY -->
 <div class="discography fade">
 
 <div class="album" onclick="toggleAlbum(this)">
@@ -230,7 +225,9 @@ seamless>
 
 </div>
 
-<footer class="social-footer">
+<footer>
+
+<div class="social-footer">
 <a href="https://www.instagram.com/gotuzmusic" target="_blank">
 <img src="icons/instagram-bw.png">
 </a>
@@ -243,14 +240,16 @@ seamless>
 <a href="https://www.youtube.com/@gotuzmusic3389" target="_blank">
 <img src="icons/youtube-bw.png">
 </a>
-</footer>
+</div>
 
-<footer class="legal-footer">
+<div class="copyright">
 © 2026 GOTUZ
-<a href="privacy.html">Privacy Policy</a>
+</div>
+
 </footer>
 
 <script>
+/* Fade-in scroll */
 const fades = document.querySelectorAll('.fade');
 
 const observer = new IntersectionObserver(entries => {
@@ -263,6 +262,7 @@ entry.target.classList.add('visible');
 
 fades.forEach(el => observer.observe(el));
 
+/* Discography toggle */
 function toggleAlbum(el) {
 el.classList.toggle('open');
 }
