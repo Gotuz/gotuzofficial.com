@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GOTUZ</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -15,48 +15,58 @@ body {
     color: #F3EFE6;
     font-family: 'Cormorant Garamond', serif;
     text-align: center;
+    animation: pageFade 1.2s ease;
+}
+
+@keyframes pageFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* HEADER */
 
 header {
     position: absolute;
-    top: 30px;
+    top: 40px;
     width: 100%;
-    font-size: 18px;
     letter-spacing: 2px;
-
+    font-size: 20px;
+    z-index: 1000;
     display: flex;
     justify-content: center;
-    gap: 40px;
-    z-index: 1000;
-}
-
-header a {
-    text-decoration: none;
-    color: #F3EFE6;
-}
-
-header a:hover {
-    border-bottom: 1px solid #F3EFE6;
+    gap: 50px;
+    flex-wrap: wrap;
 }
 
 /* HERO */
 
 .hero {
-    padding: 140px 20px 80px;
+    margin-top: 180px;
+    margin-bottom: 120px;
+    animation: heroFade 1.8s ease;
+}
+
+@keyframes heroFade {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero h1 {
-    font-size: 80px;
-    letter-spacing: 6px;
+    font-size: 90px;
     margin: 0;
+    letter-spacing: 6px;
 }
 
 .hero h2 {
-    font-size: 22px;
+    font-size: 28px;
+    margin: 15px 0;
     letter-spacing: 4px;
-    margin: 10px 0;
 }
 
 .hero p {
@@ -65,45 +75,53 @@ header a:hover {
     opacity: 0.6;
 }
 
-/* PRE SAVE BUTTON */
+/* BUTTON */
 
-.presave-btn {
-    margin-top: 25px;
-    display: inline-block;
-    padding: 10px 22px;
-    border: 1px solid #F3EFE6;
-    font-size: 14px;
-    letter-spacing: 2px;
+.buttons a {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    letter-spacing: 3px;
+    padding: 14px 38px;
     text-decoration: none;
-    color: #F3EFE6;
-    transition: 0.2s;
-}
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
 
-.presave-btn:hover {
-    background: #F3EFE6;
+    background: linear-gradient(145deg,#bfa24a,#e6c86a,#caa94f,#a88935);
     color: #111;
+    border: 1px solid #caa94f;
+
+    box-shadow:
+        0 0 8px rgba(212,175,55,0.35),
+        0 4px 10px rgba(0,0,0,0.5);
+
+    transition: 0.3s;
 }
 
-/* SINGLES SCROLL */
+.buttons a:hover {
+    background: transparent;
+    color: #d6b85a;
+    border: 1px solid #8B0000;
+}
 
-.singles-scroll {
+/* 🎵 ROULETTE */
+
+.carousel {
     display: flex;
     overflow-x: auto;
-    gap: 40px;
-    padding: 40px 20px 100px;
+    gap: 60px;
+    padding: 0 40px 120px;
 
     scroll-snap-type: x mandatory;
 }
 
-/* nasconde scrollbar su mobile */
-.singles-scroll::-webkit-scrollbar {
+.carousel::-webkit-scrollbar {
     display: none;
 }
 
-/* SINGLE */
-
-.single {
-    min-width: 260px;
+.item {
+    flex: 0 0 auto;
+    width: 320px;
     scroll-snap-align: center;
 }
 
@@ -111,21 +129,21 @@ header a:hover {
 
 .poster {
     width: 100%;
-    border-radius: 4px;
-    margin-bottom: 15px;
+    border-radius: 6px;
 }
 
 /* COVER */
 
 .cover {
-    width: 100%;
-    border-radius: 4px;
-    transition: 0.3s;
+    width: 70%;
+    margin-top: 15px;
+    border-radius: 6px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .cover:hover {
-    transform: scale(1.05);
+    transform: scale(1.06);
     opacity: 0.85;
 }
 
@@ -140,48 +158,23 @@ header a:hover {
 
 .social-footer img {
     width: 25px;
-    filter: grayscale(100%);
     opacity: 0.7;
-    transition: 0.2s;
-}
-
-.social-footer img:hover {
-    transform: scale(1.2);
-    opacity: 1;
 }
 
 .legal-footer {
     font-size: 12px;
-    letter-spacing: 2px;
     opacity: 0.6;
     margin-bottom: 30px;
 }
 
-.legal-footer a {
-    color: #F3EFE6;
-    text-decoration: none;
-    margin-left: 10px;
-}
-
-.legal-footer a:hover {
-    border-bottom: 1px solid #F3EFE6;
-}
-
 /* MOBILE */
 
-@media (max-width: 768px) {
+@media (max-width:768px){
 
-    .hero h1 {
-        font-size: 50px;
-    }
+    .hero h1 { font-size: 60px; }
+    .hero h2 { font-size: 20px; }
 
-    .hero h2 {
-        font-size: 18px;
-    }
-
-    .single {
-        min-width: 200px;
-    }
+    .item { width: 240px; }
 }
 
 </style>
@@ -204,36 +197,32 @@ header a:hover {
 <h2>SECOND ALBUM</h2>
 <p>estimate date: end 2026</p>
 
-<a href="#" class="presave-btn">PRE-SAVE</a>
+<div class="buttons">
+<a href="shop.html">PRE-ORDER</a>
+</div>
 </div>
 
-<!-- SINGLES -->
+<!-- 🎵 SINGLES ROULETTE -->
 
-<div class="singles-scroll">
+<div class="carousel">
 
-<!-- YOU COULD BE -->
-
-<div class="single">
+<div class="item">
 <img src="you-could-be_poster.png" class="poster">
-
 <a href="listen.html">
 <img src="you-could-be_artcover.png" class="cover">
 </a>
 </div>
 
-<!-- LONELY HEART -->
-
-<div class="single">
+<div class="item">
 <img src="lonely-heart_poster.png" class="poster">
-
 <a href="listen.html">
 <img src="lonely-heart_artcover.png" class="cover">
 </a>
 </div>
 
-<!-- FUTURO SINGOLO -->
+<!-- FUTURO -->
 <!--
-<div class="single">
+<div class="item">
 <img src="next_poster.png" class="poster">
 <a href="listen.html">
 <img src="next_cover.png" class="cover">
@@ -244,23 +233,14 @@ header a:hover {
 </div>
 
 <footer class="social-footer">
-<a href="https://www.instagram.com/gotuzmusic" target="_blank">
-<img src="icons/instagram-bw.png">
-</a>
-<a href="https://www.facebook.com/gotuzmusic" target="_blank">
-<img src="icons/facebook-bw.png">
-</a>
-<a href="https://twitter.com/gotuzmusic" target="_blank">
-<img src="icons/twitter-bw.png">
-</a>
-<a href="https://www.youtube.com/@gotuzmusic3389" target="_blank">
-<img src="icons/youtube-bw.png">
-</a>
+<a href="#"><img src="icons/instagram-bw.png"></a>
+<a href="#"><img src="icons/facebook-bw.png"></a>
+<a href="#"><img src="icons/twitter-bw.png"></a>
+<a href="#"><img src="icons/youtube-bw.png"></a>
 </footer>
 
 <footer class="legal-footer">
-© 2026 GOTUZ
-<a href="privacy.html">Privacy Policy</a>
+© 2026 GOTUZ | <a href="privacy.html">Privacy Policy</a>
 </footer>
 
 </body>
