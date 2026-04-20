@@ -39,7 +39,6 @@ header {
 
 .hero {
     margin-top: 180px;
-    margin-bottom: 80px;
 }
 
 .hero h1 {
@@ -51,7 +50,6 @@ header {
 .hero h2 {
     font-size: 28px;
     margin: 15px 0;
-    letter-spacing: 4px;
 }
 
 .hero p {
@@ -69,36 +67,59 @@ header {
     color: #111;
 }
 
-/* 🎯 TRUE COVERFLOW */
+/* 🎯 REAL REVOLVER */
 
-.coverflow {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-
-    padding: 40px calc(50% - 160px);
-    gap: 40px;
+.carousel-container {
+    margin-top: 60px;
+    perspective: 1200px;
 }
 
-.coverflow::-webkit-scrollbar {
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 60px calc(50% - 180px);
+}
+
+.carousel::-webkit-scrollbar {
     display: none;
 }
 
 .item {
     flex: 0 0 auto;
     width: 320px;
-    scroll-snap-align: center;
-    transition: transform 0.4s;
+    margin: 0 20px;
+    transition: all 0.4s ease;
 }
 
-/* POSTER */
+/* DEFAULT (lati) */
+.item {
+    transform: scale(0.75);
+    opacity: 0.4;
+}
+
+/* CENTRO */
+.item.active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* sinistra */
+.item.left {
+    transform: scale(0.8) rotateY(20deg);
+}
+
+/* destra */
+.item.right {
+    transform: scale(0.8) rotateY(-20deg);
+}
+
+/* IMMAGINI */
 
 .poster {
     width: 100%;
     border-radius: 6px;
 }
-
-/* COVER */
 
 .cover {
     width: 70%;
@@ -130,8 +151,8 @@ header {
 
 @media (max-width:768px){
     .hero h1 { font-size: 60px; }
-    .coverflow { padding: 20px calc(50% - 120px); }
     .item { width: 240px; }
+    .carousel { padding: 40px calc(50% - 120px); }
 }
 
 </style>
@@ -157,9 +178,10 @@ header {
 </div>
 </div>
 
-<!-- 🎵 COVERFLOW REALE -->
+<!-- 🎵 REVOLVER -->
 
-<div class="coverflow">
+<div class="carousel-container">
+<div class="carousel" id="carousel">
 
 <div class="item">
 <img src="you-could-be_poster.png" class="poster">
@@ -177,6 +199,7 @@ header {
 </div>
 
 </div>
+</div>
 
 <footer class="social-footer">
 <a href="#"><img src="icons/instagram-bw.png"></a>
@@ -188,6 +211,41 @@ header {
 <footer class="legal-footer">
 © 2026 GOTUZ | <a href="privacy.html">Privacy Policy</a>
 </footer>
+
+<script>
+
+const carousel = document.getElementById('carousel');
+const items = document.querySelectorAll('.item');
+
+function updateCarousel() {
+    const center = carousel.scrollLeft + carousel.offsetWidth / 2;
+
+    items.forEach(item => {
+        const itemCenter = item.offsetLeft + item.offsetWidth / 2;
+        const dist = itemCenter - center;
+
+        item.classList.remove('active','left','right');
+
+        if (Math.abs(dist) < 100) {
+            item.classList.add('active');
+        } else if (dist < 0) {
+            item.classList.add('left');
+        } else {
+            item.classList.add('right');
+        }
+    });
+}
+
+/* set iniziale su Lonely Heart (secondo elemento) */
+window.addEventListener('load', () => {
+    const second = items[1];
+    carousel.scrollLeft = second.offsetLeft - (carousel.offsetWidth/2) + (second.offsetWidth/2);
+    updateCarousel();
+});
+
+carousel.addEventListener('scroll', updateCarousel);
+
+</script>
 
 </body>
 </html>
