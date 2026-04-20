@@ -160,7 +160,7 @@ header a:hover {
 .revolver-stage {
     position: relative;
     width: 100%;
-    height: 470px;
+    height: 560px;
     overflow: hidden;
 }
 
@@ -175,6 +175,7 @@ header a:hover {
         filter 0.45s ease;
     will-change: transform, opacity;
     user-select: none;
+    cursor: pointer;
 }
 
 .revolver-item img {
@@ -186,22 +187,24 @@ header a:hover {
 }
 
 .revolver-item.cover {
-    width: 290px;
+    width: 360px;
     z-index: 5;
 }
 
 .revolver-item.poster {
-    width: 230px;
+    width: 270px;
     z-index: 4;
 }
 
-.revolver-item.clickable {
+.revolver-item.center-active {
     cursor: pointer;
 }
 
-.revolver-item.clickable:hover img {
-    transform: scale(1.02);
+.revolver-item.center-active:hover img {
+    transform: scale(1.015);
 }
+
+/* CONTROLS */
 
 .revolver-controls {
     margin-top: 12px;
@@ -298,15 +301,15 @@ header a:hover {
     }
 
     .revolver-stage {
-        height: 360px;
+        height: 420px;
     }
 
     .revolver-item.cover {
-        width: 210px;
+        width: 250px;
     }
 
     .revolver-item.poster {
-        width: 165px;
+        width: 185px;
     }
 }
 
@@ -325,15 +328,15 @@ header a:hover {
     }
 
     .revolver-stage {
-        height: 320px;
+        height: 370px;
     }
 
     .revolver-item.cover {
-        width: 190px;
+        width: 220px;
     }
 
     .revolver-item.poster {
-        width: 145px;
+        width: 160px;
     }
 }
 </style>
@@ -362,24 +365,24 @@ header a:hover {
 <section class="revolver-section">
     <div class="revolver-stage" id="revolverStage">
 
-        <!-- ORDINE INIZIALE RICHIESTO:
-             far left: you-could-be_artcover
-             left:     you-could-be_poster
-             center:   lonely-heart_artcover
-             right:    lonely-heart_poster
+        <!-- ordine circolare:
+             0 = you-could-be_artcover
+             1 = you-could-be_poster
+             2 = lonely-heart_artcover  (centro iniziale)
+             3 = lonely-heart_poster
         -->
 
-        <a href="listen.html" class="revolver-item cover clickable" data-type="cover">
+        <div class="revolver-item cover" data-type="cover" data-link="listen.html">
             <img src="you-could-be_artcover.png" alt="You Could Be cover art">
-        </a>
+        </div>
 
         <div class="revolver-item poster" data-type="poster">
             <img src="you-could-be_poster.png" alt="You Could Be poster">
         </div>
 
-        <a href="listen.html" class="revolver-item cover clickable" data-type="cover">
+        <div class="revolver-item cover" data-type="cover" data-link="listen.html">
             <img src="lonely-heart_artcover.png" alt="Lonely Heart cover art">
-        </a>
+        </div>
 
         <div class="revolver-item poster" data-type="poster">
             <img src="lonely-heart_poster.png" alt="Lonely Heart poster">
@@ -389,7 +392,7 @@ header a:hover {
 
     <div class="revolver-controls">
         <button class="revolver-btn" id="prevBtn" aria-label="Previous">‹</button>
-        <div class="revolver-hint">SCROLL THE RELEASES</div>
+        <div class="revolver-hint">BROWSE RELEASES</div>
         <button class="revolver-btn" id="nextBtn" aria-label="Next">›</button>
     </div>
 </section>
@@ -420,7 +423,7 @@ const stage = document.getElementById('revolverStage');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 
-/* centro iniziale = lonely-heart_artcover.png, cioè indice 2 */
+/* centro iniziale = lonely-heart_artcover.png, indice 2 */
 let activeIndex = 2;
 
 function mod(n, m) {
@@ -431,26 +434,34 @@ function updateRevolver() {
     const isMobile = window.innerWidth <= 480;
     const isTablet = window.innerWidth <= 768;
 
-    const centerX = 0;
     const centerY = -50;
 
-    let offsetMain = 250;
-    let offsetFar = 430;
-    let rotateNear = 22;
-    let rotateFar = 34;
+    let nearOffset = 255;
+    let farOffset = 430;
+    let nearScale = 0.82;
+    let farScale = 0.64;
+    let nearRotate = 20;
+    let farRotate = 32;
+    let centerScale = 1.12;
 
     if (isTablet) {
-        offsetMain = 175;
-        offsetFar = 295;
-        rotateNear = 18;
-        rotateFar = 28;
+        nearOffset = 185;
+        farOffset = 310;
+        nearScale = 0.76;
+        farScale = 0.56;
+        nearRotate = 16;
+        farRotate = 24;
+        centerScale = 1.08;
     }
 
     if (isMobile) {
-        offsetMain = 150;
-        offsetFar = 255;
-        rotateNear = 16;
-        rotateFar = 24;
+        nearOffset = 150;
+        farOffset = 245;
+        nearScale = 0.72;
+        farScale = 0.52;
+        nearRotate = 14;
+        farRotate = 22;
+        centerScale = 1.05;
     }
 
     items.forEach((item, i) => {
@@ -459,29 +470,28 @@ function updateRevolver() {
         if (rel > items.length / 2) rel -= items.length;
         if (rel < -items.length / 2) rel += items.length;
 
-        let transform = `translate(-50%, -50%) translate(${centerX}px, ${centerY}px) scale(0.5) rotateY(0deg)`;
+        let transform = `translate(-50%, -50%) translate(0px, ${centerY}px) scale(0.45) rotateY(0deg)`;
         let opacity = 0;
         let zIndex = 1;
-        let filter = 'blur(0px)';
 
         if (rel === 0) {
-            transform = `translate(-50%, -50%) translate(0px, ${centerY}px) scale(1) rotateY(0deg)`;
+            transform = `translate(-50%, -50%) translate(0px, ${centerY}px) scale(${centerScale}) rotateY(0deg)`;
             opacity = 1;
             zIndex = 10;
         } else if (rel === 1) {
-            transform = `translate(-50%, -50%) translate(${offsetMain}px, ${centerY + 8}px) scale(0.82) rotateY(-${rotateNear}deg)`;
-            opacity = 0.58;
+            transform = `translate(-50%, -50%) translate(${nearOffset}px, ${centerY + 10}px) scale(${nearScale}) rotateY(-${nearRotate}deg)`;
+            opacity = 0.68;
             zIndex = 8;
         } else if (rel === -1) {
-            transform = `translate(-50%, -50%) translate(-${offsetMain}px, ${centerY + 8}px) scale(0.82) rotateY(${rotateNear}deg)`;
-            opacity = 0.58;
+            transform = `translate(-50%, -50%) translate(-${nearOffset}px, ${centerY + 10}px) scale(${nearScale}) rotateY(${nearRotate}deg)`;
+            opacity = 0.68;
             zIndex = 8;
         } else if (rel === 2) {
-            transform = `translate(-50%, -50%) translate(${offsetFar}px, ${centerY + 16}px) scale(0.68) rotateY(-${rotateFar}deg)`;
+            transform = `translate(-50%, -50%) translate(${farOffset}px, ${centerY + 22}px) scale(${farScale}) rotateY(-${farRotate}deg)`;
             opacity = 0.32;
             zIndex = 6;
         } else if (rel === -2) {
-            transform = `translate(-50%, -50%) translate(-${offsetFar}px, ${centerY + 16}px) scale(0.68) rotateY(${rotateFar}deg)`;
+            transform = `translate(-50%, -50%) translate(-${farOffset}px, ${centerY + 22}px) scale(${farScale}) rotateY(${farRotate}deg)`;
             opacity = 0.32;
             zIndex = 6;
         }
@@ -489,8 +499,12 @@ function updateRevolver() {
         item.style.transform = transform;
         item.style.opacity = opacity;
         item.style.zIndex = zIndex;
-        item.style.filter = filter;
-        item.style.pointerEvents = (rel === 0 || rel === 1 || rel === -1) ? 'auto' : 'none';
+
+        item.classList.remove('center-active');
+
+        if (rel === 0) {
+            item.classList.add('center-active');
+        }
     });
 }
 
@@ -509,7 +523,13 @@ prevBtn.addEventListener('click', prevItem);
 
 items.forEach((item, i) => {
     item.addEventListener('click', () => {
-        if (i === activeIndex) return;
+        if (i === activeIndex) {
+            if (item.dataset.type === 'cover' && item.dataset.link) {
+                window.location.href = item.dataset.link;
+            }
+            return;
+        }
+
         activeIndex = i;
         updateRevolver();
     });
