@@ -164,6 +164,7 @@ header a:hover {
     height: auto;
     border-radius: 8px;
     box-shadow: 0 14px 34px rgba(0,0,0,0.45);
+    transition: transform 0.25s ease;
 }
 
 .revolver-item.cover {
@@ -178,15 +179,15 @@ header a:hover {
     transform: scale(1.015);
 }
 
-/* central caption */
+/* CAPTION DINAMICA */
 .revolver-caption {
     position: absolute;
     left: 50%;
-    bottom: 10px;
     transform: translateX(-50%);
-    width: 100%;
     text-align: center;
     pointer-events: none;
+    transition: top 0.4s ease;
+    width: 100%;
 }
 
 .revolver-caption .title {
@@ -432,10 +433,12 @@ header a:hover {
 
 <script>
 const items = Array.from(document.querySelectorAll('.revolver-item'));
+const stage = document.getElementById('revolverStage');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 const captionTitle = document.querySelector('#revolverCaption .title');
 const captionMeta = document.querySelector('#revolverCaption .meta');
+const captionBox = document.getElementById('revolverCaption');
 
 /* centro iniziale = lonely-heart_artcover.png */
 let activeIndex = 2;
@@ -527,6 +530,11 @@ function updateRevolver() {
     const active = items[activeIndex];
     captionTitle.textContent = active.dataset.title || '';
     captionMeta.innerHTML = active.dataset.meta || '';
+
+    const rect = active.getBoundingClientRect();
+    const stageRect = stage.getBoundingClientRect();
+    const topPosition = rect.bottom - stageRect.top + 15;
+    captionBox.style.top = topPosition + 'px';
 }
 
 function nextItem() {
