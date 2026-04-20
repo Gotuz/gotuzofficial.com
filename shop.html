@@ -17,7 +17,6 @@ body {
     color: #F3EFE6;
     font-family: 'Cormorant Garamond', serif;
     text-align: center;
-
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -32,7 +31,6 @@ header {
     letter-spacing: 2px;
     font-size: 20px;
     z-index: 1000;
-
     display: flex;
     justify-content: center;
     gap: 50px;
@@ -55,8 +53,7 @@ header a:hover {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
-    gap: 25px;
-
+    gap: 35px 25px;
     margin-top: 160px;
     padding: 0 20px 60px;
 }
@@ -66,6 +63,7 @@ header a:hover {
 .product-item {
     text-decoration: none;
     color: #F3EFE6;
+    display: inline-block;
 }
 
 .product-item img {
@@ -78,18 +76,29 @@ header a:hover {
     transform: scale(1.05);
 }
 
+/* INFO TEXT */
+
+.product-info {
+    position: relative;
+    margin-top: 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.45;
+    letter-spacing: 0.5px;
+}
+
+.product-info .price {
+    display: block;
+    margin-top: 4px;
+    color: #b11212;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
 /* VINYL */
 
 .vinyl img {
     width: 290px;
-}
-
-.vinyl-info {
-    position: relative;
-    margin-top: 14px;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
 }
 
 /* PREORDER BADGE */
@@ -98,7 +107,6 @@ header a:hover {
     position: absolute;
     top: -16px;
     right: -10px;
-
     background: #b11212;
     color: white;
     font-size: 10px;
@@ -107,12 +115,17 @@ header a:hover {
     border-radius: 12px;
 }
 
+/* POSTERS */
+
+.poster-item img {
+    width: 260px;
+}
+
 /* FOOTER */
 
 .social-footer {
     margin-top: auto;
     padding-top: 40px;
-
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -156,29 +169,33 @@ header a:hover {
 }
 
 @media (max-width: 768px) {
-
     header {
         font-size: 16px;
         gap: 20px;
         padding-top: 30px;
     }
 
-    .product-item img {
+    .product-item img,
+    .poster-item img {
         width: 200px;
     }
 
     .vinyl img {
         width: 230px;
     }
+
+    .product-info {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 480px) {
-
     .shop-grid {
         grid-template-columns: 1fr;
     }
 
-    .product-item img {
+    .product-item img,
+    .poster-item img {
         width: 180px;
     }
 
@@ -202,44 +219,72 @@ header a:hover {
 
 <div class="shop-grid">
 
+<!-- T-SHIRTS -->
+
 <a href="black-tshirt.html" class="product-item">
-<img src="Black Front.png" alt="Black T-shirt">
+    <img src="Black Front.png" alt="Black T-shirt">
 </a>
 
 <a href="white-tshirt.html" class="product-item">
-<img src="White Front.png" alt="White T-shirt">
+    <img src="White Front.png" alt="White T-shirt">
 </a>
 
 <a href="burdury-tshirt.html" class="product-item">
-<img src="Burdury Front.png" alt="Burdury T-shirt">
+    <img src="Burdury Front.png" alt="Burdury T-shirt">
 </a>
 
+<!-- VINYL -->
+
 <a href="Second-Album-Vinyl.html" class="product-item vinyl">
+    <img src="Neutre-Vinyl.png" alt="Second Album Vinyl">
 
-<img src="Neutre-Vinyl.png" alt="Second Album Vinyl">
+    <div class="product-info">
+        <div class="preorder-badge">PRE-ORDER</div>
+        Second Album<br>
+        Vinyl
+    </div>
+</a>
 
-<div class="vinyl-info">
-<div class="preorder-badge">PRE-ORDER</div>
-Second Album<br>
-Vinyl
-</div>
+<!-- YOU COULD BE POSTER -->
 
+<a href="you-could-be-poster.html" class="product-item poster-item">
+    <img src="you-could-be_poster.png" alt="You Could Be Official Poster">
+
+    <div class="product-info">
+        You Could Be<br>
+        Official Poster<br>
+        30 × 30 cm
+        <span class="price">€24</span>
+    </div>
+</a>
+
+<!-- LONELY HEART POSTER -->
+
+<a href="lonely-heart-poster.html" class="product-item poster-item">
+    <img src="lonely-heart_poster.png" alt="Lonely Heart Official Poster">
+
+    <div class="product-info">
+        Lonely Heart<br>
+        Official Poster<br>
+        30 × 30 cm
+        <span class="price">€24</span>
+    </div>
 </a>
 
 </div>
 
 <footer class="social-footer">
 <a href="https://www.instagram.com/gotuzmusic" target="_blank">
-<img src="icons/instagram-bw.png">
+    <img src="icons/instagram-bw.png" alt="Instagram">
 </a>
 <a href="https://www.facebook.com/gotuzmusic" target="_blank">
-<img src="icons/facebook-bw.png">
+    <img src="icons/facebook-bw.png" alt="Facebook">
 </a>
 <a href="https://twitter.com/gotuzmusic" target="_blank">
-<img src="icons/twitter-bw.png">
+    <img src="icons/twitter-bw.png" alt="Twitter/X">
 </a>
 <a href="https://www.youtube.com/@gotuzmusic3389" target="_blank">
-<img src="icons/youtube-bw.png">
+    <img src="icons/youtube-bw.png" alt="YouTube">
 </a>
 </footer>
 
