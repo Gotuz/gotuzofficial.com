@@ -141,7 +141,7 @@ header a:hover {
 .revolver-stage {
     position: relative;
     width: 100%;
-    height: 620px;
+    height: 700px;
     overflow: hidden;
 }
 
@@ -156,6 +156,7 @@ header a:hover {
     will-change: transform, opacity;
     user-select: none;
     cursor: pointer;
+    text-align: center;
 }
 
 .revolver-item img {
@@ -179,24 +180,27 @@ header a:hover {
     transform: scale(1.015);
 }
 
-/* CAPTION DINAMICA */
-.revolver-caption {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
+/* CAPTION DENTRO IL BLOCCO */
+.item-caption {
+    margin-top: 14px;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
     pointer-events: none;
-    transition: top 0.4s ease;
-    width: 100%;
 }
 
-.revolver-caption .title {
+.revolver-item.center-active .item-caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.item-caption .title {
     font-size: 24px;
     letter-spacing: 2px;
     margin-bottom: 4px;
 }
 
-.revolver-caption .meta {
+.item-caption .meta {
     font-size: 13px;
     letter-spacing: 2px;
     opacity: 0.65;
@@ -206,7 +210,7 @@ header a:hover {
 /* CONTROLS AI LATI */
 .revolver-btn {
     position: absolute;
-    top: 46%;
+    top: 34%;
     transform: translateY(-50%);
     background: rgba(17,17,17,0.65);
     border: 1px solid rgba(243,239,230,0.35);
@@ -300,7 +304,7 @@ header a:hover {
     }
 
     .revolver-stage {
-        height: 470px;
+        height: 530px;
     }
 
     .revolver-item.cover,
@@ -316,7 +320,7 @@ header a:hover {
         right: 14px;
     }
 
-    .revolver-caption .title {
+    .item-caption .title {
         font-size: 20px;
     }
 }
@@ -336,7 +340,7 @@ header a:hover {
     }
 
     .revolver-stage {
-        height: 420px;
+        height: 470px;
     }
 
     .revolver-item.cover,
@@ -350,11 +354,11 @@ header a:hover {
         font-size: 24px;
     }
 
-    .revolver-caption .title {
+    .item-caption .title {
         font-size: 18px;
     }
 
-    .revolver-caption .meta {
+    .item-caption .meta {
         font-size: 12px;
     }
 }
@@ -387,27 +391,38 @@ header a:hover {
 
     <div class="revolver-stage" id="revolverStage">
 
-        <div class="revolver-item cover" data-type="cover" data-link="listen.html" data-title="You Could Be" data-meta="single, 2026">
+        <div class="revolver-item cover" data-type="cover" data-link="listen.html">
             <img src="you-could-be_artcover.png" alt="You Could Be cover art">
+            <div class="item-caption">
+                <div class="title">You Could Be</div>
+                <div class="meta">single, 2026</div>
+            </div>
         </div>
 
-        <div class="revolver-item poster" data-type="poster" data-link="shop.html" data-title="You Could Be" data-meta="27 March 2026<br>poster">
+        <div class="revolver-item poster" data-type="poster" data-link="shop.html">
             <img src="you-could-be_poster.png" alt="You Could Be poster">
+            <div class="item-caption">
+                <div class="title">You Could Be</div>
+                <div class="meta">27 March 2026<br>poster</div>
+            </div>
         </div>
 
-        <div class="revolver-item cover" data-type="cover" data-link="listen.html" data-title="Lonely Heart" data-meta="single, 2026">
+        <div class="revolver-item cover" data-type="cover" data-link="listen.html">
             <img src="lonely-heart_artcover.png" alt="Lonely Heart cover art">
+            <div class="item-caption">
+                <div class="title">Lonely Heart</div>
+                <div class="meta">single, 2026</div>
+            </div>
         </div>
 
-        <div class="revolver-item poster" data-type="poster" data-link="shop.html" data-title="Lonely Heart" data-meta="21 April 2026<br>poster">
+        <div class="revolver-item poster" data-type="poster" data-link="shop.html">
             <img src="lonely-heart_poster.png" alt="Lonely Heart poster">
+            <div class="item-caption">
+                <div class="title">Lonely Heart</div>
+                <div class="meta">21 April 2026<br>poster</div>
+            </div>
         </div>
 
-    </div>
-
-    <div class="revolver-caption" id="revolverCaption">
-        <div class="title"></div>
-        <div class="meta"></div>
     </div>
 </section>
 
@@ -432,13 +447,18 @@ header a:hover {
 </footer>
 
 <script>
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+    updateRevolver();
+});
+
 const items = Array.from(document.querySelectorAll('.revolver-item'));
-const stage = document.getElementById('revolverStage');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
-const captionTitle = document.querySelector('#revolverCaption .title');
-const captionMeta = document.querySelector('#revolverCaption .meta');
-const captionBox = document.getElementById('revolverCaption');
 
 /* centro iniziale = lonely-heart_artcover.png */
 let activeIndex = 2;
@@ -461,7 +481,7 @@ function updateRevolver() {
     const isMobile = window.innerWidth <= 480;
     const isTablet = window.innerWidth <= 768;
 
-    const centerY = -55;
+    const centerY = -70;
 
     let pos1 = 255;
     let pos2 = 455;
@@ -526,15 +546,6 @@ function updateRevolver() {
         item.classList.remove('center-active');
         if (rel === 0) item.classList.add('center-active');
     });
-
-    const active = items[activeIndex];
-    captionTitle.textContent = active.dataset.title || '';
-    captionMeta.innerHTML = active.dataset.meta || '';
-
-    const rect = active.getBoundingClientRect();
-    const stageRect = stage.getBoundingClientRect();
-    const topPosition = rect.bottom - stageRect.top + 15;
-    captionBox.style.top = topPosition + 'px';
 }
 
 function nextItem() {
@@ -547,8 +558,8 @@ function prevItem() {
     updateRevolver();
 }
 
-nextBtn.addEventListener('click', nextItem);
 prevBtn.addEventListener('click', prevItem);
+nextBtn.addEventListener('click', nextItem);
 
 items.forEach((item, i) => {
     item.addEventListener('click', () => {
@@ -567,7 +578,6 @@ items.forEach((item, i) => {
 });
 
 window.addEventListener('resize', updateRevolver);
-window.addEventListener('load', updateRevolver);
 </script>
 
 </body>
