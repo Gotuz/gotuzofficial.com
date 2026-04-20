@@ -17,7 +17,7 @@ body {
     text-align: center;
 }
 
-/* FIX LINK BLU */
+/* FIX LINK */
 a {
     color: #F3EFE6;
     text-decoration: none;
@@ -32,7 +32,6 @@ header {
     letter-spacing: 2px;
     font-size: 20px;
     z-index: 1000;
-
     display: flex;
     justify-content: center;
     gap: 50px;
@@ -47,7 +46,7 @@ header a:hover {
 
 .hero {
     margin-top: 180px;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
 }
 
 .hero h1 {
@@ -64,8 +63,8 @@ header a:hover {
 
 .hero p {
     font-size: 14px;
-    opacity: 0.6;
     letter-spacing: 2px;
+    opacity: 0.6;
 }
 
 /* GOLD BUTTON ORIGINALE */
@@ -94,55 +93,67 @@ header a:hover {
     border: 1px solid #8B0000;
 }
 
-/* 🎵 TRUE REVOLVER STYLE */
+/* 🎵 APPLE FLOW */
 
-.carousel {
-    display: flex;
-    overflow-x: auto;
-    gap: 80px;
-    padding: 40px 60px 120px;
-
-    scroll-snap-type: x mandatory;
+.flow-wrapper {
+    perspective: 1200px;
+    margin: 40px 0 120px;
+    overflow: hidden;
 }
 
-.carousel::-webkit-scrollbar {
+.flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 40px calc(50% - 150px);
+}
+
+.flow::-webkit-scrollbar {
     display: none;
 }
 
-.item {
+/* ITEM */
+
+.flow-item {
     flex: 0 0 auto;
-    width: 300px;
-    scroll-snap-align: center;
-
-    transition: transform 0.3s;
+    width: 260px;
+    transition: transform 0.4s, opacity 0.4s;
+    transform-style: preserve-3d;
 }
 
-/* effetto "focus" */
-
-.item:hover {
-    transform: scale(1.05);
-}
-
-/* POSTER GRANDE */
+/* POSTER */
 
 .poster {
     width: 100%;
     border-radius: 6px;
 }
 
-/* COVER PIÙ PICCOLA */
+/* COVER */
 
 .cover {
-    width: 75%;
+    width: 70%;
     margin-top: 15px;
     border-radius: 6px;
-    cursor: pointer;
-    transition: 0.3s;
 }
 
-.cover:hover {
-    transform: scale(1.06);
-    opacity: 0.85;
+/* STATO */
+
+.flow-item.center {
+    transform: scale(1.2) rotateY(0deg);
+    opacity: 1;
+}
+
+.flow-item.left {
+    transform: scale(0.85) rotateY(25deg);
+    opacity: 0.5;
+}
+
+.flow-item.right {
+    transform: scale(0.85) rotateY(-25deg);
+    opacity: 0.5;
 }
 
 /* FOOTER ORIGINALE */
@@ -182,8 +193,7 @@ header a:hover {
     .hero h1 { font-size: 60px; }
     .hero h2 { font-size: 20px; }
 
-    .item { width: 220px; }
-    .carousel { gap: 40px; padding: 20px; }
+    .flow-item { width: 200px; }
 }
 
 </style>
@@ -211,24 +221,22 @@ header a:hover {
 </div>
 </div>
 
-<!-- 🎵 CAROUSEL -->
+<!-- 🎵 FLOW -->
 
-<div class="carousel">
+<div class="flow-wrapper">
+<div class="flow" id="flow">
 
-<div class="item">
+<div class="flow-item">
 <img src="you-could-be_poster.png" class="poster">
-<a href="listen.html">
 <img src="you-could-be_artcover.png" class="cover">
-</a>
 </div>
 
-<div class="item">
+<div class="flow-item">
 <img src="lonely-heart_poster.png" class="poster">
-<a href="listen.html">
 <img src="lonely-heart_artcover.png" class="cover">
-</a>
 </div>
 
+</div>
 </div>
 
 <footer class="social-footer">
@@ -242,6 +250,37 @@ header a:hover {
 © 2026 GOTUZ
 <a href="privacy.html">Privacy Policy</a>
 </footer>
+
+<script>
+
+/* FLOW LOGIC */
+
+const flow = document.getElementById('flow');
+const items = document.querySelectorAll('.flow-item');
+
+function updateFlow() {
+    const center = flow.scrollLeft + flow.offsetWidth / 2;
+
+    items.forEach(item => {
+        const itemCenter = item.offsetLeft + item.offsetWidth / 2;
+        const dist = itemCenter - center;
+
+        item.classList.remove('left','right','center');
+
+        if (Math.abs(dist) < 100) {
+            item.classList.add('center');
+        } else if (dist < 0) {
+            item.classList.add('left');
+        } else {
+            item.classList.add('right');
+        }
+    });
+}
+
+flow.addEventListener('scroll', updateFlow);
+window.addEventListener('load', updateFlow);
+
+</script>
 
 </body>
 </html>
