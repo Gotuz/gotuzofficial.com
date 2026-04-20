@@ -17,32 +17,25 @@ body {
     text-align: center;
 }
 
-/* FIX LINK */
 a {
     color: #F3EFE6;
     text-decoration: none;
 }
 
-/* HEADER ORIGINALE */
+/* HEADER */
 
 header {
     position: absolute;
     top: 40px;
     width: 100%;
-    letter-spacing: 2px;
     font-size: 20px;
-    z-index: 1000;
+    letter-spacing: 2px;
     display: flex;
     justify-content: center;
     gap: 50px;
-    flex-wrap: wrap;
 }
 
-header a:hover {
-    border-bottom: 1px solid #F3EFE6;
-}
-
-/* HERO ORIGINALE */
+/* HERO */
 
 .hero {
     margin-top: 180px;
@@ -63,65 +56,39 @@ header a:hover {
 
 .hero p {
     font-size: 14px;
-    letter-spacing: 2px;
     opacity: 0.6;
 }
 
-/* GOLD BUTTON ORIGINALE */
+/* BUTTON */
 
 .buttons a {
     font-family: 'Playfair Display', serif;
     font-size: 18px;
-    letter-spacing: 3px;
     padding: 14px 38px;
-    display: inline-block;
-
     background: linear-gradient(145deg,#bfa24a,#e6c86a,#caa94f,#a88935);
     color: #111;
-    border: 1px solid #caa94f;
-
-    box-shadow:
-        0 0 8px rgba(212,175,55,0.35),
-        0 4px 10px rgba(0,0,0,0.5);
-
-    transition: 0.3s;
 }
 
-.buttons a:hover {
-    background: transparent;
-    color: #d6b85a;
-    border: 1px solid #8B0000;
-}
+/* 🎯 TRUE COVERFLOW */
 
-/* 🎵 APPLE FLOW */
-
-.flow-wrapper {
-    perspective: 1200px;
-    margin: 40px 0 120px;
-    overflow: hidden;
-}
-
-.flow {
+.coverflow {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
     overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 40px calc(50% - 150px);
+    scroll-snap-type: x mandatory;
+
+    padding: 40px calc(50% - 160px);
+    gap: 40px;
 }
 
-.flow::-webkit-scrollbar {
+.coverflow::-webkit-scrollbar {
     display: none;
 }
 
-/* ITEM */
-
-.flow-item {
+.item {
     flex: 0 0 auto;
-    width: 260px;
-    transition: transform 0.4s, opacity 0.4s;
-    transform-style: preserve-3d;
+    width: 320px;
+    scroll-snap-align: center;
+    transition: transform 0.4s;
 }
 
 /* POSTER */
@@ -139,27 +106,10 @@ header a:hover {
     border-radius: 6px;
 }
 
-/* STATO */
-
-.flow-item.center {
-    transform: scale(1.2) rotateY(0deg);
-    opacity: 1;
-}
-
-.flow-item.left {
-    transform: scale(0.85) rotateY(25deg);
-    opacity: 0.5;
-}
-
-.flow-item.right {
-    transform: scale(0.85) rotateY(-25deg);
-    opacity: 0.5;
-}
-
-/* FOOTER ORIGINALE */
+/* FOOTER */
 
 .social-footer {
-    margin-bottom: 20px;
+    margin: 40px 0 10px;
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -168,12 +118,6 @@ header a:hover {
 .social-footer img {
     width: 25px;
     opacity: 0.7;
-    transition: 0.2s;
-}
-
-.social-footer img:hover {
-    transform: scale(1.2);
-    opacity: 1;
 }
 
 .legal-footer {
@@ -182,18 +126,12 @@ header a:hover {
     margin-bottom: 30px;
 }
 
-.legal-footer a:hover {
-    border-bottom: 1px solid #F3EFE6;
-}
-
 /* MOBILE */
 
 @media (max-width:768px){
-
     .hero h1 { font-size: 60px; }
-    .hero h2 { font-size: 20px; }
-
-    .flow-item { width: 200px; }
+    .coverflow { padding: 20px calc(50% - 120px); }
+    .item { width: 240px; }
 }
 
 </style>
@@ -209,8 +147,6 @@ header a:hover {
 <a href="news.html">NEWS</a>
 </header>
 
-<!-- HERO -->
-
 <div class="hero">
 <h1>GOTUZ</h1>
 <h2>SECOND ALBUM</h2>
@@ -221,66 +157,37 @@ header a:hover {
 </div>
 </div>
 
-<!-- 🎵 FLOW -->
+<!-- 🎵 COVERFLOW REALE -->
 
-<div class="flow-wrapper">
-<div class="flow" id="flow">
+<div class="coverflow">
 
-<div class="flow-item">
+<div class="item">
 <img src="you-could-be_poster.png" class="poster">
 <img src="you-could-be_artcover.png" class="cover">
 </div>
 
-<div class="flow-item">
+<div class="item">
 <img src="lonely-heart_poster.png" class="poster">
 <img src="lonely-heart_artcover.png" class="cover">
 </div>
 
+<div class="item">
+<img src="you-could-be_poster.png" class="poster">
+<img src="you-could-be_artcover.png" class="cover">
 </div>
+
 </div>
 
 <footer class="social-footer">
-<a href="https://www.instagram.com/gotuzmusic"><img src="icons/instagram-bw.png"></a>
-<a href="https://www.facebook.com/gotuzmusic"><img src="icons/facebook-bw.png"></a>
-<a href="https://twitter.com/gotuzmusic"><img src="icons/twitter-bw.png"></a>
-<a href="https://www.youtube.com/@gotuzmusic3389"><img src="icons/youtube-bw.png"></a>
+<a href="#"><img src="icons/instagram-bw.png"></a>
+<a href="#"><img src="icons/facebook-bw.png"></a>
+<a href="#"><img src="icons/twitter-bw.png"></a>
+<a href="#"><img src="icons/youtube-bw.png"></a>
 </footer>
 
 <footer class="legal-footer">
-© 2026 GOTUZ
-<a href="privacy.html">Privacy Policy</a>
+© 2026 GOTUZ | <a href="privacy.html">Privacy Policy</a>
 </footer>
-
-<script>
-
-/* FLOW LOGIC */
-
-const flow = document.getElementById('flow');
-const items = document.querySelectorAll('.flow-item');
-
-function updateFlow() {
-    const center = flow.scrollLeft + flow.offsetWidth / 2;
-
-    items.forEach(item => {
-        const itemCenter = item.offsetLeft + item.offsetWidth / 2;
-        const dist = itemCenter - center;
-
-        item.classList.remove('left','right','center');
-
-        if (Math.abs(dist) < 100) {
-            item.classList.add('center');
-        } else if (dist < 0) {
-            item.classList.add('left');
-        } else {
-            item.classList.add('right');
-        }
-    });
-}
-
-flow.addEventListener('scroll', updateFlow);
-window.addEventListener('load', updateFlow);
-
-</script>
 
 </body>
 </html>
