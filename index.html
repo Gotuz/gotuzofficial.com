@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GOTUZ</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -21,16 +21,15 @@ body {
 
 header {
     position: absolute;
-    top: 40px;
+    top: 30px;
     width: 100%;
+    font-size: 18px;
     letter-spacing: 2px;
-    font-size: 20px;
-    z-index: 1000;
 
     display: flex;
     justify-content: center;
-    gap: 50px;
-    flex-wrap: wrap;
+    gap: 40px;
+    z-index: 1000;
 }
 
 header a {
@@ -45,65 +44,89 @@ header a:hover {
 /* HERO */
 
 .hero {
-    margin-top: 140px;
-    margin-bottom: 80px;
+    padding: 140px 20px 80px;
 }
 
 .hero h1 {
-    font-size: 90px;
+    font-size: 80px;
     letter-spacing: 6px;
     margin: 0;
 }
 
 .hero h2 {
-    font-size: 26px;
+    font-size: 22px;
     letter-spacing: 4px;
-    margin-top: 10px;
+    margin: 10px 0;
 }
 
-/* SINGLES */
+.hero p {
+    font-size: 14px;
+    letter-spacing: 2px;
+    opacity: 0.6;
+}
 
-.singles {
+/* PRE SAVE BUTTON */
+
+.presave-btn {
+    margin-top: 25px;
+    display: inline-block;
+    padding: 10px 22px;
+    border: 1px solid #F3EFE6;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #F3EFE6;
+    transition: 0.2s;
+}
+
+.presave-btn:hover {
+    background: #F3EFE6;
+    color: #111;
+}
+
+/* SINGLES SCROLL */
+
+.singles-scroll {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 120px;
-    padding-bottom: 120px;
+    overflow-x: auto;
+    gap: 40px;
+    padding: 40px 20px 100px;
+
+    scroll-snap-type: x mandatory;
 }
 
-/* SINGLE BLOCK */
+/* nasconde scrollbar su mobile */
+.singles-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* SINGLE */
 
 .single {
-    position: relative;
+    min-width: 260px;
+    scroll-snap-align: center;
 }
 
 /* POSTER */
 
 .poster {
-    width: 420px;
-    max-width: 90vw;
+    width: 100%;
     border-radius: 4px;
+    margin-bottom: 15px;
 }
 
-/* COVER OVERLAY */
-
-.cover-link {
-    position: absolute;
-    bottom: -40px;
-    right: -40px;
-}
+/* COVER */
 
 .cover {
-    width: 200px;
+    width: 100%;
     border-radius: 4px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
     transition: 0.3s;
     cursor: pointer;
 }
 
 .cover:hover {
-    transform: scale(1.08);
-    opacity: 0.9;
+    transform: scale(1.05);
+    opacity: 0.85;
 }
 
 /* FOOTER */
@@ -149,24 +172,15 @@ header a:hover {
 @media (max-width: 768px) {
 
     .hero h1 {
-        font-size: 60px;
+        font-size: 50px;
     }
 
     .hero h2 {
         font-size: 18px;
     }
 
-    .poster {
-        width: 300px;
-    }
-
-    .cover {
-        width: 150px;
-    }
-
-    .cover-link {
-        bottom: -30px;
-        right: -20px;
+    .single {
+        min-width: 200px;
     }
 }
 
@@ -183,37 +197,49 @@ header a:hover {
 <a href="news.html">NEWS</a>
 </header>
 
+<!-- HERO -->
+
 <div class="hero">
 <h1>GOTUZ</h1>
 <h2>SECOND ALBUM</h2>
+<p>estimate date: end 2026</p>
+
+<a href="#" class="presave-btn">PRE-SAVE</a>
 </div>
 
-<div class="singles">
+<!-- SINGLES -->
+
+<div class="singles-scroll">
 
 <!-- YOU COULD BE -->
 
 <div class="single">
-
 <img src="you-could-be_poster.png" class="poster">
 
-<a href="listen.html" class="cover-link">
+<a href="listen.html">
 <img src="you-could-be_artcover.png" class="cover">
 </a>
-
 </div>
-
 
 <!-- LONELY HEART -->
 
 <div class="single">
-
 <img src="lonely-heart_poster.png" class="poster">
 
-<a href="listen.html" class="cover-link">
+<a href="listen.html">
 <img src="lonely-heart_artcover.png" class="cover">
 </a>
-
 </div>
+
+<!-- FUTURO SINGOLO -->
+<!--
+<div class="single">
+<img src="next_poster.png" class="poster">
+<a href="listen.html">
+<img src="next_cover.png" class="cover">
+</a>
+</div>
+-->
 
 </div>
 
