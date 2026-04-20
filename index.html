@@ -29,7 +29,6 @@ a {
 }
 
 /* HEADER ORIGINALE */
-
 header {
     position: absolute;
     top: 40px;
@@ -49,7 +48,6 @@ header a:hover {
 }
 
 /* HERO ORIGINALE */
-
 .hero {
     margin-top: 180px;
     margin-bottom: 70px;
@@ -88,7 +86,6 @@ header a:hover {
 }
 
 /* GOLD BUTTON ORIGINALE */
-
 .buttons a {
     font-family: 'Playfair Display', serif;
     font-size: 18px;
@@ -98,23 +95,13 @@ header a:hover {
     display: inline-block;
     position: relative;
     overflow: hidden;
-
-    background: linear-gradient(
-        145deg,
-        #bfa24a,
-        #e6c86a,
-        #caa94f,
-        #a88935
-    );
-
+    background: linear-gradient(145deg, #bfa24a, #e6c86a, #caa94f, #a88935);
     color: #111;
     border: 1px solid #caa94f;
     border-radius: 2px;
-
     box-shadow:
         0 0 8px rgba(212,175,55,0.35),
         0 4px 10px rgba(0,0,0,0.5);
-
     transition: all 0.35s ease;
 }
 
@@ -125,12 +112,7 @@ header a:hover {
     left: -120%;
     width: 60%;
     height: 100%;
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,0.4),
-        transparent
-    );
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
     animation: shimmer 4.5s infinite;
 }
 
@@ -150,7 +132,6 @@ header a:hover {
 }
 
 /* REVOLVER */
-
 .revolver-section {
     position: relative;
     width: 100%;
@@ -170,9 +151,9 @@ header a:hover {
     left: 50%;
     transform-origin: center center;
     transition:
-        transform 0.45s ease,
-        opacity 0.45s ease,
-        filter 0.45s ease;
+        transform 0.5s ease,
+        opacity 0.5s ease,
+        filter 0.5s ease;
     will-change: transform, opacity;
     user-select: none;
     cursor: pointer;
@@ -188,16 +169,10 @@ header a:hover {
 
 .revolver-item.cover {
     width: 360px;
-    z-index: 5;
 }
 
 .revolver-item.poster {
     width: 270px;
-    z-index: 4;
-}
-
-.revolver-item.center-active {
-    cursor: pointer;
 }
 
 .revolver-item.center-active:hover img {
@@ -205,7 +180,6 @@ header a:hover {
 }
 
 /* CONTROLS */
-
 .revolver-controls {
     margin-top: 12px;
     display: flex;
@@ -239,7 +213,6 @@ header a:hover {
 }
 
 /* FOOTERS ORIGINALI */
-
 .social-footer {
     display: flex;
     justify-content: center;
@@ -279,7 +252,6 @@ header a:hover {
 }
 
 /* MOBILE */
-
 @media (max-width: 768px) {
     header {
         font-size: 16px;
@@ -365,13 +337,6 @@ header a:hover {
 <section class="revolver-section">
     <div class="revolver-stage" id="revolverStage">
 
-        <!-- ordine circolare:
-             0 = you-could-be_artcover
-             1 = you-could-be_poster
-             2 = lonely-heart_artcover  (centro iniziale)
-             3 = lonely-heart_poster
-        -->
-
         <div class="revolver-item cover" data-type="cover" data-link="listen.html">
             <img src="you-could-be_artcover.png" alt="You Could Be cover art">
         </div>
@@ -419,80 +384,85 @@ header a:hover {
 
 <script>
 const items = Array.from(document.querySelectorAll('.revolver-item'));
-const stage = document.getElementById('revolverStage');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 
-/* centro iniziale = lonely-heart_artcover.png, indice 2 */
+/* centro iniziale = lonely-heart_artcover.png */
 let activeIndex = 2;
 
 function mod(n, m) {
     return ((n % m) + m) % m;
 }
 
+function offsetFromActive(index) {
+    const n = items.length;
+    const right = mod(index - activeIndex, n);
+    const left = mod(activeIndex - index, n);
+
+    if (index === activeIndex) return 0;
+    if (right <= left) return right;   // lato destro: 1,2,...
+    return -left;                      // lato sinistro: -1,-2,...
+}
+
 function updateRevolver() {
     const isMobile = window.innerWidth <= 480;
     const isTablet = window.innerWidth <= 768;
 
-    const centerY = -50;
+    const centerY = -45;
 
-    let nearOffset = 255;
-    let farOffset = 430;
-    let nearScale = 0.82;
-    let farScale = 0.64;
-    let nearRotate = 20;
-    let farRotate = 32;
-    let centerScale = 1.12;
+    let pos1 = 250;
+    let pos2 = 430;
+    let scaleCenter = 1.14;
+    let scale1 = 0.84;
+    let scale2 = 0.66;
+    let rot1 = 18;
+    let rot2 = 30;
+    let op1 = 0.70;
+    let op2 = 0.34;
 
     if (isTablet) {
-        nearOffset = 185;
-        farOffset = 310;
-        nearScale = 0.76;
-        farScale = 0.56;
-        nearRotate = 16;
-        farRotate = 24;
-        centerScale = 1.08;
+        pos1 = 180;
+        pos2 = 315;
+        scaleCenter = 1.08;
+        scale1 = 0.78;
+        scale2 = 0.60;
+        rot1 = 15;
+        rot2 = 24;
     }
 
     if (isMobile) {
-        nearOffset = 150;
-        farOffset = 245;
-        nearScale = 0.72;
-        farScale = 0.52;
-        nearRotate = 14;
-        farRotate = 22;
-        centerScale = 1.05;
+        pos1 = 150;
+        pos2 = 245;
+        scaleCenter = 1.04;
+        scale1 = 0.74;
+        scale2 = 0.56;
+        rot1 = 13;
+        rot2 = 20;
     }
 
     items.forEach((item, i) => {
-        let rel = i - activeIndex;
-
-        if (rel > items.length / 2) rel -= items.length;
-        if (rel < -items.length / 2) rel += items.length;
+        const rel = offsetFromActive(i);
 
         let transform = `translate(-50%, -50%) translate(0px, ${centerY}px) scale(0.45) rotateY(0deg)`;
         let opacity = 0;
         let zIndex = 1;
 
         if (rel === 0) {
-            transform = `translate(-50%, -50%) translate(0px, ${centerY}px) scale(${centerScale}) rotateY(0deg)`;
+            transform = `translate(-50%, -50%) translate(0px, ${centerY}px) scale(${scaleCenter}) rotateY(0deg)`;
             opacity = 1;
             zIndex = 10;
         } else if (rel === 1) {
-            transform = `translate(-50%, -50%) translate(${nearOffset}px, ${centerY + 10}px) scale(${nearScale}) rotateY(-${nearRotate}deg)`;
-            opacity = 0.68;
+            transform = `translate(-50%, -50%) translate(${pos1}px, ${centerY + 10}px) scale(${scale1}) rotateY(-${rot1}deg)`;
+            opacity = op1;
             zIndex = 8;
         } else if (rel === -1) {
-            transform = `translate(-50%, -50%) translate(-${nearOffset}px, ${centerY + 10}px) scale(${nearScale}) rotateY(${nearRotate}deg)`;
-            opacity = 0.68;
+            transform = `translate(-50%, -50%) translate(-${pos1}px, ${centerY + 10}px) scale(${scale1}) rotateY(${rot1}deg)`;
+            opacity = op1;
             zIndex = 8;
-        } else if (rel === 2) {
-            transform = `translate(-50%, -50%) translate(${farOffset}px, ${centerY + 22}px) scale(${farScale}) rotateY(-${farRotate}deg)`;
-            opacity = 0.32;
-            zIndex = 6;
-        } else if (rel === -2) {
-            transform = `translate(-50%, -50%) translate(-${farOffset}px, ${centerY + 22}px) scale(${farScale}) rotateY(${farRotate}deg)`;
-            opacity = 0.32;
+        } else if (rel === 2 || rel === -2) {
+            const dir = rel > 0 ? 1 : -1;
+            transform = `translate(-50%, -50%) translate(${dir * pos2}px, ${centerY + 24}px) scale(${scale2}) rotateY(${dir > 0 ? -rot2 : rot2}deg)`;
+            opacity = op2;
             zIndex = 6;
         }
 
@@ -501,10 +471,7 @@ function updateRevolver() {
         item.style.zIndex = zIndex;
 
         item.classList.remove('center-active');
-
-        if (rel === 0) {
-            item.classList.add('center-active');
-        }
+        if (rel === 0) item.classList.add('center-active');
     });
 }
 
@@ -523,7 +490,9 @@ prevBtn.addEventListener('click', prevItem);
 
 items.forEach((item, i) => {
     item.addEventListener('click', () => {
-        if (i === activeIndex) {
+        const rel = offsetFromActive(i);
+
+        if (rel === 0) {
             if (item.dataset.type === 'cover' && item.dataset.link) {
                 window.location.href = item.dataset.link;
             }
