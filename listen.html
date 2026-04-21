@@ -23,8 +23,6 @@ body {
     to { opacity: 1; }
 }
 
-a { color: #F3EFE6; text-decoration: none; }
-
 header {
     position: absolute;
     top: 40px;
@@ -34,6 +32,11 @@ header {
     display: flex;
     justify-content: center;
     gap: 50px;
+}
+
+header a {
+    color: #F3EFE6;
+    text-decoration: none;
 }
 
 header a:hover {
@@ -52,24 +55,6 @@ header a:hover {
     gap: 60px;
     margin-bottom: 110px;
     flex-wrap: wrap;
-
-    opacity: 0;
-    transform: translateY(30px);
-    animation: reveal 1s ease forwards;
-}
-
-.release:nth-child(1) { animation-delay: 0.2s; }
-.release:nth-child(2) { animation-delay: 0.4s; }
-.release:nth-child(3) { animation-delay: 0.6s; }
-.release:nth-child(4) { animation-delay: 0.8s; }
-.release:nth-child(5) { animation-delay: 1s; }
-.release:nth-child(6) { animation-delay: 1.2s; }
-
-@keyframes reveal {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .release img {
@@ -122,65 +107,35 @@ header a:hover {
 .buttons a:hover {
     background: #F3EFE6;
     color: #111;
-    transform: translateY(-2px);
 }
 
-/* MODAL */
-.listen-modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.85);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
+/* VIDEO BLOCK */
+
+.video-block {
+    max-width: 720px;
+    margin: 0 auto 120px;
 }
 
-.listen-modal.active {
-    display: flex;
-}
-
-.listen-box {
-    width: 90%;
-    max-width: 700px;
-    background: #161616;
-    padding: 30px;
-}
-
-.listen-close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 28px;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-}
-
-.platforms {
-    margin-top: 20px;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.platforms a {
-    border: 1px solid #F3EFE6;
-    padding: 8px 14px;
-    font-size: 13px;
-}
-
-.platforms a:hover {
-    background: #F3EFE6;
-    color: #111;
-}
-
-.youtube iframe {
+.video-block iframe {
     width: 100%;
-    height: 380px;
+    height: 400px;
     border: none;
+}
+
+.video-info {
+    margin-top: 20px;
+}
+
+.video-title {
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+.video-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    opacity: 0.7;
+    margin-bottom: 15px;
 }
 
 </style>
@@ -241,52 +196,53 @@ header a:hover {
 </div>
 
 <!-- INVISIBLE HARP -->
-<div class="release">
-<img src="you-could-be_artcover.png">
-<div class="release-info">
-<div class="release-title">Invisible Harp</div>
-<div class="release-sub">My invention · 2019</div>
+<div class="video-block">
+<iframe src="https://www.youtube.com/embed/9FoSzz6V4_Y" allowfullscreen></iframe>
 
-<div class="buttons">
-<a href="https://www.youtube.com/watch?v=9FoSzz6V4_Y" target="_blank">WATCH</a>
-</div>
+<div class="video-info">
+<div class="video-title">Invisible Harp</div>
+<div class="video-sub">My invention · 2019</div>
 </div>
 </div>
 
 <!-- WRONG WAY -->
-<div class="release">
-<img src="you-could-be_artcover.png">
-<div class="release-info">
-<div class="release-title">Wrong Way</div>
-<div class="release-sub">Video · 2016</div>
+<div class="video-block">
+<iframe src="https://www.youtube.com/embed/h07ibFCIYkQ" allowfullscreen></iframe>
+
+<div class="video-info">
+<div class="video-title">Wrong Way</div>
+<div class="video-sub">Single · 2016</div>
 
 <div class="buttons">
-<a href="https://www.youtube.com/watch?v=h07ibFCIYkQ&list=RDh07ibFCIYkQ&start_radio=1" target="_blank">WATCH</a>
-</div>
-</div>
-</div>
-
-<!-- GLOW YELLOW -->
-<div class="release">
-<img src="you-could-be_artcover.png">
-<div class="release-info">
-<div class="release-title">Glow Yellow</div>
-<div class="release-sub">Single · 2016</div>
-
-<div class="buttons">
-<a href="https://www.youtube.com/watch?v=TW-n_2nTi-A&list=RDTW-n_2nTi-A&start_radio=1" target="_blank">LISTEN</a>
+<a href="https://gotuz.bandcamp.com/track/wrong-way" target="_blank">BUY</a>
 </div>
 </div>
 </div>
 
 <!-- MEMORY -->
-<div class="release">
-<div class="release-info" style="text-align:center; max-width:700px;">
-<div class="release-title">Memory</div>
-<div class="release-sub">First Album · 2016</div>
-
-<div class="youtube">
+<div class="video-block">
 <iframe src="https://www.youtube.com/embed/videoseries?list=OLAK5uy_k5vCl8Vq1KOUSpyfGoDJ5Kkd9mhy8Mf_w"></iframe>
+
+<div class="video-info">
+<div class="video-title">Memory</div>
+<div class="video-sub">First Album · 2016</div>
+
+<div class="buttons">
+<a href="https://gotuz.bandcamp.com/album/memory" target="_blank">BUY</a>
+</div>
+</div>
+</div>
+
+<!-- GLOW YELLOW -->
+<div class="video-block">
+<iframe src="https://www.youtube.com/embed/TW-n_2nTi-A" allowfullscreen></iframe>
+
+<div class="video-info">
+<div class="video-title">Glow Yellow</div>
+<div class="video-sub">Single · 2016</div>
+
+<div class="buttons">
+<a href="https://gotuz.bandcamp.com/track/glow-yellow" target="_blank">BUY</a>
 </div>
 </div>
 </div>
@@ -296,7 +252,7 @@ header a:hover {
 <!-- MODAL -->
 <div class="listen-modal" id="modal">
 <div class="listen-box">
-<button class="listen-close" onclick="closeModal()">×</button>
+<button onclick="closeModal()">×</button>
 
 <h2 id="modalTitle"></h2>
 
