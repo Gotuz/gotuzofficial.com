@@ -8,9 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-
-/* BASE */
-
 body {
     margin: 0;
     background: #111;
@@ -19,7 +16,7 @@ body {
     text-align: center;
 }
 
-/* HEADER */
+a { color: #F3EFE6; text-decoration: none; }
 
 header {
     position: absolute;
@@ -32,30 +29,19 @@ header {
     gap: 50px;
 }
 
-header a {
-    color: #F3EFE6;
-    text-decoration: none;
-}
-
-header a:hover {
-    border-bottom: 1px solid #F3EFE6;
-}
-
-/* SECTION */
+header a:hover { border-bottom: 1px solid #F3EFE6; }
 
 .section {
-    margin-top: 140px;
-    padding: 0 20px;
+    margin-top: 150px;
+    padding: 0 20px 80px;
 }
-
-/* RELEASE BLOCK */
 
 .release {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 60px;
-    margin-bottom: 100px;
+    margin-bottom: 110px;
     flex-wrap: wrap;
 }
 
@@ -64,26 +50,22 @@ header a:hover {
     border-radius: 6px;
 }
 
-/* TEXT */
-
 .release-info {
     text-align: left;
-    max-width: 300px;
+    max-width: 320px;
 }
 
 .release-title {
-    font-size: 26px;
-    margin-bottom: 10px;
+    font-size: 28px;
+    margin-bottom: 8px;
 }
 
 .release-sub {
     font-family: 'Inter', sans-serif;
     font-size: 14px;
     opacity: 0.7;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
-
-/* BUTTONS */
 
 .buttons {
     display: flex;
@@ -91,32 +73,76 @@ header a:hover {
     flex-wrap: wrap;
 }
 
+.buttons button,
 .buttons a {
-    text-decoration: none;
-    padding: 10px 24px;
+    background: transparent;
+    color: #F3EFE6;
     border: 1px solid #F3EFE6;
+    padding: 10px 22px;
     font-size: 14px;
     letter-spacing: 2px;
+    cursor: pointer;
     transition: 0.2s;
 }
 
+.buttons button:hover,
 .buttons a:hover {
     background: #F3EFE6;
     color: #111;
 }
 
-/* FIRST ALBUM */
-
-.album-section {
-    margin-top: 120px;
+/* MODAL */
+.listen-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
 }
 
-.album-title {
-    font-size: 22px;
-    margin-bottom: 30px;
-    letter-spacing: 2px;
+.listen-modal.active { display: flex; }
+
+.listen-box {
+    width: 90%;
+    max-width: 700px;
+    background: #161616;
+    padding: 30px;
+    position: relative;
 }
 
+.listen-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.platforms {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.platforms a {
+    border: 1px solid #F3EFE6;
+    padding: 8px 14px;
+    font-size: 13px;
+}
+
+.platforms a:hover {
+    background: #F3EFE6;
+    color: #111;
+}
+
+/* YOUTUBE */
 .youtube {
     max-width: 700px;
     margin: 0 auto;
@@ -126,43 +152,6 @@ header a:hover {
     width: 100%;
     height: 380px;
     border: none;
-}
-
-/* FOOTER */
-
-.social-footer {
-    margin-top: 80px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.social-footer img {
-    width: 25px;
-    opacity: 0.7;
-}
-
-.legal-footer {
-    padding: 20px;
-    font-size: 12px;
-    opacity: 0.6;
-}
-
-/* MOBILE */
-
-@media (max-width: 768px) {
-    .release {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .release img {
-        width: 260px;
-    }
-
-    .release-info {
-        text-align: center;
-    }
 }
 
 </style>
@@ -181,63 +170,107 @@ header a:hover {
 <div class="section">
 
 <!-- LONELY HEART -->
-
 <div class="release">
 <img src="lonely-heart_artcover.png">
-
 <div class="release-info">
 <div class="release-title">Lonely Heart</div>
 <div class="release-sub">Single · 2026</div>
 
 <div class="buttons">
-<a href="#" target="_blank">LISTEN</a>
+<button onclick="openModal(
+'Lonely Heart',
+'https://open.spotify.com/embed/album/3MTYAwHyoxg9CwWm9j1MxV',
+'https://open.spotify.com/album/3MTYAwHyoxg9CwWm9j1MxV',
+'#',
+'https://youtu.be/XhRkjo1w2VU'
+)">LISTEN</button>
+
 <a href="lonely-heart-poster.html">BUY</a>
 </div>
-
 </div>
 </div>
 
 <!-- YOU COULD BE -->
-
 <div class="release">
 <img src="you-could-be_artcover.png">
-
 <div class="release-info">
 <div class="release-title">You Could Be</div>
 <div class="release-sub">Single · 2026</div>
 
 <div class="buttons">
-<a href="#" target="_blank">LISTEN</a>
+<button onclick="openModal(
+'You Could Be',
+'https://open.spotify.com/embed/album/6geLxX9AruhyGIon0d9uEg',
+'https://open.spotify.com/album/6geLxX9AruhyGIon0d9uEg',
+'https://gotuz.bandcamp.com/track/you-could-be',
+'https://www.youtube.com/watch?v=GKgQN7vswhw'
+)">LISTEN</button>
+
 <a href="you-could-be-poster.html">BUY</a>
 </div>
+</div>
+</div>
 
+<!-- GLOW YELLOW -->
+<div class="release">
+<img src="you-could-be_artcover.png">
+<div class="release-info">
+<div class="release-title">Glow Yellow</div>
+<div class="release-sub">Single · 2016</div>
+
+<div class="buttons">
+<a href="https://www.youtube.com/watch?v=TW-n_2nTi-A&list=RDTW-n_2nTi-A&start_radio=1" target="_blank">LISTEN</a>
+</div>
 </div>
 </div>
 
 <!-- FIRST ALBUM -->
-
-<div class="album-section">
-
-<div class="album-title">FIRST ALBUM</div>
+<div class="release">
+<div class="release-info" style="text-align:center; max-width:700px;">
+<div class="release-title">Memory</div>
+<div class="release-sub">First Album · 2016</div>
 
 <div class="youtube">
-<iframe src="https://www.youtube.com/embed/YOUR_PLAYLIST_ID"></iframe>
+<iframe src="https://www.youtube.com/embed/videoseries?list=OLAK5uy_k5vCl8Vq1KOUSpyfGoDJ5Kkd9mhy8Mf_w"></iframe>
+</div>
+</div>
 </div>
 
 </div>
 
+<!-- MODAL -->
+<div class="listen-modal" id="modal">
+<div class="listen-box">
+<button class="listen-close" onclick="closeModal()">×</button>
+
+<h2 id="modalTitle"></h2>
+
+<iframe id="spotifyEmbed" width="100%" height="152" frameborder="0"></iframe>
+
+<div class="platforms">
+<a id="spotifyLink" target="_blank">Spotify</a>
+<a id="bandcampLink" target="_blank">Bandcamp</a>
+<a id="youtubeLink" target="_blank">YouTube</a>
 </div>
 
-<footer class="social-footer">
-<img src="icons/instagram-bw.png">
-<img src="icons/facebook-bw.png">
-<img src="icons/twitter-bw.png">
-<img src="icons/youtube-bw.png">
-</footer>
+</div>
+</div>
 
-<footer class="legal-footer">
-© 2026 GOTUZ
-</footer>
+<script>
+function openModal(title, embed, spotify, bandcamp, youtube) {
+document.getElementById('modalTitle').innerText = title;
+document.getElementById('spotifyEmbed').src = embed;
+document.getElementById('spotifyLink').href = spotify;
+document.getElementById('bandcampLink').href = bandcamp;
+document.getElementById('youtubeLink').href = youtube;
+document.getElementById('modal').classList.add('active');
+}
+
+function closeModal() {
+document.getElementById('modal').classList.remove('active');
+document.getElementById('spotifyEmbed').src = '';
+}
+</script>
 
 </body>
 </html>
