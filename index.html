@@ -143,6 +143,7 @@ header a:hover {
     width: 100%;
     height: 700px;
     overflow: hidden;
+    perspective: 1400px;
 }
 
 .revolver-item {
@@ -153,10 +154,12 @@ header a:hover {
     transition:
         transform 0.5s ease,
         opacity 0.5s ease;
-    will-change: transform, opacity;
     user-select: none;
     cursor: pointer;
     text-align: center;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 .revolver-item img {
@@ -166,6 +169,13 @@ header a:hover {
     border-radius: 8px;
     box-shadow: 0 14px 34px rgba(0,0,0,0.45);
     transition: transform 0.25s ease;
+    image-rendering: auto;
+    image-rendering: -webkit-optimize-contrast;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    filter: none;
 }
 
 .revolver-item.cover {
@@ -177,7 +187,7 @@ header a:hover {
 }
 
 .revolver-item.center-active:hover img {
-    transform: scale(1.015);
+    transform: translateZ(0) scale(1.015);
 }
 
 /* CAPTION DENTRO IL BLOCCO */
@@ -392,7 +402,7 @@ header a:hover {
     <div class="revolver-stage" id="revolverStage">
 
         <div class="revolver-item cover" data-type="cover" data-link="listen.html">
-            <img src="you-could-be_artcover.png" alt="You Could Be cover art">
+            <img src="you-could-be_artcover.png" alt="You Could Be cover art" loading="eager" decoding="async">
             <div class="item-caption">
                 <div class="title">You Could Be</div>
                 <div class="meta">single, 2026</div>
@@ -400,7 +410,7 @@ header a:hover {
         </div>
 
         <div class="revolver-item poster" data-type="poster" data-link="shop.html">
-            <img src="you-could-be_poster.png" alt="You Could Be poster">
+            <img src="you-could-be_poster.png" alt="You Could Be poster" loading="eager" decoding="async">
             <div class="item-caption">
                 <div class="title">You Could Be</div>
                 <div class="meta">27 March 2026<br>poster</div>
@@ -408,7 +418,7 @@ header a:hover {
         </div>
 
         <div class="revolver-item cover" data-type="cover" data-link="listen.html">
-            <img src="lonely-heart_artcover.png" alt="Lonely Heart cover art">
+            <img src="lonely-heart_artcover.png" alt="Lonely Heart cover art" loading="eager" decoding="async">
             <div class="item-caption">
                 <div class="title">Lonely Heart</div>
                 <div class="meta">single, 2026</div>
@@ -416,7 +426,7 @@ header a:hover {
         </div>
 
         <div class="revolver-item poster" data-type="poster" data-link="shop.html">
-            <img src="lonely-heart_poster.png" alt="Lonely Heart poster">
+            <img src="lonely-heart_poster.png" alt="Lonely Heart poster" loading="eager" decoding="async">
             <div class="item-caption">
                 <div class="title">Lonely Heart</div>
                 <div class="meta">21 April 2026<br>poster</div>
@@ -516,25 +526,25 @@ function updateRevolver() {
     items.forEach((item, i) => {
         const rel = offsetFromActive(i);
 
-        let transform = `translate(-50%, -50%) translate(0px, ${centerY}px) scale(0.4) rotateY(0deg)`;
+        let transform = `translate3d(-50%, -50%, 0) translate3d(0px, ${centerY}px, 0) scale(0.4) rotateY(0deg)`;
         let opacity = 0;
         let zIndex = 1;
 
         if (rel === 0) {
-            transform = `translate(-50%, -50%) translate(0px, ${centerY}px) scale(${scaleCenter}) rotateY(0deg)`;
+            transform = `translate3d(-50%, -50%, 0) translate3d(0px, ${centerY}px, 0) scale(${scaleCenter}) rotateY(0deg)`;
             opacity = 1;
             zIndex = 12;
         } else if (rel === 1) {
-            transform = `translate(-50%, -50%) translate(${pos1}px, ${centerY + 14}px) scale(${scale1}) rotateY(-${rot1}deg)`;
+            transform = `translate3d(-50%, -50%, 0) translate3d(${pos1}px, ${centerY + 14}px, 0) scale(${scale1}) rotateY(-${rot1}deg)`;
             opacity = op1;
             zIndex = 9;
         } else if (rel === -1) {
-            transform = `translate(-50%, -50%) translate(-${pos1}px, ${centerY + 14}px) scale(${scale1}) rotateY(${rot1}deg)`;
+            transform = `translate3d(-50%, -50%, 0) translate3d(-${pos1}px, ${centerY + 14}px, 0) scale(${scale1}) rotateY(${rot1}deg)`;
             opacity = op1;
             zIndex = 9;
         } else if (rel === 2 || rel === -2) {
             const dir = rel > 0 ? 1 : -1;
-            transform = `translate(-50%, -50%) translate(${dir * pos2}px, ${centerY + 28}px) scale(${scale2}) rotateY(${dir > 0 ? -rot2 : rot2}deg)`;
+            transform = `translate3d(-50%, -50%, 0) translate3d(${dir * pos2}px, ${centerY + 28}px, 0) scale(${scale2}) rotateY(${dir > 0 ? -rot2 : rot2}deg)`;
             opacity = op2;
             zIndex = 6;
         }
