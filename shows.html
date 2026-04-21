@@ -14,6 +14,9 @@ body {
     color: #F3EFE6;
     font-family: 'Cormorant Garamond', serif;
     text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* HEADER */
@@ -41,14 +44,23 @@ header a:hover {
     border-bottom: 1px solid #F3EFE6;
 }
 
+/* MAIN */
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 160px 20px 60px;
+    box-sizing: border-box;
+}
+
 /* HERO */
 .hero {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 20px;
+    width: 100%;
 }
 
 /* MESSAGE */
@@ -56,6 +68,7 @@ header a:hover {
     font-size: 20px;
     line-height: 1.5;
     margin-bottom: 30px;
+    letter-spacing: 1px;
 }
 
 /* CONTACT BUTTON */
@@ -66,6 +79,7 @@ header a:hover {
     color: #F3EFE6;
     display: inline-block;
     letter-spacing: 3px;
+    transition: background 0.2s, color 0.2s;
 }
 
 .contact-button a:hover {
@@ -75,12 +89,12 @@ header a:hover {
 
 /* SOCIAL FOOTER */
 .social-footer {
-    position: absolute;
-    bottom: 50px;
     display: flex;
     justify-content: center;
     gap: 20px;
     width: 100%;
+    margin-top: auto;
+    padding-top: 20px;
 }
 
 .social-footer img {
@@ -97,12 +111,12 @@ header a:hover {
 
 /* LEGAL FOOTER */
 .legal-footer {
-    position: absolute;
-    bottom: 15px;
     width: 100%;
     font-size: 12px;
     letter-spacing: 2px;
     opacity: 0.6;
+    padding: 15px 0 25px;
+    box-sizing: border-box;
 }
 
 .legal-footer a {
@@ -123,6 +137,10 @@ header a:hover {
         padding-top: 30px;
     }
 
+    main {
+        padding: 150px 20px 50px;
+    }
+
     .shows-message {
         font-size: 18px;
     }
@@ -134,7 +152,8 @@ header a:hover {
 
 @media (max-width: 480px) {
     .shows-message {
-        font-size: 14px;
+        font-size: 15px;
+        line-height: 1.6;
     }
 
     .contact-button a {
@@ -154,17 +173,17 @@ header a:hover {
 <a href="news.html">NEWS</a>
 </header>
 
-<div class="hero">
+<main>
+    <div class="hero">
+        <div class="shows-message">
+            New shows coming soon! Stay connected
+        </div>
 
-<div class="shows-message">
-New shows coming soon! Stay connected
-</div>
-
-<div class="contact-button">
-<a href="contact.html">CONTACT</a>
-</div>
-
-</div>
+        <div class="contact-button">
+            <a href="contact.html">CONTACT</a>
+        </div>
+    </div>
+</main>
 
 <footer class="social-footer">
 <a href="https://www.instagram.com/gotuzmusic" target="_blank">
