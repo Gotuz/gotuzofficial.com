@@ -8,19 +8,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-
 body {
     margin: 0;
     background: #111;
     color: #F3EFE6;
     font-family: 'Cormorant Garamond', serif;
     text-align: center;
-    animation: fadeIn 1.2s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
 }
 
 header {
@@ -28,7 +21,6 @@ header {
     top: 40px;
     width: 100%;
     font-size: 20px;
-    letter-spacing: 2px;
     display: flex;
     justify-content: center;
     gap: 50px;
@@ -39,103 +31,61 @@ header a {
     text-decoration: none;
 }
 
-header a:hover {
-    border-bottom: 1px solid #F3EFE6;
-}
-
 .section {
     margin-top: 150px;
-    padding: 0 20px 80px;
 }
 
 .release {
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 60px;
-    margin-bottom: 110px;
+    margin-bottom: 100px;
     flex-wrap: wrap;
 }
 
 .release img {
     width: 320px;
-    border-radius: 6px;
-    transition: 0.4s;
-}
-
-.release img:hover {
-    transform: scale(1.04);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
 }
 
 .release-info {
+    max-width: 300px;
     text-align: left;
-    max-width: 320px;
 }
 
-.release-title {
-    font-size: 28px;
-    margin-bottom: 8px;
-}
-
-.release-sub {
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    opacity: 0.7;
-    margin-bottom: 22px;
-}
-
-.buttons {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.buttons button,
-.buttons a {
-    background: transparent;
-    color: #F3EFE6;
+.buttons a,
+.buttons button {
     border: 1px solid #F3EFE6;
-    padding: 10px 22px;
-    font-size: 14px;
-    letter-spacing: 2px;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background: none;
+    color: #F3EFE6;
     cursor: pointer;
-    transition: 0.25s;
-}
-
-.buttons button:hover,
-.buttons a:hover {
-    background: #F3EFE6;
-    color: #111;
-}
-
-/* VIDEO BLOCK */
-
-.video-block {
-    max-width: 720px;
-    margin: 0 auto 120px;
 }
 
 .video-block iframe {
     width: 100%;
+    max-width: 700px;
     height: 400px;
-    border: none;
 }
 
-.video-info {
-    margin-top: 20px;
+.listen-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
 }
 
-.video-title {
-    font-size: 26px;
-    margin-bottom: 5px;
+.listen-modal.active {
+    display: flex;
 }
 
-.video-sub {
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    opacity: 0.7;
-    margin-bottom: 15px;
+.listen-box {
+    background: #111;
+    padding: 20px;
+    max-width: 600px;
+    width: 90%;
 }
 
 </style>
@@ -145,10 +95,8 @@ header a:hover {
 
 <header>
 <a href="index.html">HOME</a>
-<a href="shows.html">SHOWS</a>
 <a href="shop.html">SHOP</a>
 <a href="listen.html">LISTEN</a>
-<a href="news.html">NEWS</a>
 </header>
 
 <div class="section">
@@ -157,15 +105,14 @@ header a:hover {
 <div class="release">
 <img src="lonely-heart_artcover.png">
 <div class="release-info">
-<div class="release-title">Lonely Heart</div>
-<div class="release-sub">Single · 2026</div>
+<h2>Lonely Heart</h2>
 
 <div class="buttons">
 <button onclick="openModal(
 'Lonely Heart',
 'https://open.spotify.com/embed/album/3MTYAwHyoxg9CwWm9j1MxV',
 'https://open.spotify.com/album/3MTYAwHyoxg9CwWm9j1MxV',
-'#',
+'https://gotuz.bandcamp.com/track/lonely-heart',
 'https://youtu.be/XhRkjo1w2VU'
 )">LISTEN</button>
 
@@ -178,8 +125,7 @@ header a:hover {
 <div class="release">
 <img src="you-could-be_artcover.png">
 <div class="release-info">
-<div class="release-title">You Could Be</div>
-<div class="release-sub">Single · 2026</div>
+<h2>You Could Be</h2>
 
 <div class="buttons">
 <button onclick="openModal(
@@ -197,56 +143,58 @@ header a:hover {
 
 <!-- INVISIBLE HARP -->
 <div class="video-block">
-<iframe src="https://www.youtube.com/embed/9FoSzz6V4_Y" allowfullscreen></iframe>
-
-<div class="video-info">
-<div class="video-title">Invisible Harp</div>
-<div class="video-sub">My invention · 2019</div>
-</div>
+<h2>Invisible Harp</h2>
+<iframe src="https://www.youtube.com/embed/9FoSzz6V4_Y"></iframe>
 </div>
 
 <!-- WRONG WAY -->
 <div class="video-block">
-<iframe src="https://www.youtube.com/embed/h07ibFCIYkQ" allowfullscreen></iframe>
-
-<div class="video-info">
-<div class="video-title">Wrong Way</div>
-<div class="video-sub">Single · 2016</div>
+<h2>Wrong Way</h2>
+<iframe src="https://www.youtube.com/embed/h07ibFCIYkQ"></iframe>
 
 <div class="buttons">
 <a href="https://gotuz.bandcamp.com/track/wrong-way" target="_blank">BUY</a>
 </div>
 </div>
-</div>
 
 <!-- MEMORY -->
 <div class="video-block">
+<h2>Memory</h2>
 <iframe src="https://www.youtube.com/embed/videoseries?list=OLAK5uy_k5vCl8Vq1KOUSpyfGoDJ5Kkd9mhy8Mf_w"></iframe>
-
-<div class="video-info">
-<div class="video-title">Memory</div>
-<div class="video-sub">First Album · 2016</div>
 
 <div class="buttons">
 <a href="https://gotuz.bandcamp.com/album/memory" target="_blank">BUY</a>
 </div>
 </div>
-</div>
 
 <!-- GLOW YELLOW -->
 <div class="video-block">
-<iframe src="https://www.youtube.com/embed/TW-n_2nTi-A" allowfullscreen></iframe>
-
-<div class="video-info">
-<div class="video-title">Glow Yellow</div>
-<div class="video-sub">Single · 2016</div>
+<h2>Glow Yellow</h2>
+<iframe src="https://www.youtube.com/embed/TW-n_2nTi-A"></iframe>
 
 <div class="buttons">
 <a href="https://gotuz.bandcamp.com/track/glow-yellow" target="_blank">BUY</a>
 </div>
 </div>
+
 </div>
 
+<!-- MODAL -->
+<div class="listen-modal" id="modal">
+<div class="listen-box">
+<button onclick="closeModal()">X</button>
+
+<h2 id="modalTitle"></h2>
+
+<iframe id="spotifyEmbed" width="100%" height="152"></iframe>
+
+<div class="buttons">
+<a id="spotifyLink" target="_blank">Spotify</a>
+<a id="bandcampLink" target="_blank">Bandcamp</a>
+<a id="youtubeLink" target="_blank">YouTube</a>
+</div>
+
+</div>
 </div>
 
 <script>
