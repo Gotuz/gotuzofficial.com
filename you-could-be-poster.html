@@ -17,7 +17,6 @@ body {
     font-family: 'Cormorant Garamond', serif;
 }
 
-/* HEADER */
 header {
     position: fixed;
     top: 0;
@@ -38,24 +37,21 @@ header a {
     letter-spacing: 2px;
 }
 
-/* LAYOUT */
 .product-container {
     margin-top: 100px;
-    padding: 40px 20px 60px;
+    padding: 40px 20px 80px;
     display: flex;
     justify-content: center;
     gap: 60px;
     flex-wrap: wrap;
 }
 
-/* IMAGE */
 .product-images img {
     width: 420px;
     max-width: 100%;
     border-radius: 5px;
 }
 
-/* TEXT */
 .description {
     max-width: 420px;
     text-align: left;
@@ -63,26 +59,87 @@ header a {
     line-height: 1.6;
 }
 
-/* TITLE */
 .product-title {
     font-size: 30px;
     margin-bottom: 10px;
 }
 
-/* SUBTITLE */
 .product-subtitle {
-    font-size: 16px;
+    font-size: 14px;
     opacity: 0.6;
     margin-bottom: 20px;
     letter-spacing: 2px;
 }
 
-/* PRICE */
+.product-details {
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
 .product-price {
-    font-size: 24px;
+    font-size: 28px;
     margin: 25px 0;
 }
 
-/* DETAILS */
-.product-details {
-    margin
+.buy-section {
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .product-container {
+        gap: 35px;
+    }
+
+    .description {
+        text-align: center;
+    }
+
+    .product-title {
+        font-size: 26px;
+    }
+
+    .product-price {
+        font-size: 24px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<a href="shop.html">SHOP</a>
+</header>
+
+<div class="product-container">
+
+    <div class="product-images">
+        <img src="you-could-be_poster.png" alt="You Could Be Poster">
+    </div>
+
+    <div class="description">
+        <div class="product-title">You Could Be</div>
+        <div class="product-subtitle">OFFICIAL POSTER</div>
+
+        <div class="product-details">
+            Official release artwork for <em>You Could Be</em>.<br><br>
+            30 × 30 cm premium print.
+        </div>
+
+        <div class="product-price">€10</div>
+
+        <div class="buy-section">
+            <div id="paypal-container-P6QVL3HWXUL6E"></div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+paypal.HostedButtons({
+    hostedButtonId: "P6QVL3HWXUL6E"
+}).render("#paypal-container-P6QVL3HWXUL6E");
+</script>
+
+</body>
+</html>
