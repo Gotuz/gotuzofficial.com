@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lonely Heart Poster - GOTUZ</title>
+<title>You Could Be Poster – GOTUZ</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
 
-<script src="https://www.paypal.com/sdk/js?client-id=BAApqvZFp7OYumHbOcxJDgeLBFc3A3SmYM8jxmr2c6h5ib7dXGqgupvVo0k-kvA-xwMhtPXZsQWtCvUKPI&components=hosted-buttons&disable-funding=venmo&currency=EUR"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=BAApqvZFp7OYumHbOcxJDgeLBFc3A3SmYM8jxmr2c6h5ib7dXGqgupvVo0k-kvA-xwMhtPXZsQWtCvUKPI&components=hosted-buttons&currency=EUR"></script>
 
 <style>
 body {
@@ -17,29 +17,9 @@ body {
     font-family: 'Cormorant Garamond', serif;
 }
 
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 60px;
-    background: #111;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 1px solid #222;
-    z-index: 1000;
-}
-
-header a {
-    text-decoration: none;
-    color: #F3EFE6;
-    font-size: 18px;
-    letter-spacing: 2px;
-}
-
 .product-container {
-    margin-top: 100px;
-    padding: 40px 20px 80px;
+    margin-top: 80px;
+    padding: 40px;
     display: flex;
     justify-content: center;
     gap: 60px;
@@ -49,92 +29,62 @@ header a {
 .product-images img {
     width: 420px;
     max-width: 100%;
-    border-radius: 5px;
+    border-radius: 6px;
 }
 
 .description {
     max-width: 420px;
-    text-align: left;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.6;
 }
 
 .product-title {
-    font-size: 30px;
-    margin-bottom: 8px;
+    font-size: 34px;
+    margin-bottom: 10px;
 }
 
 .product-subtitle {
-    font-size: 15px;
-    opacity: 0.65;
-    margin-bottom: 22px;
+    font-size: 16px;
     letter-spacing: 2px;
-}
-
-.product-text {
-    margin-bottom: 22px;
-    opacity: 0.92;
+    opacity: 0.7;
+    margin-bottom: 20px;
 }
 
 .product-price {
-    font-size: 30px;
-    margin: 0 0 26px;
-}
-
-.buy-section {
-    margin-top: 12px;
-}
-
-@media (max-width: 768px) {
-    .description {
-        text-align: center;
-    }
-
-    .product-title {
-        font-size: 26px;
-    }
-
-    .product-price {
-        font-size: 26px;
-    }
+    font-size: 26px;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-<a href="shop.html">SHOP</a>
-</header>
-
 <div class="product-container">
 
     <div class="product-images">
-        <img src="lonely-heart_poster.png" alt="Lonely Heart Poster">
+        <img src="you-could-be_poster.png">
     </div>
 
     <div class="description">
-        <div class="product-title">Lonely Heart</div>
+        <div class="product-title">You Could Be</div>
         <div class="product-subtitle">OFFICIAL POSTER</div>
 
-        <div class="product-text">
-            Official release poster for <em>Lonely Heart</em>.<br><br>
-            30 × 30 cm premium print.
-        </div>
+        <p>Official release poster for <em>You Could Be</em>.</p>
+
+        <p>30 × 30 cm premium print.</p>
 
         <div class="product-price">€10</div>
 
-        <div class="buy-section">
-            <div id="paypal-container-XPVZ9HUSVJ566"></div>
-        </div>
+        <div id="paypal-container-YOU"></div>
     </div>
 
 </div>
 
 <script>
 paypal.HostedButtons({
-    hostedButtonId: "XPVZ9HUSVJ566"
-}).render("#paypal-container-XPVZ9HUSVJ566");
+    hostedButtonId: "IL_TUO_ID_YOU_COULD_BE"
+}).render("#paypal-container-YOU");
 </script>
 
 </body>
