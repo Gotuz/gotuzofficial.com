@@ -6,7 +6,6 @@
 <title>You Could Be Poster - GOTUZ</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
-<script src="https://www.paypal.com/sdk/js?client-id=BAApqvZFp7OYumHbOcxJDgeLBFc3A3SmYM8jxmr2c6h5ib7dXGqgupvVo0k-kvA-xwMhtPXZsQWtCvUKPI&components=hosted-buttons&disable-funding=venmo&currency=EUR"></script>
 
 <style>
 body {
@@ -16,6 +15,7 @@ body {
     font-family: 'Cormorant Garamond', serif;
 }
 
+/* HEADER */
 header {
     position: fixed;
     top: 0;
@@ -30,12 +30,13 @@ header {
 }
 
 header a {
-    text-decoration: none;
     color: #F3EFE6;
+    text-decoration: none;
     font-size: 18px;
     letter-spacing: 2px;
 }
 
+/* LAYOUT */
 .product-container {
     margin-top: 100px;
     padding: 40px 20px 80px;
@@ -48,53 +49,46 @@ header a {
 .product-images img {
     width: 420px;
     max-width: 100%;
-    border-radius: 5px;
+    border-radius: 6px;
 }
 
 .description {
     max-width: 420px;
-    text-align: left;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.6;
 }
 
 .product-title {
-    font-size: 34px;
+    font-size: 32px;
     margin-bottom: 10px;
 }
 
 .product-subtitle {
-    font-size: 16px;
     letter-spacing: 2px;
-    opacity: 0.7;
-    margin-bottom: 24px;
+    font-size: 14px;
+    opacity: 0.6;
+    margin-bottom: 20px;
 }
 
 .product-price {
-    font-size: 28px;
-    margin: 24px 0 30px;
+    font-size: 24px;
+    margin-top: 25px;
 }
 
-.buy-section {
-    margin-top: 10px;
+/* BUTTON */
+.buy-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 40px;
+    border: 1px solid #F3EFE6;
+    color: #F3EFE6;
+    text-decoration: none;
+    letter-spacing: 2px;
 }
 
-@media (max-width: 768px) {
-    .product-container {
-        gap: 35px;
-    }
-
-    .description {
-        text-align: center;
-    }
-
-    .product-title {
-        font-size: 28px;
-    }
-
-    .product-price {
-        font-size: 24px;
-    }
+.buy-button:hover {
+    background: #F3EFE6;
+    color: #111;
 }
 </style>
 </head>
@@ -106,6 +100,7 @@ header a {
 </header>
 
 <div class="product-container">
+
     <div class="product-images">
         <img src="you-could-be_poster.png" alt="You Could Be Poster">
     </div>
@@ -115,21 +110,17 @@ header a {
         <div class="product-subtitle">OFFICIAL POSTER</div>
 
         <p>Official release poster for <em>You Could Be</em>.</p>
+
         <p>30 × 30 cm premium print.</p>
 
         <div class="product-price">€10</div>
 
-        <div class="buy-section">
-            <div id="paypal-container-YOU"></div>
-        </div>
+        <a class="buy-button" href="https://www.paypal.com/ncp/payment/ZKCBSTJVKYEHE" target="_blank">
+            BUY NOW
+        </a>
     </div>
-</div>
 
-<script>
-paypal.HostedButtons({
-    hostedButtonId: "ZKCBSTJVKYEHE"
-}).render("#paypal-container-YOU");
-</script>
+</div>
 
 </body>
 </html>
