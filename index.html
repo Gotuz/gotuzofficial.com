@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>GOTUZ OFFICIAL</title>
-  <meta name="description" content="GOTUZ official website. Discover music, posters and latest releases including Lonely Heart and You Could Be.">
-  
+<meta name="description" content="GOTUZ official website. Discover music, posters and latest releases including Lonely Heart and You Could Be.">
+
 <meta name="description" content="Official website of GOTUZ. Listen to new releases, shop official posters, explore music, and stay updated on shows and upcoming releases.">
-<meta name="keywords" content="GOTUZ, Gotuz official, music, artist, posters, shows, Lonely Heart, You Could Be, official website">
+<meta name="keywords" content="GOTUZ, Gotuz official, music, artist, posters, shows, Lonely Heart, You Could Be, Under Water, official website">
 <meta name="author" content="GOTUZ">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://gotuzofficial.com/">
@@ -26,33 +26,31 @@
 <meta name="twitter:description" content="Official website of GOTUZ. Listen to new releases, shop official posters, explore music, and stay updated on shows and upcoming releases.">
 <meta name="twitter:image" content="https://gotuzofficial.com/lonely-heart_artcover.jpg">
 
-  <!-- SOCIAL PREVIEW -->
+<!-- SOCIAL PREVIEW -->
 <meta property="og:title" content="GOTUZ OFFICIAL">
 <meta property="og:description" content="Official website. Music, art, videos and releases by GOTUZ.">
 <meta property="og:image" content="https://gotuzofficial.com/lonely-heart_artcover.jpg">
 <meta property="og:url" content="https://gotuzofficial.com/">
 <meta property="og:type" content="website">
-  
+
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NT3W7883Z6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-NT3W7883Z6');
-</script>
-
-  <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NT3W7883Z6"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-
 gtag('config', 'G-NT3W7883Z6');
 </script>
-  
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NT3W7883Z6"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-NT3W7883Z6');
+</script>
+
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
 <style>
@@ -76,7 +74,6 @@ a {
     text-decoration: none;
 }
 
-/* HEADER ORIGINALE */
 header {
     position: absolute;
     top: 40px;
@@ -95,7 +92,6 @@ header a:hover {
     border-bottom: 1px solid #F3EFE6;
 }
 
-/* HERO ORIGINALE */
 .hero {
     margin-top: 180px;
     margin-bottom: 70px;
@@ -133,7 +129,6 @@ header a:hover {
     margin: 6px 0 22px;
 }
 
-/* GOLD BUTTON ORIGINALE */
 .buttons a {
     font-family: 'Playfair Display', serif;
     font-size: 18px;
@@ -179,7 +174,6 @@ header a:hover {
     transform: translateY(-1px);
 }
 
-/* REVOLVER */
 .revolver-section {
     position: relative;
     width: 100%;
@@ -238,7 +232,6 @@ header a:hover {
     transform: translateZ(0) scale(1.015);
 }
 
-/* CAPTION DENTRO IL BLOCCO */
 .item-caption {
     margin-top: 14px;
     opacity: 0;
@@ -265,7 +258,6 @@ header a:hover {
     line-height: 1.4;
 }
 
-/* CONTROLS AI LATI */
 .revolver-btn {
     position: absolute;
     top: 34%;
@@ -301,7 +293,6 @@ header a:hover {
     right: 40px;
 }
 
-/* FOOTERS ORIGINALI */
 .social-footer {
     display: flex;
     justify-content: center;
@@ -340,7 +331,6 @@ header a:hover {
     border-bottom: 1px solid #F3EFE6;
 }
 
-/* MOBILE */
 @media (max-width: 768px) {
     header {
         font-size: 16px;
@@ -449,6 +439,14 @@ header a:hover {
 
     <div class="revolver-stage" id="revolverStage">
 
+        <div class="revolver-item poster" data-type="poster" data-link="shop.html">
+            <img src="under-water_poster.jpg" alt="Under Water poster" loading="eager" decoding="async">
+            <div class="item-caption">
+                <div class="title">Under Water</div>
+                <div class="meta">21 May 2026<br>poster</div>
+            </div>
+        </div>
+
         <div class="revolver-item cover" data-type="cover" data-link="listen.html">
             <img src="you-could-be_artcover.jpg" alt="You Could Be cover art" loading="eager" decoding="async">
             <div class="item-caption">
@@ -481,13 +479,6 @@ header a:hover {
             </div>
         </div>
 
-        <div class="revolver-item poster" data-type="poster" data-link="shop.html">
-            <img src="under-water_poster.jpg" alt="Under Water poster" loading="eager" decoding="async">
-            <div class="item-caption">
-                <div class="title">Under Water</div>
-                <div class="meta">21 May 2026<br>poster</div>
-            </div>
-</div>
     </div>
 </section>
 
@@ -525,8 +516,8 @@ const items = Array.from(document.querySelectorAll('.revolver-item'));
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 
-/* centro iniziale = lonely-heart_artcover.jpg */
-let activeIndex = 2;
+/* centro iniziale = under-water_poster.jpg */
+let activeIndex = 0;
 
 function mod(n, m) {
     return ((n % m) + m) % m;
