@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>GOTUZ OFFICIAL</title>
-<meta name="description" content="GOTUZ official website. Discover music, posters and latest releases including Lonely Heart and You Could Be.">
+<meta name="description" content="GOTUZ official website. Discover music, posters and latest releases including The Final Star, Under Water, Lonely Heart and You Could Be.">
 
 <meta name="description" content="Official website of GOTUZ. Listen to new releases, shop official posters, explore music, and stay updated on shows and upcoming releases.">
-<meta name="keywords" content="GOTUZ, Gotuz official, music, artist, posters, shows, Lonely Heart, You Could Be, Under Water, official website">
+<meta name="keywords" content="GOTUZ, Gotuz official, music, artist, posters, shows, The Final Star, Lonely Heart, You Could Be, Under Water, official website">
 <meta name="author" content="GOTUZ">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://gotuzofficial.com/">
@@ -439,6 +439,14 @@ header a:hover {
 
     <div class="revolver-stage" id="revolverStage">
 
+        <div class="revolver-item poster" data-type="poster" data-link="shop.html">
+            <img src="the-final-star_poster.jpg" alt="The Final Star poster" loading="eager" decoding="async">
+            <div class="item-caption">
+                <div class="title">The Final Star</div>
+                <div class="meta">single, 2026<br>poster</div>
+            </div>
+        </div>
+
         <div class="revolver-item cover" data-type="cover" data-link="listen.html">
             <img src="under-water_artcover.jpg" alt="Under Water cover art" loading="eager" decoding="async">
             <div class="item-caption">
@@ -524,7 +532,7 @@ const items = Array.from(document.querySelectorAll('.revolver-item'));
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 
-/* centro iniziale = under-water_artcover.jpg */
+/* centro iniziale = the-final-star_poster.jpg */
 let activeIndex = 0;
 
 function mod(n, m) {
