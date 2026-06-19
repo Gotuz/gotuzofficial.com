@@ -6,8 +6,8 @@
     
 <!-- SOCIAL PREVIEW LISTEN -->
 <meta property="og:title" content="LISTEN | GOTUZ OFFICIAL">
-<meta property="og:description" content="Listen to Lonely Heart, You Could Be and more by GOTUZ.">
-<meta property="og:image" content="https://gotuzofficial.com/lonely-heart_artcover.jpg">
+<meta property="og:description" content="Listen to The Final Star, Under Water, Lonely Heart, You Could Be and more by GOTUZ.">
+<meta property="og:image" content="https://gotuzofficial.com/the-final-star_artcover.jpg">
 <meta property="og:url" content="https://gotuzofficial.com/listen.html">
 <meta property="og:type" content="website">
     
@@ -31,8 +31,8 @@ gtag('config', 'G-NT3W7883Z6');
 </script>
 
 <title>LISTEN | GOTUZ OFFICIAL</title>
-<meta name="description" content="Listen to music by GOTUZ, including Lonely Heart, You Could Be, Memory full album. Watch to video by GOTUZ, including Invible Harp, Glow Yellow, Wrong Way">
-<meta name="keywords" content="GOTUZ, listen, Lonely Heart, You Could Be, Memory, Glow Yellow, Wrong Way, Invisible Harp">
+<meta name="description" content="Listen to music by GOTUZ, including The Final Star, Under Water, Lonely Heart, You Could Be, Memory full album. Watch video by GOTUZ, including Invisible Harp, Glow Yellow, Wrong Way">
+<meta name="keywords" content="GOTUZ, listen, The Final Star, Under Water, Lonely Heart, You Could Be, Memory, Glow Yellow, Wrong Way, Invisible Harp">
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
@@ -378,6 +378,24 @@ header a:hover {
 <div class="section">
 
 <div class="release">
+    <img src="the-final-star_artcover.jpg" alt="The Final Star">
+    <div class="release-info">
+        <h2>The Final Star</h2>
+        <div class="release-sub">Single · 2026</div>
+        <div class="buttons">
+            <button onclick="openModal(
+                'The Final Star',
+                '',
+                '#',
+                'https://gotuz.bandcamp.com/track/the-final-star',
+                'https://www.youtube.com/watch?v=E6cU_vxAVi4'
+            )">LISTEN</button>
+            <a href="https://gotuz.bandcamp.com/track/the-final-star" target="_blank">BUY</a>
+        </div>
+    </div>
+</div>
+
+<div class="release">
     <img src="under-water_artcover.jpg" alt="Under Water">
     <div class="release-info">
         <h2>Under Water</h2>
@@ -529,8 +547,19 @@ const youtubeLink = document.getElementById('youtubeLink');
 
 function openModal(title, embed, spotify, bandcamp, youtube) {
     modalTitle.innerText = title;
-    spotifyEmbed.src = embed;
-    spotifyLink.href = spotify;
+
+    if (embed && embed !== '') {
+        spotifyEmbed.style.display = 'block';
+        spotifyEmbed.src = embed;
+        spotifyLink.style.display = 'inline-block';
+        spotifyLink.href = spotify;
+    } else {
+        spotifyEmbed.style.display = 'none';
+        spotifyEmbed.src = '';
+        spotifyLink.style.display = 'inline-block';
+        spotifyLink.href = '#';
+    }
+
     bandcampLink.href = bandcamp;
     youtubeLink.href = youtube;
     modal.classList.add('active');
@@ -540,6 +569,7 @@ function openModal(title, embed, spotify, bandcamp, youtube) {
 function closeModal() {
     modal.classList.remove('active');
     spotifyEmbed.src = '';
+    spotifyEmbed.style.display = 'block';
     document.body.style.overflow = '';
 }
 
