@@ -439,6 +439,14 @@ header a:hover {
 
     <div class="revolver-stage" id="revolverStage">
 
+        <div class="revolver-item poster" data-type="poster" data-link="shop.html">
+            <img src="every-synthetizer-under-the-sun_poster.jpg" alt="Every Synthetizer Under The Sun poster" loading="eager" decoding="async">
+            <div class="item-caption">
+                <div class="title">Every Synthetizer Under The Sun</div>
+                <div class="meta">single, 2026<br>poster</div>
+            </div>
+        </div>
+
         <div class="revolver-item cover" data-type="cover" data-link="listen.html">
             <img src="the-final-star_artcover.jpg" alt="The Final Star cover art" loading="eager" decoding="async">
             <div class="item-caption">
@@ -543,7 +551,7 @@ const items = Array.from(document.querySelectorAll('.revolver-item'));
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 
-/* centro iniziale = the-final-star_artcover.jpg */
+/* centro iniziale = every-synthetizer-under-the-sun_poster.jpg */
 let activeIndex = 0;
 
 function mod(n, m) {
